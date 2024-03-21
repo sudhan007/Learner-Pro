@@ -15,7 +15,7 @@
   import { toast } from "svelte-sonner";
   import InternshipCard from "./InternShipCard";
 
-  let showModal = true;
+  let showModal = false;
 
   const Interests = [
     { value: "python", label: "Python" },
@@ -288,12 +288,12 @@
           {/if}
         </div>
       </div>
-      <div class="input-group">
+      <!-- <div class="input-group">
         <input class="font-publicaz w-full py-4 indent-4" type="file" />
         <label for="" class="text-base font-inter"
           >Upload Identity Card/Resume
         </label>
-      </div>
+      </div> -->
     </div>
 
     <div class="flex justify-center px-10 pt-4">

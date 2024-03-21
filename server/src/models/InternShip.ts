@@ -37,10 +37,10 @@ const InternShipSchema = new Schema({
     required : true,
     enum:["online","offline"]
  },
- image:{
-   type : String,
-   required : true
- }
+//  image:{
+//    type : String,
+//    required : true
+//  }
 })
 
 export const InternshipModel = model("Internship",InternShipSchema)

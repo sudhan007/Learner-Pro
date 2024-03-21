@@ -36,7 +36,7 @@
                 border-image-source: linear-gradient(132.43deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 61.87%);
                 background-color: rgba(0, 0, 0, 0.8);
                 "
-            class="rounded-xl border-0 border-opacity-25 shadow-2xl"
+            class="rounded-xl border-0 border-opacity-25 shadow-white"
           >
             <div class="px-4 py-4">
               <div
@@ -88,7 +88,7 @@
                 border-image-source: linear-gradient(132.43deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 61.87%);
                 background-color: rgba(0, 0, 0, 0.8);
                 "
-          class="rounded-xl border-0 border-opacity-25 shadow-2xl"
+          class="rounded-xl border-0 border-opacity-25 shadow-white"
         >
           <div class="px-4 py-4">
             <div

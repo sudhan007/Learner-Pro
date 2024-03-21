@@ -66,11 +66,18 @@
           });
           console.log(error);
         }
+        // empty the fields
+
+        values.name = "";
+        values.email = "";
+        values.phoneNumber = "";
+        values.certificateName = "";
+        values.currentPosition = "student";
       },
     });
 </script>
 
-<sectionerror
+<section
   class="h-[100vh] flex items-center justify-center"
   style="background: radial-gradient(circle, {gradientColor1}, {gradientColor2})"
 >
@@ -174,7 +181,7 @@
       </div>
     </form>
   </div>
-</sectionerror>
+</section>
 
 <style>
   .input-group {

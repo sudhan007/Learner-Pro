@@ -2,7 +2,7 @@ import { Elysia } from "elysia";
 import { logger } from "@grotto/logysia";
 import { connect } from "mongoose";
 import { swagger } from "@elysiajs/swagger";
-import { AuthController,WebinarController} from "./controllers";
+import { AuthController,WebinarController,InternshipController} from "./controllers";
 import {cors} from "@elysiajs/cors"
 const app = new Elysia();
 
@@ -18,7 +18,6 @@ await connect(
       credentials: true,
     }
   ))
-
 
 app.use(
   logger({
@@ -43,6 +42,7 @@ app.use(
 // adding routes
 app.use(AuthController)
 app.use(WebinarController)
+app.use(InternshipController)
 
 app.onError(({ code, error }) => {
   if (code === "VALIDATION") {

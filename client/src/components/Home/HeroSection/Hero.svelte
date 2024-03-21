@@ -34,7 +34,7 @@
           >
           <Button
             variant="ghost"
-            class="text-herodesc rounded-full border-2  border-gray-500 md:px-10 md:py-8 text-base md:text-[20px]"
+            class="text-herodesc hover:bg-white hover:text-black rounded-full border-2  border-gray-500 md:px-10 md:py-8 text-base md:text-[20px]"
             >How it Works</Button
           >
         </div>
@@ -45,17 +45,17 @@
             <h3
               class="text-herocount mb-2 text-lg md:text-[25px] font-bold xl:text-[40px]"
             >
-              100000+
+              10000+
             </h3>
             <p class=" text-xs md:text-[17px] leading-snug xl:text-[20px]">
-              Interview tips to <br /> choose from
+              Happy <br /> Customers
             </p>
           </div>
           <div class=" md:mr-8">
             <h3
               class="text-herocount mb-2 text-lg md:text-[25px] font-bold xl:text-[40px]"
             >
-              100000+
+              5000+
             </h3>
             <p class="text-xs md:text-[17px] leading-snug xl:text-[20px]">
               Students <br />Trained
@@ -65,10 +65,10 @@
             <h3
               class="text-herocount mb-2 text-lg md:text-[25px] font-bold xl:text-[40px]"
             >
-              100000+
+              400+
             </h3>
             <p class="text-xs md:text-[17px] xl:text-[20px] leading-snug">
-              Professional<br />Trainers
+              Expert<br />Mentors
             </p>
           </div>
         </div>

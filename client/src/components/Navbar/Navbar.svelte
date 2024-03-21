@@ -17,7 +17,7 @@
     >
       {#each menuLinks as link}
         <li
-          class={`text-navmenu pb-1 tracking-[1px] transition-all duration-100 hover:border-b-2 `}
+          class={`text-navmenu border-white pb-1 tracking-[1px] transition-all duration-100 hover:border-b-2 `}
         >
           <a href={link.path}> {link.name}</a>
         </li>

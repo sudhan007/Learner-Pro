@@ -126,3 +126,110 @@
     </form>
   </div>
 </section> -->
+
+<!-- <script>
+  import Button from "$lib/components/ui/button/button.svelte";
+  import Label from "$lib/components/ui/label/label.svelte";
+  import { createForm } from "svelte-forms-lib";
+  import * as yup from "yup";
+
+  const { errors, touched, isValid, isSubmitting, handleChange, handleSubmit } =
+    createForm({
+      initialValues: {
+        status: "",
+      },
+      validationSchema: yup.object().shape({
+        status: yup
+          .string()
+          .required("Status is required")
+          .oneOf(["online", "offline"]),
+      }),
+      onSubmit: async (values) => {
+        console.log(values);
+        alert(JSON.stringify(values, null, 2));
+      },
+    });
+</script>
+
+<form class:valid={$isValid} method="POST" on:submit={handleSubmit}>
+  <ol class="flex gap-20">
+    <li class="4">
+      <input
+        on:change={handleChange}
+        class=""
+        type="checkbox"
+        name="status"
+        id="online"
+        value="online"
+      />
+      <Label class="font-publicbold text-3xl" for="online">Online</Label>
+    </li>
+    <li class="flex items-center gap-4">
+      <input type="checkbox" value="offline" name="status" id="offline" />
+      <Label for="offline" class="font-publicbold text-3xl">offline</Label>
+    </li>
+  </ol>
+  <Button
+    type="submit"
+    style="background: linear-gradient(82.96deg, #212443 -29.79%, #FF3434 -29.77%, #006CDB -9.84%, #E51057 108.39%, #212443 161.74%);
+"
+    class="text-herodesc font-publicbold mt-6 rounded-full py-6 text-[20px] "
+    >Submit</Button
+  >
+</form> -->
+
+<script>
+  import Button from "$lib/components/ui/button/button.svelte";
+  import Label from "$lib/components/ui/label/label.svelte";
+  import { createForm } from "svelte-forms-lib";
+  import * as yup from "yup";
+
+  const { errors, touched, isValid, isSubmitting, handleChange, handleSubmit } =
+    createForm({
+      initialValues: {
+        status: "", // Initialize to an empty string
+      },
+      validationSchema: yup.object().shape({
+        status: yup
+          .string()
+          .required("Status is required")
+          .oneOf(["online", "offline"]),
+      }),
+      onSubmit: async (values) => {
+        console.log(values);
+        alert(JSON.stringify(values, null, 2));
+      },
+    });
+</script>
+
+<form class:valid={$isValid} method="POST" on:submit={handleSubmit}>
+  <ol class="flex gap-20">
+    <li class="4">
+      <input
+        type="radio"
+        id="online"
+        name="status"
+        value="online"
+        on:change={handleChange}
+      />
+      <Label class="font-publicbold text-3xl" for="online">Online</Label>
+    </li>
+    <li class="flex items-center gap-4">
+      <input
+        type="radio"
+        id="offline"
+        name="status"
+        value="offline"
+        on:change={handleChange}
+      />
+      <Label for="offline" class="font-publicbold text-3xl">Offline</Label>
+    </li>
+  </ol>
+  <Button
+    type="submit"
+    style="background: linear-gradient(82.96deg, #212443 -29.79%, #FF3434 -29.77%, #006CDB -9.84%, #E51057 108.39%, #212443 161.74%);
+"
+    class="text-herodesc font-publicbold mt-6 rounded-full py-6 text-[20px] "
+    >Submit</Button
+  >
+</form>

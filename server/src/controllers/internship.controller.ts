@@ -83,7 +83,7 @@ export const InternshipController = new Elysia({prefix:"/internship"})
              error: "classMode is required",
              enum:["online","offline"]
          }),
-         
+       
         
     }),
     detail:{

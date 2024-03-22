@@ -14,8 +14,8 @@ await connect(
 
   app.use(cors(
     {
-      origin: "*",
-      credentials: true,
+      origin: ["https://www.learnerpro.in", "http://localhost:4000"],
+      credentials: true,      
     }
   ))
 

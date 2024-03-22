@@ -13,8 +13,8 @@
   import { toast } from "svelte-sonner";
 
   onMount(() => {
-    // const isLoggedIn = localStorage.getItem("isLoggedIn");
     const phoneNumber = localStorage.getItem("phoneNumber");
+
     if (!phoneNumber) {
       goto("/login");
       toast("Please login to continue", {

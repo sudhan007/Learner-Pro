@@ -9,8 +9,6 @@
   </script>
   <script>
     function otpless(otplessUser) {
-      console.log(otplessUser);
-      console.log(otplessUser.token, "edfef");
       init(otplessUser.token);
     }
   </script>
@@ -42,25 +40,26 @@
           }
           return res.json();
         })
-        .then((data) => {
-          console.log(data, "ressssssssssss");
+        .then(async (data) => {
           const phoneNumber = data.national_phone_number;
           localStorage.setItem("phoneNumber", phoneNumber);
           localStorage.setItem("isLoggedIn", true);
-          fetch("http://localhost:4000/auth/login", {
+
+          let _formData = new FormData();
+          _formData.append("phoneNumber", phoneNumber);
+
+          let res = await fetch("?/login", {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ phoneNumber }),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              console.log(data);
-              if (data.ok === true) {
-                window.location.href = "/";
-              }
-            });
+            body: _formData,
+          });
+
+          res = await res.json();
+
+          if (res.status == 200) {
+            window.location.replace("/");
+          } else {
+            console.log("not working");
+          }
         })
         .catch((error) => {
           console.error("Error fetching user info:", error);

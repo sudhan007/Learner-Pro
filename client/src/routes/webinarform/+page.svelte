@@ -1,11 +1,8 @@
 <script lang="ts">
   import Button from "$lib/components/ui/button/button.svelte";
   import { createForm } from "svelte-forms-lib";
-  import config from "$lib/config";
   import * as yup from "yup";
-  import axios from "axios";
   import { toast } from "svelte-sonner";
-  import { onMount } from "svelte";
 
   let gradientColor1 = "#424242";
   let gradientColor2 = "#353535";
@@ -17,7 +14,6 @@
   ];
 
   const {
-    handleReset,
     errors,
     touched,
     isValid,
@@ -26,13 +22,14 @@
     state,
     handleChange,
     handleSubmit,
+    handleReset,
   } = createForm({
     initialValues: {
       name: "",
       email: "",
       phoneNumber: "",
       certificateName: "",
-      currentPosition: "student",
+      currentPosition: "",
     },
     validationSchema: yup.object().shape({
       name: yup.string().required("Name is required"),
@@ -49,23 +46,62 @@
         .oneOf(["workingprofessional", "lookingforcareer", "student"]),
     }),
     onSubmit: async (values) => {
+      let _formData = new FormData();
+
+      _formData.append("name", values.name);
+      _formData.append("email", values.email);
+      _formData.append("phoneNumber", values.phoneNumber);
+      _formData.append("certificateName", values.certificateName);
+      _formData.append("currentPosition", values.currentPosition);
+
       try {
-        const response = await axios.post(
-          `${config.BaseUrl}webinar/register`,
-          values
-        );
-        console.log(response);
-        if (response.data.ok === true) {
-          toast(`${response.data.message}`, {
-            duration: 3000,
+        let response: any = await fetch("?/register", {
+          method: "POST",
+          body: _formData,
+        });
+
+        response = await response.json();
+        console.log(response, "wdhiuwd");
+        if (response.ok === true) {
+          form.set({
+            name: "",
+            email: "",
+            phoneNumber: "",
+            certificateName: "",
+            currentPosition: "student",
+          });
+          toast(`Registration Successful`, {
+            duration: 4000,
             position: "top-center",
+            style:
+              "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
+          });
+        } else {
+          form.set({
+            name: "",
+            email: "",
+            phoneNumber: "",
+            certificateName: "",
+            currentPosition: "student",
+          });
+          toast(`${response.message}`, {
+            duration: 4000,
+            position: "top-center",
+            class: "bg-red-500",
             style:
               "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
           });
         }
       } catch (error: any) {
+        form.set({
+          name: "",
+          email: "",
+          phoneNumber: "",
+          certificateName: "",
+          currentPosition: "student",
+        });
         toast(`${error.response.data.message}`, {
-          duration: 3000,
+          duration: 4000,
           position: "top-center",
           class: "bg-red-500",
           style:
@@ -84,6 +120,9 @@
   });
 </script>
 
+<head>
+  <title>Webinar Form</title>
+</head>
 <section
   class="h-[100vh] flex items-center justify-center"
   style="background: radial-gradient(circle, {gradientColor1}, {gradientColor2})"
@@ -95,17 +134,14 @@
       Webinar Form
     </h2>
 
-    <form
-      class:valid={$isValid}
-      method="POST"
-      on:submit={handleSubmit}
-      class=""
-    >
+    <form class:valid={$isValid} method="POST" on:submit={handleSubmit}>
       <div class="">
         <div class="input-group">
           <input
             name="name"
-            on:keyup={handleChange}
+            on:change={handleChange}
+            on:blur={handleChange}
+            bind:value={$form.name}
             class="font-publicaz w-full py-3 indent-4 md:text-lg"
             type="text"
           />
@@ -120,7 +156,9 @@
             name="email"
             class="font-publicaz w-full py-3 indent-4 md:text-lg"
             type="text"
-            on:keyup={handleChange}
+            on:change={handleChange}
+            on:blur={handleChange}
+            bind:value={$form.email}
           />
           <label for="" class="text-base font-inter">E-mail</label>
           {#if $errors.email && $touched.email}
@@ -131,7 +169,9 @@
           <input
             class="font-publicaz w-full py-3 indent-4 md:text-lg"
             type="text"
-            on:keyup={handleChange}
+            on:change={handleChange}
+            on:blur={handleChange}
+            bind:value={$form.phoneNumber}
             name="phoneNumber"
           />
           <label for="" class="text-base font-inter">Mobile Number</label>
@@ -143,7 +183,9 @@
           <input
             class="font-publicaz w-full py-3 indent-4 md:text-lg"
             type="text"
-            on:keyup={handleChange}
+            on:change={handleChange}
+            on:blur={handleChange}
+            bind:value={$form.certificateName}
             name="certificateName"
           />
           <label for="" class="text-base font-inter"
@@ -163,6 +205,7 @@
             class="font-publicaz w-full py-3 bg-black text-white indent-4 outline-none bg- md:text-lg"
             name="currentPosition"
             on:change={handleChange}
+            on:blur={handleChange}
           >
             <option value="">Select Position</option>
             {#each positions as position}
@@ -179,12 +222,20 @@
 
       <div class="flex justify-center px-10 pt-4">
         <Button
+          disabled={!$isValid}
           type="submit"
           style="background: linear-gradient(82.96deg, #212443 -29.79%, #FF3434 -29.77%, #006CDB -9.84%, #E51057 108.39%, #212443 161.74%);
           "
           class="text-herodesc font-publicbold w-full rounded-full py-8 text-[20px] "
-          >Submit</Button
         >
+          {#if $isSubmitting}
+            <div
+              class="h-4 w-4 border-b-2 rounded-full border-blue-500 animate-spin"
+            ></div>
+          {:else}
+            Submit
+          {/if}
+        </Button>
       </div>
     </form>
   </div>

@@ -17,3 +17,12 @@ model User {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
   phoneNumber String @unique
 }
+
+model WebinarForm {
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  email           String
+  phoneNumber     String
+  certificateName String
+  currentPosition String
+}

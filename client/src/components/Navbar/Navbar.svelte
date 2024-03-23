@@ -26,32 +26,32 @@
     <ul
       class="font-publicalight flex cursor-pointer items-center justify-between gap-x-4 text-lg font-semibold lg:gap-x-9 xl:gap-x-24"
     >
-      {#if phoneNumber}
-        {#each menuLinks as link}
-          <li
-            class={`text-navmenu border-white pb-1 tracking-[1px] ${currentPath === link.path ? "border-b-2" : ""} transition-all duration-100 hover:border-b-2 `}
-          >
-            <a href={link.path}> {link.name}</a>
-          </li>
-        {/each}
-
-        <li>
-          <div
-            style="border: 1.15px solid rgba(232, 239, 247, 0.25)"
-            class="flex p-2 items-center rounded-xl ga-2 bg-[#010101]"
-          >
-            <!-- <img src={profile} class="h-12 rounded-lg" alt="" /> -->
-            <img
-              src="https://github.com/shadcn.png"
-              class="h-12 rounded-lg"
-              alt=""
-            />
-            <p class="px-5 py-2 font-publicaz text-[#EFEFEF] text-xl">
-              {phoneNumber}
-            </p>
-          </div>
+      <!-- {#if phoneNumber} -->
+      {#each menuLinks as link}
+        <li
+          class={`text-navmenu border-white pb-1 tracking-[1px] ${currentPath === link.path ? "border-b-2" : ""} transition-all duration-100 hover:border-b-2 `}
+        >
+          <a href={link.path}> {link.name}</a>
         </li>
-      {/if}
+      {/each}
+
+      <li>
+        <div
+          style="border: 1.15px solid rgba(232, 239, 247, 0.25)"
+          class="flex p-2 items-center rounded-xl ga-2 bg-[#010101]"
+        >
+          <!-- <img src={profile} class="h-12 rounded-lg" alt="" /> -->
+          <img
+            src="https://github.com/shadcn.png"
+            class="h-12 rounded-lg"
+            alt=""
+          />
+          <!-- <p class="px-5 py-2 font-publicaz text-[#EFEFEF] text-xl">
+            {phoneNumber}
+          </p> -->
+        </div>
+      </li>
+      <!-- {/if} -->
     </ul>
   </div>
 </header>

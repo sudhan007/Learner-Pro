@@ -7,6 +7,7 @@
   import Services from "../components/Home/OurServices/Services.svelte";
 </script>
 
+<title>Learner Pro</title>
 <div class="">
   <div class="bg-black">
     <Hero />

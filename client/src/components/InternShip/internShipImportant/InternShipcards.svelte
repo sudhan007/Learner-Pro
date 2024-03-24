@@ -1,91 +1,91 @@
 <script lang="ts">
-  import * as RadioGroup from "./../../../lib/components/ui/radio-group";
+  import * as RadioGroup from "../../../lib/components/ui/radio-group";
   import Button from "$lib/components/ui/button/button.svelte";
   import { Card } from "$lib/components/ui/card";
-  import card1 from "../../../img/Internship/card1.svg";
-  import card2 from "../../../img/Internship/card2.svg";
-  import card3 from "../../../img/Internship/card3.svg";
-  import card4 from "../../../img/Internship/card4.svg";
+
   import Modal from "./Modal.svelte";
   import { Label } from "$lib/components/ui/label";
   import { createForm } from "svelte-forms-lib";
   import config from "$lib/config";
   import * as yup from "yup";
   import axios from "axios";
-  import { toast } from "svelte-sonner";
   import InternshipCard from "./InternShipCard";
 
-  let showModal = false;
+  let showModal = true;
 
   const Interests = [
     { value: "python", label: "Python" },
     { value: "webdevlopement", label: "Web Development" },
     { value: "ui/uxdesigning", label: "UI/UX Design" },
+    { value: "mbainternship", label: "MBA Internship" },
   ];
 
-  const { errors, touched, isValid, isSubmitting, handleChange, handleSubmit } =
-    createForm({
-      initialValues: {
-        name: "",
-        collegeName: "",
-        email: "",
-        fieldofStudy: "",
-        phoneNumber: "",
-        areaofInterest: "",
-        gender: "",
-        classMode: "",
-      },
-      validationSchema: yup.object().shape({
-        name: yup.string().required("Name is required"),
-        collegeName: yup.string().required("College Name is required"),
-        email: yup.string().required("Email is required"),
-        fieldofStudy: yup.string().required("Field of Study is required"),
-        phoneNumber: yup
-          .string()
-          .required("Phone Number is required")
-          .min(10, "phone number should be 10")
-          .max(10, "phone number should be 10"),
-        areaofInterest: yup
-          .string()
-          .required("Area of Interest is required")
-          .oneOf(["python", "webdevlopement", "ui/uxdesigning"]),
-        gender: yup
-          .string()
-          .required("Gender is required")
-          .oneOf(["male", "female"]),
-        classMode: yup
-          .string()
-          .required("Status is required")
-          .oneOf(["online", "offline"]),
-      }),
-      onSubmit: async (values) => {
-        console.log(values);
-        alert(JSON.stringify(values, null, 2));
-        try {
-          const response = await axios.post(
-            `${config.BaseUrl}internship/register`,
-            values
-          );
-          if (response.data.ok === true) {
-            toast(`${response.data.message}`, {
-              duration: 3000,
-              position: "top-center",
-              style:
-                "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
-            });
-          }
-          console.log(response);
-        } catch (error: any) {
-          toast(`${error.response.data.message}`, {
-            duration: 3000,
-            position: "top-center",
-            class: "bg-red-500",
-            style:
-              "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
-          });
-        }
-      },
-    });
+  const {
+    form,
+    errors,
+    touched,
+    isValid,
+    isSubmitting,
+    handleChange,
+    handleSubmit,
+  } = createForm({
+    initialValues: {
+      name: "",
+      collegeName: "",
+      email: "",
+      fieldofStudy: "",
+      phoneNumber: "",
+      areaofInterest: "",
+      gender: "",
+      classMode: "",
+    },
+    validationSchema: yup.object().shape({
+      name: yup.string().required("Name is required"),
+      collegeName: yup.string().required("College Name is required"),
+      email: yup.string().required("Email is required"),
+      fieldofStudy: yup.string().required("Field of Study is required"),
+      phoneNumber: yup
+        .string()
+        .required("Phone Number is required")
+        .min(10, "phone number should be 10")
+        .max(10, "phone number should be 10"),
+      areaofInterest: yup
+        .string()
+        .required("Area of Interest is required")
+        .oneOf(["python", "webdevlopement", "ui/uxdesigning", "mbainternship"]),
+      gender: yup
+        .string()
+        .required("Gender is required")
+        .oneOf(["male", "female"]),
+      classMode: yup
+        .string()
+        .required("Status is required")
+        .oneOf(["online", "offline"]),
+    }),
+    onSubmit: async (values) => {
+      console.log(values);
+      let _formData = new FormData();
+      _formData.append("name", values.name);
+      _formData.append("collegeName", values.collegeName);
+      _formData.append("email", values.email);
+      _formData.append("fieldofStudy", values.fieldofStudy);
+      _formData.append("phoneNumber", values.phoneNumber);
+      _formData.append("areaofInterest", values.areaofInterest);
+      _formData.append("gender", values.gender);
+      _formData.append("classMode", values.classMode);
+
+      try {
+        let response: any = await fetch("?/", {
+          method: "POST",
+          body: _formData,
+        });
+        response = await response.json();
+        console.log(response, "intetrsndkjwjk");
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
 </script>
 
 <main class="bg-internherobg min-h-screen w-full overflow-x-hidden text-white">
@@ -288,12 +288,6 @@
           {/if}
         </div>
       </div>
-      <!-- <div class="input-group">
-        <input class="font-publicaz w-full py-4 indent-4" type="file" />
-        <label for="" class="text-base font-inter"
-          >Upload Identity Card/Resume
-        </label>
-      </div> -->
     </div>
 
     <div class="flex justify-center px-10 pt-4">

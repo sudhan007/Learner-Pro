@@ -55,7 +55,7 @@
       _formData.append("currentPosition", values.currentPosition);
 
       try {
-        let response: any = await fetch("?/register", {
+        let response: any = await fetch("?/", {
           method: "POST",
           body: _formData,
         });
@@ -98,7 +98,7 @@
           email: "",
           phoneNumber: "",
           certificateName: "",
-          currentPosition: "student",
+          currentPosition: "",
         });
         toast(`${error.response.data.message}`, {
           duration: 4000,
@@ -109,13 +109,6 @@
         });
         console.log(error);
       }
-      // empty the fields
-
-      values.name = "";
-      values.email = "";
-      values.phoneNumber = "";
-      values.certificateName = "";
-      values.currentPosition = "";
     },
   });
 </script>
@@ -124,7 +117,7 @@
   <title>Webinar Form</title>
 </head>
 <section
-  class="h-[100vh] flex items-center justify-center"
+  class="h-[91vh] flex items-center justify-center"
   style="background: radial-gradient(circle, {gradientColor1}, {gradientColor2})"
 >
   <div

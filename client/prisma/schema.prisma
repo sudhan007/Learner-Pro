@@ -26,3 +26,15 @@ model WebinarForm {
   certificateName String
   currentPosition String
 }
+
+model InternshipForm {
+  id             String @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  collegeName    String
+  phoneNumber    String
+  email          String
+  areaofInterest String
+  fieldofStudy   String
+  gender         String
+  classMode      String
+}

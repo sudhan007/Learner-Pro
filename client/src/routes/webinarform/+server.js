@@ -1,6 +1,5 @@
 // @ts-nocheck
 import { PrismaClient } from "@prisma/client";
-import { fail } from "@sveltejs/kit";
 
 const prisma = new PrismaClient();
 

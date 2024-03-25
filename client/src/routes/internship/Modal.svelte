@@ -3,8 +3,8 @@
   import Icon from "@iconify/svelte";
   import { onMount } from "svelte";
 
-  export let showModal: boolean; // boolean
-  let dialog: HTMLDialogElement; // HTMLDialogElement
+  export let showModal: boolean;
+  let dialog: HTMLDialogElement;
 
   onMount(() => {
     let scrolloff;

@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
   import * as RadioGroup from "../../../lib/components/ui/radio-group";
   import Button from "$lib/components/ui/button/button.svelte";
   import { Card } from "$lib/components/ui/card";
@@ -334,4 +334,4 @@
     outline: none;
     border-radius: 5px;
   }
-</style>
+</style> -->

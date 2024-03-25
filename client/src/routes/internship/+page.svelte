@@ -105,7 +105,7 @@
       _formData.append("gender", values.gender);
       _formData.append("classMode", values.classMode);
       try {
-        let response: any = await fetch("?/internshipform", {
+        let response: any = await fetch("?/", {
           method: "POST",
           body: _formData,
         });

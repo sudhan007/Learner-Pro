@@ -38,3 +38,8 @@ model InternshipForm {
   gender         String
   classMode      String
 }
+
+model FooterForm {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  email1 String
+}

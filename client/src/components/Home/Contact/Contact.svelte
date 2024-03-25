@@ -50,9 +50,8 @@
       <div
         class=" font-publicaz mb-4 text-lg md:text-xl lg:text-2xl font-medium leading-relaxed tracking-wider"
       >
-        <p class="">With VR, they aren't limited to word descriptions or</p>
-        <p>book illustrations; they can explore</p>
-        <p>the topic and see how things are put together.</p>
+        <p class="">Adhere to our company's dress code for a polished and</p>
+        <p>professional appearance that resonates with our culture.</p>
       </div>
       <div class="mb-4 pt-4">
         <Button

@@ -286,7 +286,7 @@
           <div class="input-group">
             <input
               name="collegeName"
-              on:keyup={handleChange}
+              on:change={handleChange}
               bind:value={$form.collegeName}
               on:blur={handleChange}
               class="font-publicaz w-full py-3 indent-4 md:text-lg"

@@ -3,126 +3,77 @@
   import Button from "$lib/components/ui/button/button.svelte";
   import Icon from "@iconify/svelte";
   import { createEventDispatcher } from "svelte";
+  import InternshipFaq from "./FaqQuestions";
 
   const dispatcher = createEventDispatcher();
-  let isOpen: boolean = false;
-  const toggleQuestion = () => {
-    isOpen = !isOpen;
-    dispatcher("toggle", isOpen);
+  let isOpen: { [key: string]: boolean } = {};
+
+  const toggleQuestion = (id: string) => {
+    isOpen[id] = !isOpen[id];
+    dispatcher("toggle", { id, isOpen: isOpen[id] });
   };
 </script>
 
-<main
-  class=" bg-internherobg w-full min-h-0 overflow-x-hidden pb-20 text-white"
->
+<main class="bg-internherobg w-full min-h-0 overflow-x-hidden pb-20 text-white">
   <div class="py-8 md:py-20">
     <div
       class="font-publicaz flex justify-center md:px-0 px-5 text-2xl md:text-5xl"
     >
-      <h1>Frequently Ask Questions</h1>
+      <h1>Frequently Asked Questions</h1>
     </div>
   </div>
   <div class="container mx-auto mb-5 md:mb-10 px-5">
-    <div class=" ">
-      <div class="">
+    <div>
+      <div>
         <Accordion.Root
-          on:on:toggle={(event) => (isOpen = event.detail.isOpen)}
+          on:toggle={({ detail }) => (isOpen[detail.id] = detail.isOpen)}
         >
-          <Accordion.Item
-            value="item-1"
-            class="border-0 rounded-lg bg-[#242424] mb-3 px-2 md:px-20 py-1 md:py-4"
-          >
-            <Accordion.Trigger
-              on:click={toggleQuestion}
-              class=" border-0 no-underline hover:cursor-default hover:no-underline "
+          {#each InternshipFaq as faq}
+            <Accordion.Item
+              value={faq._id}
+              class="border-0 rounded-lg bg-[#242424] mb-3 px-2 md:px-20 py-1 md:py-4"
             >
-              <div class="flex items-center gap-4 md:gap-10">
-                <div
-                  class="text-gradient font-inter text-xl md:text-3xl lg:text-5xl font-semibold"
-                >
-                  01
-                </div>
-                <div
-                  class="font-publicamedium text-base md:text-[20px] xl:text-[30px]"
-                >
-                  What language will be used for aspects of the internship?
-                </div>
-              </div>
-              <!-- {#if isOpen}
-                <div
-                  class="cursor-pointer rounded-full bg-[#D9D9D91A] text-lg md:text-3xl text-[#C0C0C0]"
-                >
-                  <Icon icon="mingcute:close-fill" />
-                </div>
-              {:else} -->
-              <div
-                class="cursor-pointer rounded-full bg-[#D9D9D91A] text-lg md:text-3xl text-[#C0C0C0]"
+              <Accordion.Trigger
+                on:click={() => toggleQuestion(faq._id)}
+                class="border-0 no-underline hover:cursor-default hover:no-underline"
               >
-                <Icon icon="pepicons-pop:plus" />
-              </div>
-              <!-- {/if} -->
-            </Accordion.Trigger>
-            <Accordion.Content class="no-underline"
-              ><div
-                class="text-interndesc font-publicaz px-5 md:px-10 lg:px-20 text-sm md:text-[20px] leading-relaxed"
-              >
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Fugit ipsa obcaecati magnam aliquam atque fuga perspiciatis
-                  corrupti non qui unde impedit quam, ipsam itaque enim
-                  laudantium hic, officiis pariatur! Voluptas.
-                </p>
-              </div></Accordion.Content
-            >
-          </Accordion.Item>
-
-          <Accordion.Item
-            value="item-2"
-            class="border-0 rounded-lg bg-[#242424] px-2 md:px-20 py-1 md:py-4"
-          >
-            <Accordion.Trigger
-              on:click={toggleQuestion}
-              class=" border-0 no-underline hover:cursor-default hover:no-underline "
-            >
-              <div class="flex items-center gap-4 md:gap-10">
-                <div
-                  class="text-gradient font-inter text-xl md:text-3xl lg:text-5xl font-semibold"
-                >
-                  02
+                <div class="flex items-center gap-4 md:gap-10">
+                  <div
+                    class="text-gradient font-inter text-xl md:text-3xl lg:text-5xl font-semibold"
+                  >
+                    {faq._id}
+                  </div>
+                  <div
+                    class="font-publicamedium text-base md:text-[20px] xl:text-[30px]"
+                  >
+                    {faq.question}
+                  </div>
                 </div>
+                {#if isOpen[faq._id]}
+                  <div
+                    class="cursor-pointer rounded-full bg-[#D9D9D91A] text-lg md:text-3xl text-[#C0C0C0]"
+                  >
+                    <Icon icon="mingcute:close-fill" />
+                  </div>
+                {:else}
+                  <div
+                    class="cursor-pointer rounded-full bg-[#D9D9D91A] text-lg md:text-3xl text-[#C0C0C0]"
+                  >
+                    <Icon icon="pepicons-pop:plus" />
+                  </div>
+                {/if}
+              </Accordion.Trigger>
+              <Accordion.Content class="no-underline">
                 <div
-                  class="font-publicamedium text-base md:text-[20px] xl:text-[30px]"
+                  class="text-interndesc font-publicaz px-5 md:px-10 lg:px-20 text-sm md:text-[20px] leading-relaxed"
                 >
-                  What language will be used for aspects of the internship?
+                  <p>
+                    {faq.answer}
+                  </p>
                 </div>
-              </div>
-              <!-- {#if isOpen}
-                <div
-                  class="cursor-pointer rounded-full bg-[#D9D9D91A] text-lg md:text-3xl text-[#C0C0C0]"
-                >
-                  <Icon icon="mingcute:close-fill" />
-                </div>
-              {:else} -->
-              <div
-                class="cursor-pointer rounded-full bg-[#D9D9D91A] text-lg md:text-3xl text-[#C0C0C0]"
-              >
-                <Icon icon="pepicons-pop:plus" />
-              </div>
-              <!-- {/if} -->
-            </Accordion.Trigger>
-            <Accordion.Content class="no-underline"
-              ><div
-                class="text-interndesc font-publicaz px-5 md:px-10 lg:px-20 text-sm md:text-[20px] leading-relaxed"
-              >
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Fugit ipsa obcaecati magnam aliquam atque fuga perspiciatis
-                  corrupti non qui unde impedit quam, ipsam itaque enim
-                  laudantium hic, officiis pariatur! Voluptas.
-                </p>
-              </div></Accordion.Content
-            >
-          </Accordion.Item>
+              </Accordion.Content>
+            </Accordion.Item>
+          {/each}
         </Accordion.Root>
       </div>
     </div>

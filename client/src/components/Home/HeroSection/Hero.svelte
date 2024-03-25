@@ -17,11 +17,12 @@
             > <br /> On LearnerPro
           </h1>
           <p
-            class="font-publicaz text-herodesc mt-3 text-wrap md:text-nowrap text-xs md:text-[17px] font-medium md:leading-loose xl:text-[20px]"
+            class="font-publicaz text-herodesc mt-3 text-wrap text-xs md:text-[17px] font-medium md:leading-loose xl:text-[20px]"
           >
-            Empower your journey through personalized learning.
-            <br />
-            Elevate your skills with our innovative app today
+            Elevate Your Knowledge Through the Gateway of Technical Questions <br
+            />
+            Illuminate the Path of Understanding with Questions that Spark the Light
+            of Knowledge
           </p>
         </div>
         <div

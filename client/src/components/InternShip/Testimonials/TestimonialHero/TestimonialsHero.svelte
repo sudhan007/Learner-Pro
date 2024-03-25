@@ -5,7 +5,7 @@
 </script>
 
 <main
-  class=" testimonialhero pt-10 md:pt-20 xl:pt-0 flex min-h-[100vh] w-full xl:items-center overflow-x-hidden text-white"
+  class=" testimonialhero bg-internherobg pt-10 md:pt-20 xl:pt-0 flex min-h-[100vh] w-full xl:items-center overflow-x-hidden text-white"
 >
   <div class="container mx-auto">
     <div class="grid grid-cols-1 xl:grid-cols-2 mb-4">
@@ -139,6 +139,6 @@
     background-position: center;
     background-size: cover;
     height: auto; */
-    background-color: #111111;
+    /* background-color: #111111; */
   }
 </style>

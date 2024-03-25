@@ -12,7 +12,7 @@ const CardContent = [
     {
         image: tablet,
         title: "PROJECTS",
-        description: " We provide hands-on experience with live projects."
+        description: " We facilitate hands-on projects, enhancing practical skills and fostering professional growth effectively."
     },
     {
         image: cctv,

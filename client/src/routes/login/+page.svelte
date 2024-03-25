@@ -1,3 +1,7 @@
+<script>
+  import imgUrl from "../../img/Home/login.png";
+</script>
+
 <head>
   <script
     lang="ts"
@@ -68,6 +72,45 @@
   </script>
 </head>
 
-<div class="h-[94vh] flex items-center justify-center bg-white">
+<!-- <div class="h-[94vh] flex items-center justify-center bg-white">
   <div id="otpless-login-page"></div>
+</div> -->
+
+<!-- <div
+  style="background: radial-gradient(circle, #424242, #0E0E0E);"
+  class="h-[94vh] flex items-center justify-center overflow-x-hidden"
+>
+  <div class="grid gap-40 justify-between container mx-auto grid-cols-2 w-full">
+    <div class="">
+      <img
+        style="width: 100%; height: auto;"
+        src={imgUrl}
+        alt="Description of the image"
+      />
+    </div>
+    <div class="">
+      <div id="otpless-login-page"></div>
+    </div>
+  </div>
+</div> -->
+
+<div
+  style="background: radial-gradient(circle, #424242, #0E0E0E);"
+  class="h-[94vh] flex flex-col items-center justify-center overflow-x-hidden"
+>
+  <div
+    class="grid lg:gap-40 justify-center md:justify-between md:grid-cols-2 w-full"
+  >
+    <div class="hidden md:block">
+      <!-- svelte-ignore a11y-img-redundant-alt -->
+      <img
+        style="width: 100%; height: auto;"
+        src={imgUrl}
+        alt="Description of the image"
+      />
+    </div>
+    <div class="">
+      <div id="otpless-login-page"></div>
+    </div>
+  </div>
 </div>

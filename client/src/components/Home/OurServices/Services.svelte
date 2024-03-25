@@ -23,20 +23,20 @@
         class="bg-transparent mx-auto xl:mx-0 polygon1 mt-10 h-[300px] w-[342px] md:w-[390px] relative p-3 md:p-5"
       >
         <div class="px-4 py-3 text-xl md:text-3xl font-publicamedium">
-          <h1>Internship</h1>
+          <h1>Face To Face</h1>
         </div>
         <div>
           <p
             style="color: rgba(255, 255, 255, 0.73);
-        "
+  "
             class="p-3 md:p-4 font-publicaz text-base md:text-lg px-4"
           >
-            Navigating the exciting realm of internships, where every task is a
-            lesson and every challenge is an opportunity.
+            A glimpse into a face-to-face interview, where communication skills
+            become the key to unlocking career doors
           </p>
         </div>
-        <div class="flex items-center gap-10 md:gap-20 pt-4 px-7 md:px-10">
-          <img src={service1} alt="" />
+        <div class="flex items-center gap-10 md:gap-20 pt-2 px-7 md:px-10">
+          <img class="h-[50px]" src={service3} alt="" />
           <p class=" font-inter text-xl md:text-3xl lg:text-5xl font-semibold">
             01
           </p>
@@ -52,22 +52,22 @@
         class="bg-transparent mx-auto xl:mx-0 polygon2 mt-10 h-[300px] w-[342px] md:w-[390px] relative p-3 md:p-5"
       >
         <div class="flex items-center gap-10 md:gap-20 pt-4 px-7 md:px-10">
-          <img class="h-[50px]" src={service2} alt="" />
+          <img src={service4} alt="" />
           <p class=" font-inter text-xl md:text-3xl lg:text-5xl font-semibold">
             02
           </p>
         </div>
         <div class="px-4 pt-10 text-xl md:text-3xl font-publicamedium">
-          <h1>Interview Tips</h1>
+          <h1>Mockup</h1>
         </div>
         <div>
           <p
             style="color: rgba(255, 255, 255, 0.73);
-      "
+    "
             class="p-3 md:p-4 font-publicaz text-base md:text-lg px-4"
           >
-            Crafting your path to success starts with mastering the art of
-            interviews.
+            Diving into a mock interview to refine responses, conquer nerves,
+            and set the stage for success
           </p>
         </div>
 
@@ -82,20 +82,20 @@
         class="bg-transparent mx-auto xl:mx-0 polygon1 mt-10 h-[300px] w-[342px] md:w-[390px] relative p-3 md:p-5"
       >
         <div class="px-4 py-3 text-xl md:text-3xl font-publicamedium">
-          <h1>Face To Face</h1>
+          <h1>Internship</h1>
         </div>
         <div>
           <p
             style="color: rgba(255, 255, 255, 0.73);
-      "
+        "
             class="p-3 md:p-4 font-publicaz text-base md:text-lg px-4"
           >
-            A glimpse into a face-to-face interview, where communication skills
-            become the key to unlocking career doors
+            Navigating the exciting realm of internships, where every task is a
+            lesson and every challenge is an opportunity.
           </p>
         </div>
-        <div class="flex items-center gap-10 md:gap-20 pt-2 px-7 md:px-10">
-          <img class="h-[50px]" src={service3} alt="" />
+        <div class="flex items-center gap-10 md:gap-20 pt-4 px-7 md:px-10">
+          <img src={service1} alt="" />
           <p class=" font-inter text-xl md:text-3xl lg:text-5xl font-semibold">
             03
           </p>
@@ -111,13 +111,13 @@
         class="bg-transparent mx-auto xl:mx-0 polygon2 mt-10 h-[300px] w-[342px] md:w-[390px] relative p-3 md:p-5"
       >
         <div class="flex items-center gap-10 md:gap-20 pt-4 px-7 md:px-10">
-          <img src={service4} alt="" />
+          <img class="h-[50px]" src={service2} alt="" />
           <p class=" font-inter text-xl md:text-3xl lg:text-5xl font-semibold">
             04
           </p>
         </div>
         <div class="px-4 pt-10 text-xl md:text-3xl font-publicamedium">
-          <h1>Mockup</h1>
+          <h1>Interview Tips</h1>
         </div>
         <div>
           <p
@@ -125,8 +125,8 @@
       "
             class="p-3 md:p-4 font-publicaz text-base md:text-lg px-4"
           >
-            Diving into a mock interview to refine responses, conquer nerves,
-            and set the stage for success
+            Crafting your path to success starts with mastering the art of
+            interviews.
           </p>
         </div>
 

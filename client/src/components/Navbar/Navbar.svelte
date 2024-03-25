@@ -26,7 +26,7 @@
     phoneNumber = localStorage.getItem("phoneNumber");
     console.log(phoneNumber);
   });
-
+  // mdew
   let isNavbarOpen = false;
 
   function toggleNavbar() {

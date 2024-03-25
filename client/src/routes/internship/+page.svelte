@@ -122,7 +122,7 @@
             gender: "",
             classMode: "",
           });
-
+          // jj
           toast(`Registration Successfully`, {
             duration: 4000,
             position: "top-center",

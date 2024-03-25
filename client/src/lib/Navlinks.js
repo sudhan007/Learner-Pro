@@ -9,7 +9,6 @@ const menuLinks = [
         path: "/internship",
     },
 
-
 ]
 
 

@@ -80,7 +80,6 @@
           body: _formData,
         });
         response = await response.json();
-        console.log(response, "intetrsndkjwjk");
       } catch (error) {
         console.log(error);
       }

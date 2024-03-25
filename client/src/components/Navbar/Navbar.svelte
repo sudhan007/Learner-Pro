@@ -39,6 +39,7 @@
   const handleLogout = () => {
     localStorage.clear();
     toast("Logged out successfully", {
+      position: "top-center",
       duration: 2000,
       style:
         "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",

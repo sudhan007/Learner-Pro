@@ -10,15 +10,15 @@ const InternshipCard = [
     },
     {
         image: card2,
-        description: "Immerse yourself in real-world challenges and gain valuable hands-on experience through our live project internships."
+        description: "Gain practical skills and apply your knowledge to real-world projects during your internship with us"
     },
     {
         image: card3,
-        description: "Immerse yourself in real-world challenges and gain valuable hands-on experience through our live project internships."
+        description: "Experience the thrill of working on live projects and gain invaluable experience in ourinternship program."
     },
     {
         image: card4,
-        description: "Immerse yourself in real-world challenges and gain valuable hands-on experience through our live project internships."
+        description: "Demonstrate your value by taking ownership of impactful projects during your internship."
     }
 
 ]

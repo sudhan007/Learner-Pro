@@ -13,7 +13,7 @@
   <div
     class="font-publicamedium text-herotext flex justify-center text-2xl md:text-5xl"
   >
-    About we Services
+    About Our Services
   </div>
   <div class=" ">
     <div
@@ -141,7 +141,7 @@
   <div
     class="font-publicamedium text-herotext flex justify-center pt-5 text-2xl md:text-5xl"
   >
-    Meet the team
+    Meet Our team
   </div>
   <div class="container mx-auto mb-4">
     <div
@@ -151,11 +151,10 @@
       {#each ServiceCard as card}
         <Card class="rounded-3xl py-5 border-0 bg-[#333333] shadow-xl">
           <div class="flex justify-center py-4">
-            <Avatar.Root class="h-20 w-20 rounded-full">
-              <Avatar.Image
-                src="https://github.com/shadcn.png"
-                alt="@learner1"
-              />
+            <Avatar.Root
+              class="h-[150px] w-[150px] object-contain rounded-full"
+            >
+              <Avatar.Image src={card.image} alt={card.name} />
               <Avatar.Fallback>CN</Avatar.Fallback>
             </Avatar.Root>
           </div>

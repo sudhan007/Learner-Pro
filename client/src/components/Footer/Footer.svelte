@@ -1,6 +1,10 @@
 <script>
+  // @ts-nocheck
+
   import Button from "$lib/components/ui/button/button.svelte";
   import Icon from "@iconify/svelte";
+
+  let year = new Date().getFullYear();
 </script>
 
 <main
@@ -24,9 +28,9 @@
     <div
       class="font-publicalight mt-4 md:mt-8 flex justify-center text-base md:text-xl text-[#747474]"
     >
-      <p>Subscribe to get our Newsletter</p>
+      <a href="mailto:support@wenoxo.in">support@wenoxo.in</a>
     </div>
-    <div class="px-3">
+    <!-- <div class="px-3">
       <form action="">
         <div
           class="mt-4 flex w-full place-items-center rounded-full border-2 border-[#8B8989] bg-transparent px-1 py-1 text-[18px]"
@@ -43,8 +47,8 @@
           >
         </div>
       </form>
-    </div>
-    <div
+    </div> -->
+    <!-- <div
       class="my-6 grid grid-cols-2 px-4 md:px-0 md:grid-cols-4 items-center gap-6 md:gap-14"
     >
       <nav class="">
@@ -131,7 +135,7 @@
           </li>
         </ul>
       </nav>
-    </div>
+    </div> -->
     <div class="my-8">
       <ul
         class="font-publicaz flex items-center justify-center text-xs md:text-xl text-[#B9B9B9]"
@@ -144,13 +148,47 @@
     <div
       class="font-publicaz flex justify-center text-xs md:text-xl text-[#B9B9B9]"
     >
-      <h1>© 2024 Powered By Wenoxo Technologies Private Limited Inc.</h1>
+      <h1>&copy; {year} Powered By Wenoxo Technologies Private Limited Inc.</h1>
     </div>
-    <div class="flex pt-5 gap-5 justify-center text-lg md:text-xl items-center">
-      <Icon icon="ri:facebook-fill" style="color: white" />
-      <Icon icon="mdi:instagram" style="color: white" />
-      <Icon icon="ri:linkedin-fill" style="color: white" />
-      <Icon icon="ri:twitter-x-fill" style="color: white" />
+    <div
+      class="flex pt-5 gap-4 md:gap-10 justify-center text-2xl md:text-3xl cursor-pointer items-center"
+    >
+      <a
+        href="https://www.facebook.com/profile.php?id=61556791419503&mibextid=ZbWKwL"
+        target="_blank"
+      >
+        <Icon
+          icon="ri:facebook-fill"
+          class="opacity-60 hover:opacity-100"
+          style="color: white"
+        />
+      </a>
+      <a
+        href="https://www.instagram.com/learnerpro_official?igsh=MXBzMGlhYzZzZGlncQ=="
+        target="_blank"
+      >
+        <Icon
+          icon="mdi:instagram"
+          class="opacity-60 hover:opacity-100"
+          style="color: white"
+        />
+      </a>
+
+      <a href="https://www.linkedin.com/showcase/learnerpro" target="_blank">
+        <Icon
+          icon="ri:linkedin-fill"
+          class="opacity-60 hover:opacity-100"
+          style="color: white"
+        />
+      </a>
+
+      <a href="https://twitter.com/learnerPro2023" target="_blank">
+        <Icon
+          icon="ri:twitter-x-fill"
+          class="opacity-60 hover:opacity-100"
+          style="color: white"
+        />
+      </a>
     </div>
   </div>
 </main>

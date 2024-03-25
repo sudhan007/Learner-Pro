@@ -20,13 +20,12 @@ const EliteStudentsCollege = [
     },
     {
         image: college4,
-        name: "ArunaChala College of Engineering"
+        name: "Arunachala College of Engineering"
     },
     {
         image: college5,
         name: "Scott Christain College"
     },
-
 ]
 
 export default EliteStudentsCollege

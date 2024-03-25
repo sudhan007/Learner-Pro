@@ -1,18 +1,25 @@
+import team1 from '../../../img/Home/team1.png'
+import team2 from '../../../img/Home/team2.png'
+import team3 from '../../../img/Home/team3.png'
+
 const ServiceCard = [
     {
-        name: "John William",
-        role: "CTO",
-        content: "Passion for Defi. Has worked @coinbase & @google as an advisor"
+        image: team1,
+        name: "Karthika Murugeswaran",
+        role: "HR Manager",
+        content: "3+ years shaping dynamic workplaces as an HR manager, driving talent strategies for organizational success"
     },
     {
-        name: "Alisha Ruckets",
-        role: "Advisor",
-        content: "Has excellent skills in project management. Previously @binance"
+        image: team2,
+        name: "Jaslin",
+        role: "Business Development Executive",
+        content: "With 2+ years of strategic Business Development expertise, fostering growth and innovation in the learning landscape"
     },
     {
-        name: "Maria Silva",
+        image: team3,
+        name: "Thinesh Rasla",
         role: "Full Stack Developer",
-        content: "Has an experience of 10+ years working in web.3. Previously @crypto.com "
+        content: "Over 8+ years of full stack mastery architecting digital ecosystems from pixels to database"
     }
 ]
 

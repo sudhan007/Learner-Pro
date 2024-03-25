@@ -55,6 +55,7 @@
       </div>
       <div class="mb-4 pt-4">
         <Button
+          href="tel:+916380058663"
           style="background: linear-gradient(82.96deg, #212443 -29.79%, #FF3434 -29.77%, #006CDB -9.84%, #E51057 108.39%, #212443 161.74%);"
           class="text-herodesc font-publicbold rounded-full px-6 md:px-12 py-5 md:py-8 text-[20px]"
           >Contact us</Button

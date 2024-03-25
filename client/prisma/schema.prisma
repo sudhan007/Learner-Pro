@@ -43,3 +43,8 @@ model FooterForm {
   id     String @id @default(auto()) @map("_id") @db.ObjectId
   email1 String
 }
+
+model FaqQuestions {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  query String
+}

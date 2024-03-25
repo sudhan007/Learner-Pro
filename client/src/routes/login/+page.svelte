@@ -8,7 +8,7 @@
     id="otpless-sdk"
     type="text/javascript"
     src="https://otpless.com/v2/auth.js"
-    data-appid="TZ76JYNHHTEDGNMT4VIC"
+    data-appid="8E75C1E8RNZ4RH17N0GT"
   >
   </script>
   <script>
@@ -34,8 +34,8 @@
         },
         body: new URLSearchParams({
           token,
-          client_id: "I28KG9G1D52ZBXQMNK57HTJRTG579HRJ",
-          client_secret: "vydxtqrujycus5khgfnoikeonxx4njrs",
+          client_id: "PUBQSYH54KM81G9P71G4MMS2KAPG7NER",
+          client_secret: "v0fucvkf4xlyaudfuedb15bvip6rqd6q",
         }),
       })
         .then((res) => {
@@ -98,9 +98,7 @@
   style="background: radial-gradient(circle, #424242, #0E0E0E);"
   class="h-[94vh] flex flex-col items-center justify-center overflow-x-hidden"
 >
-  <div
-    class="grid lg:gap-40 justify-center md:justify-between md:grid-cols-2 w-full"
-  >
+  <div class="grid lg:gap-40 md:justify-between md:grid-cols-2 w-full">
     <div class="hidden md:block">
       <!-- svelte-ignore a11y-img-redundant-alt -->
       <img

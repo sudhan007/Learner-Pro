@@ -17,9 +17,26 @@
   import Label from "$lib/components/ui/label/label.svelte";
   import InternshipCard from "./InternShipCard";
   import { toast } from "svelte-sonner";
+  import { afterUpdate, createEventDispatcher } from "svelte";
+  import * as Accordion from "$lib/components/ui/accordion";
+  import InternshipFaq from "./FaqQuestions";
+  import Icon from "@iconify/svelte";
+
   let showModal = false;
 
-  console.log(showModal, "befor");
+  afterUpdate(() => {
+    if (showModal == true) {
+      showModal = false;
+    }
+  });
+
+  const dispatcher = createEventDispatcher();
+  let isOpen: { [key: string]: boolean } = {};
+
+  const toggleQuestion = (id: string) => {
+    isOpen[id] = !isOpen[id];
+    dispatcher("toggle", { id, isOpen: isOpen[id] });
+  };
 
   function closeModal() {
     showModal = false;
@@ -88,14 +105,13 @@
       _formData.append("gender", values.gender);
       _formData.append("classMode", values.classMode);
       try {
-        let response: any = await fetch("?/", {
+        let response: any = await fetch("?/internshipform", {
           method: "POST",
           body: _formData,
         });
         response = await response.json();
         console.log(response, "wdhiuwd");
         if (response.ok === true) {
-          closeModal();
           form.set({
             name: "",
             collegeName: "",
@@ -107,7 +123,7 @@
             classMode: "",
           });
 
-          toast(`Registration Successful`, {
+          toast(`Registration Successfully`, {
             duration: 4000,
             position: "top-center",
             style:
@@ -155,6 +171,48 @@
       }
     },
   });
+
+  let query = "";
+
+  const handleSubmit1 = async (event: any) => {
+    event.preventDefault();
+    console.log(query);
+    let _formData1 = new FormData();
+    _formData1.append("query", query);
+    try {
+      let response: any = await fetch("?/faqquery", {
+        method: "POST",
+        body: _formData1,
+      });
+      response = await response.json();
+      console.log(response, "wdhiuwd");
+      if (response.ok === true) {
+        query = "";
+        toast(`Query Submitted`, {
+          duration: 4000,
+          position: "top-center",
+          style:
+            "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
+        });
+      } else {
+        toast(`${response.message}`, {
+          duration: 4000,
+          position: "top-center",
+          class: "bg-red-500",
+          style:
+            "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
+        });
+      }
+    } catch (error: any) {
+      toast(`${error.response.data.message}`, {
+        duration: 4000,
+        position: "top-center",
+        class: "bg-red-500",
+        style:
+          "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
+      });
+    }
+  };
 </script>
 
 <title>InternShip</title>
@@ -438,15 +496,116 @@
     <TestimonialsHero />
   </div>
   <Elitestudents />
-  <Frequentquestion />
+  <!-- <Frequentquestion /> -->
+
+  <main
+    class="bg-internherobg w-full min-h-0 overflow-x-hidden pb-20 text-white"
+  >
+    <div class="py-8 md:py-20">
+      <div
+        class="font-publicaz flex justify-center md:px-0 px-5 text-2xl md:text-5xl"
+      >
+        <h1>Frequently Asked Questions</h1>
+      </div>
+    </div>
+    <div class="container mx-auto mb-5 md:mb-10 px-5">
+      <div>
+        <div>
+          <Accordion.Root
+            on:toggle={({ detail }) => (isOpen[detail.id] = detail.isOpen)}
+          >
+            {#each InternshipFaq as faq}
+              <Accordion.Item
+                value={faq._id}
+                class="border-0 rounded-lg bg-[#242424] mb-3 px-2 md:px-20 py-1 md:py-4"
+              >
+                <Accordion.Trigger
+                  on:click={() => toggleQuestion(faq._id)}
+                  class="border-0 no-underline hover:cursor-default hover:no-underline"
+                >
+                  <div class="flex items-center gap-4 md:gap-10">
+                    <div
+                      class="text-gradient font-inter text-xl md:text-3xl lg:text-5xl font-semibold"
+                    >
+                      {faq._id}
+                    </div>
+                    <div
+                      class="font-publicamedium text-left leading-tight text-base md:text-[20px] xl:text-[30px]"
+                    >
+                      {faq.question}
+                    </div>
+                  </div>
+                  {#if isOpen[faq._id]}
+                    <div
+                      class="cursor-pointer rounded-full bg-[#D9D9D91A] text-lg md:text-3xl text-[#C0C0C0]"
+                    >
+                      <Icon icon="mingcute:close-fill" />
+                    </div>
+                  {:else}
+                    <div
+                      class="cursor-pointer rounded-full bg-[#D9D9D91A] text-lg md:text-3xl text-[#C0C0C0]"
+                    >
+                      <Icon icon="pepicons-pop:plus" />
+                    </div>
+                  {/if}
+                </Accordion.Trigger>
+                <Accordion.Content class="no-underline">
+                  <div
+                    class="text-interndesc font-publicaz px-5 md:px-10 lg:px-20 text-sm md:text-[20px] leading-relaxed"
+                  >
+                    <p>
+                      {faq.answer}
+                    </p>
+                  </div>
+                </Accordion.Content>
+              </Accordion.Item>
+            {/each}
+          </Accordion.Root>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto py-6 px-5 md:px-0 md:py-20">
+      <div class=" rounded-2xl bg-[#242424]">
+        <div class=" rounded-s-3xl">
+          <h1
+            class="font-publicaz px-5 md:px-14 py-3 md:py-8 text-xl md:text-[33px] capitalize md:leading-relaxed"
+          >
+            Need Further Assistance?
+
+            <p
+              style="text-transform: none;"
+              class="mt-2 text-base md:text-[17px] text-[#C4C4C4]"
+            >
+              Sign up to the newsletter and learn about new resources, new
+              commits, new proposals, and more.
+            </p>
+            <form on:submit={handleSubmit1} action="">
+              <div
+                class="mt-4 flex w-full place-items-center rounded-full border-0 bg-[#000000] px-2 py-2 text-[16px]"
+              >
+                <input
+                  placeholder="Type Query Here..."
+                  class="font-publicamedium w-full bg-transparent text-base md:text-lg indent-4 outline-none"
+                  type="text"
+                  bind:value={query}
+                />
+                <Button
+                  type="submit"
+                  style="background: linear-gradient(82.96deg, #212443 -29.79%, #FF3434 -29.77%, #006CDB -9.84%, #E51057 108.39%, #212443 161.74%);"
+                  class="text-herodesc font-publicbold rounded-full text-[17px] "
+                  >Send</Button
+                >
+              </div>
+            </form>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </main>
+
   <Footer />
 </div>
-
-<!-- <style>
-  .hero {
-    /* background-image: url(../../img/Internship/testimonialhero.png); */
-  }
-</style> -->
 
 <style>
   .input-group {
@@ -480,5 +639,16 @@
     border: 1.2px solid #fff;
     outline: none;
     border-radius: 5px;
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(
+      202.11deg,
+      #9b66ff 31.72%,
+      #a61f89 85.56%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 </style>

@@ -6,85 +6,67 @@ const prisma = new PrismaClient();
 /** @type {import('./$types').Actions} */
 
 export async function POST({ request }) {
-    const data = await request.formData();
 
-    const name = data.get("name");
-    const email = data.get("email");
-    const phoneNumber = data.get("phoneNumber");
-    const certificateName = data.get("certificateName");
-    const currentPosition = data.get("currentPosition");
+    console.log(request, "rewqq")
 
+    return new Response(JSON.stringify({ ok: true }))
 
-    if (!name || !email || !phoneNumber || !certificateName || !currentPosition) {
-        return new Response(
-            JSON.stringify({
-                failed: true,
-            })
-        )
-    }
+    // const data = await request.formData();
 
-    try {
-        let studentExists = await prisma.webinarForm.findFirst({
-            where: {
-                phoneNumber: phoneNumber,
-                email: email
-            },
-        })
+    // const name = data.get("name");
+    // const email = data.get("email");
+    // const phoneNumber = data.get("phoneNumber");
+    // const certificateName = data.get("certificateName");
+    // const currentPosition = data.get("currentPosition");
 
 
-        if (studentExists) {
-            return new Response(
-                JSON.stringify({
-                    ok: false,
-                    message: "Email / Phone number already exists"
-                })
-            )
-        }
+    // if (!name || !email || !phoneNumber || !certificateName || !currentPosition) {
+    //     return new Response(
+    //         JSON.stringify({
+    //             failed: true,
+    //         })
+    //     )
+    // }
 
-        const newStudent = await prisma.webinarForm.create({
-            data: {
-                name: name.toString(),
-                email: email.toString(),
-                phoneNumber: phoneNumber.toString(),
-                certificateName: certificateName.toString(),
-                currentPosition: currentPosition.toString(),
-            },
-        })
-        return new Response(JSON.stringify({
-            ok: true,
-            message: "Registration successfully"
-        }))
+    // try {
+    //     let studentExists = await prisma.webinarForm.findFirst({
+    //         where: {
+    //             phoneNumber: phoneNumber,
+    //             email: email
+    //         },
+    //     })
 
-    } catch (error) {
-        return new Response(JSON.stringify({
-            ok: false,
-            message: error.message
-        }))
-    }
+
+    //     if (studentExists) {
+    //         return new Response(
+    //             JSON.stringify({
+    //                 ok: false,
+    //                 message: "Email / Phone number already exists"
+    //             })
+    //         )
+    //     }
+
+    //     const newStudent = await prisma.webinarForm.create({
+    //         data: {
+    //             name: name.toString(),
+    //             email: email.toString(),
+    //             phoneNumber: phoneNumber.toString(),
+    //             certificateName: certificateName.toString(),
+    //             currentPosition: currentPosition.toString(),
+    //         },
+    //     })
+    //     return new Response(JSON.stringify({
+    //         ok: true,
+    //         message: "Registration successfully"
+    //     }))
+
+    // } catch (error) {
+    //     return new Response(JSON.stringify({
+    //         ok: false,
+    //         message: error.message
+    //     }))
+    // }
 }
 
-// export async function POST({ request }) {
-//     const data = await request.formData()
 
-//     const email1 = data.get('email1')
-//     try {
-
-//         const newemail = await prisma.footerForm.create({
-//             data: {
-//                 email1: email1.toString()
-//             }
-//         })
-
-//         return new Response(JSON.stringify({
-//             ok: true,
-//             data: newemail
-//         }))
-//     } catch (error) {
-//         return new Response(JSON.stringify({
-//             ok: false,
-//             message: error.message
-//         }))
-//     }
-
-// }
 

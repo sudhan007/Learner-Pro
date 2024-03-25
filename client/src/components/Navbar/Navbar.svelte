@@ -10,6 +10,8 @@
   import Icon from "@iconify/svelte";
   import * as AlertDialog from "$lib/components/ui/alert-dialog";
   import { toast } from "svelte-sonner";
+  import * as Tooltip from "$lib/components/ui/tooltip";
+  import logo from "../../img/Home/logo.png";
 
   let currentPath = "";
   console.log($page.url.pathname);
@@ -38,6 +40,8 @@
     localStorage.clear();
     toast("Logged out successfully", {
       duration: 2000,
+      style:
+        "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
     });
     window.location.reload();
   };
@@ -47,9 +51,12 @@
   class=" bg-navbg sticky top-0 z-20 py-3 transition-all duration-500 md:block hidden"
 >
   <div class=" flex items-center justify-between px-3 lg:px-52">
-    <a href="/" class="font-gilroy text-navlogo text-xl md:text-3xl"
-      >Learner Pro</a
-    >
+    <div class="flex items-center gap-2">
+      <img src={logo} class="h-[40px] -mt-3" alt="" />
+      <a href="/" class="font-gilroy text-navlogo text-xl md:text-2xl"
+        >Learner Pro</a
+      >
+    </div>
     <ul
       class="font-publicalight flex cursor-pointer items-center justify-between gap-x-4 text-lg font-semibold lg:gap-x-9 xl:gap-x-24"
     >
@@ -90,19 +97,23 @@
         <li>
           <AlertDialog.Root>
             <AlertDialog.Trigger>
-              <Icon
-                icon="humbleicons:logout"
-                class="text-4xl"
-                style="color: red"
-              />
+              <Tooltip.Root>
+                <Tooltip.Trigger>
+                  <Icon
+                    title="Logout"
+                    icon="humbleicons:logout"
+                    class="text-4xl"
+                    style="color: red"
+                  />
+                </Tooltip.Trigger>
+                <Tooltip.Content>
+                  <p>Logout</p>
+                </Tooltip.Content>
+              </Tooltip.Root>
             </AlertDialog.Trigger>
             <AlertDialog.Content>
               <AlertDialog.Header>
                 <AlertDialog.Title>Are you absolutely sure?</AlertDialog.Title>
-                <AlertDialog.Description>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
-                </AlertDialog.Description>
               </AlertDialog.Header>
               <AlertDialog.Footer>
                 <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
@@ -122,25 +133,27 @@
   class="bg-navbg sticky top-0 z-20 py-3 transition-all duration-500 md:hidden block"
 >
   <div class="flex items-center justify-between px-3 lg:px-52">
-    <a href="/" class="font-gilroy text-navlogo text-xl md:text-3xl"
-      >Learner Pro</a
+    <div class="flex items-center gap-4">
+      <img src={logo} class="h-[30px] -mt-2" alt="" />
+
+      <a href="/" class="font-gilroy text-navlogo text-2xl">Learner Pro</a>
+    </div>
+
+    <Button
+      size="icon"
+      class="focus:outline-none bg-transparent hover:bg-transparent"
+      on:click={toggleNavbar}
     >
-    <button class="focus:outline-none" on:click={toggleNavbar}>
-      <svg
-        class="h-6 w-6 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16m-7 6h7"
-        ></path>
-      </svg>
-    </button>
+      {#if isNavbarOpen}
+        <Icon
+          icon="iconamoon:close-bold"
+          class="text-3xl"
+          style="color: white"
+        />
+      {:else}
+        <Icon icon="ci:menu-alt-01" class="text-3xl" style="color: white" />
+      {/if}
+    </Button>
   </div>
   <div
     class="{isNavbarOpen
@@ -180,6 +193,38 @@
           >
         {/if}
       </li>
+      {#if phoneNumber}
+        <li>
+          <AlertDialog.Root>
+            <AlertDialog.Trigger>
+              <Tooltip.Root>
+                <Tooltip.Trigger>
+                  <Icon
+                    title="Logout"
+                    icon="humbleicons:logout"
+                    class="text-4xl"
+                    style="color: red"
+                  />
+                </Tooltip.Trigger>
+                <Tooltip.Content>
+                  <p>Logout</p>
+                </Tooltip.Content>
+              </Tooltip.Root>
+            </AlertDialog.Trigger>
+            <AlertDialog.Content>
+              <AlertDialog.Header>
+                <AlertDialog.Title>Are you absolutely sure?</AlertDialog.Title>
+              </AlertDialog.Header>
+              <AlertDialog.Footer>
+                <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
+                <AlertDialog.Action on:click={() => handleLogout()}
+                  >Logout</AlertDialog.Action
+                >
+              </AlertDialog.Footer>
+            </AlertDialog.Content>
+          </AlertDialog.Root>
+        </li>
+      {/if}
     </ul>
   </div>
 </header>

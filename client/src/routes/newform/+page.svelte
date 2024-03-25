@@ -56,7 +56,7 @@
       _formData.append("currentPosition", values.currentPosition);
 
       try {
-        let response: any = await fetch("?/", {
+        let response: any = await fetch("/webinarform", {
           method: "POST",
           body: _formData,
         });
@@ -119,13 +119,13 @@
     event.preventDefault();
     console.log(email1);
     let _formData1 = new FormData();
-    _formData1.append("email", email1);
-    let response = await fetch("?/", {
+    _formData1.append("email1", email1);
+    let response = await fetch("/footerform", {
       method: "POST",
       body: _formData1,
     });
     response = await response.json();
-    console.log(response, "wdhiuwd");
+    console.log(response, "efefef");
   };
 </script>
 

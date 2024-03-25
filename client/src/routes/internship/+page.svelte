@@ -565,7 +565,7 @@
       </div>
     </div>
 
-    <div class="container mx-auto py-6 px-5 md:px-0 md:py-20">
+    <!-- <div class="container mx-auto py-6 px-5 md:px-0 md:py-20">
       <div class=" rounded-2xl bg-[#242424]">
         <div class=" rounded-s-3xl">
           <h1
@@ -601,7 +601,7 @@
           </h1>
         </div>
       </div>
-    </div>
+    </div> -->
   </main>
 
   <Footer />

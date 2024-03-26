@@ -69,10 +69,10 @@
 </main>
 
 <style>
-  .herowave {
+  /* .herowave {
     background-image: url(../../../../img/Internship/newsletter.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-  }
+  } */
 </style>

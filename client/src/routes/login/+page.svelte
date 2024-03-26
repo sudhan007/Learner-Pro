@@ -1,5 +1,5 @@
 <script>
-  import imgUrl from "../../img/Home/login.webp";
+  import imgUrl from "../../img/Home/login.png";
 </script>
 
 <head>

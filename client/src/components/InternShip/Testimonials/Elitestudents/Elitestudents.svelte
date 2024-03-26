@@ -1,6 +1,5 @@
 <script>
   import { Card } from "$lib/components/ui/card";
-  import college1 from "../../../../img/Internship/college1.svg";
   import EliteStudentsCollege from "./EliteCard";
 </script>
 

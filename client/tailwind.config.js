@@ -80,16 +80,16 @@ const config = {
 
 
 		},
-		// fontFamily: {
-		// 	"gilroy": "Gilroy-SemiBold",
-		// 	"publicalight": "PublicaSans-Light",
-		// 	"publicamedium": "PublicaSans-Medium",
-		// 	"publicaz": "ZPublicaSans",
-		// 	"publicbold": "PublicaSans-Bold",
-		// 	"prompt": "Prompt-SemiBold",
-		// 	"dmsans": "DMSans-Regular.ttf",
-		// 	"inter": "Inter-SemiBold"
-		// }
+		fontFamily: {
+			"gilroy": "Gilroy-SemiBold",
+			"publicalight": "PublicaSans-Light",
+			"publicamedium": "PublicaSans-Medium",
+			"publicaz": "ZPublicaSans",
+			"publicbold": "PublicaSans-Bold",
+			"prompt": "Prompt-SemiBold",
+			"dmsans": "DMSans-Regular.ttf",
+			"inter": "Inter-SemiBold"
+		}
 	},
 };
 

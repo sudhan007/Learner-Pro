@@ -27,12 +27,12 @@
   //     });
   //   }
   // });
-  let isPageLoaded = false;
-  onMount(() => {
-    setTimeout(() => {
-      isPageLoaded = true;
-    }, 4000);
-  });
+  // let isPageLoaded = false;
+  // onMount(() => {
+  //   setTimeout(() => {
+  //     isPageLoaded = true;
+  //   }, 4000);
+  // });
 
   // const pageLoaded = () => {
   //   setTimeout(() => {
@@ -41,7 +41,7 @@
   // };
 </script>
 
-{#if !isPageLoaded}
+<!-- {#if !isPageLoaded}
   <div class="w-full h-screen flex justify-center items-center">
     <div
       class="animate-spin h-16 w-16 rounded-full border-b-2 border-green-500"
@@ -50,5 +50,7 @@
 {:else}
   <Toaster />
   <Navbar />
-  <slot />
-{/if}
+ 
+{/if} -->
+
+<slot />

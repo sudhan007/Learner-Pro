@@ -1,8 +1,8 @@
 <script>
-  // import brain1 from "../../../img/Home/brain1.webp";
-  // import brainman from "../../../img/Home/brainman.webp";
-  import brain1 from "../../../img/Home/brain1.png";
-  import brainman from "../../../img/Home/brainman.png";
+  import brain1 from "../../../img/Home/brain1.webp";
+  import brainman from "../../../img/Home/brainman.webp";
+  // import brain1 from "../../../img/Home/brain1.png";
+  // import brainman from "../../../img/Home/brainman.png";
   import check from "../../../img/Home/checkmark.svg";
 </script>
 

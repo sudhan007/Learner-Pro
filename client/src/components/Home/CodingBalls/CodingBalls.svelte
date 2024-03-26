@@ -1,9 +1,9 @@
 <script>
   import Icon from "@iconify/svelte";
-  // import coding from "../../../img/Home/coding.webp";
-  // import coding1 from "../../../img/Home/coding1.webp";
-  import coding from "../../../img/Home/coding.png";
-  import coding1 from "../../../img/Home/coding1.png";
+  import coding from "../../../img/Home/coding.webp";
+  import coding1 from "../../../img/Home/coding1.webp";
+  // import coding from "../../../img/Home/coding.png";
+  // import coding1 from "../../../img/Home/coding1.png";
 
   import { Card } from "$lib/components/ui/card";
 </script>

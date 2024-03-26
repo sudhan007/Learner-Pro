@@ -1,7 +1,7 @@
 <script>
   import Button from "$lib/components/ui/button/button.svelte";
-  // import manvr from "../../../img/Home/manvr.webp";
-  import manvr from "../../../img/Home/manvr.png";
+  import manvr from "../../../img/Home/manvr.webp";
+  // import manvr from "../../../img/Home/manvr.png";
 </script>
 
 <main

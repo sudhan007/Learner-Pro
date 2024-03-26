@@ -32,13 +32,8 @@
       </div>
     </div>
 
-    <div class="hero-bg hero relative">
+    <div class="hero-bg hero">
       <img src={internai1} alt="" class=" w-full" />
-      <img
-        src={inrenbg}
-        alt=""
-        class="absolute left-0 top-0 z-10 animate-pulse"
-      />
       <div data-aos="slide-right" class=""></div>
     </div>
   </div>

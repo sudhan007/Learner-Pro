@@ -2,7 +2,6 @@
   import menuLinks from "$lib/Navlinks";
   import { page } from "$app/stores";
   import { onMount } from "svelte";
-  import profile from "../../img/Home/profile.png";
   import Button from "$lib/components/ui/button/button.svelte";
   import { afterUpdate } from "svelte";
   import { afterNavigate } from "$app/navigation";

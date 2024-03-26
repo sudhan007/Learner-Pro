@@ -3,14 +3,12 @@
   import { page } from "$app/stores";
   import { onMount } from "svelte";
   import Button from "$lib/components/ui/button/button.svelte";
-  import { afterUpdate } from "svelte";
   import { afterNavigate } from "$app/navigation";
-  import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
   import Icon from "@iconify/svelte";
   import * as AlertDialog from "$lib/components/ui/alert-dialog";
   import { toast } from "svelte-sonner";
   import * as Tooltip from "$lib/components/ui/tooltip";
-  import logo from "../../img/Home/logo.png";
+  import logo from "../../img/Home/logo.webp";
 
   let currentPath = "";
   $: if ($page) {

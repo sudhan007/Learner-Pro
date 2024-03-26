@@ -1,10 +1,15 @@
-import college1 from '../../../../img/Internship/college1.svg'
-import college2 from '../../../../img/Internship/college2.svg'
-import college3 from '../../../../img/Internship/college3.svg'
-import college4 from '../../../../img/Internship/college4.svg'
-import college5 from '../../../../img/Internship/college5.svg'
+// import college1 from '../../../../img/Internship/college1.svg'
+// import college2 from '../../../../img/Internship/college2.svg'
+// import college3 from '../../../../img/Internship/college3.svg'
+// import college4 from '../../../../img/Internship/college4.svg'
+// import college5 from '../../../../img/Internship/college5.svg'
 
 
+import college1 from '../../../../img/Internship/college1.webp'
+import college2 from '../../../../img/Internship/college2.webp'
+import college3 from '../../../../img/Internship/college3.webp'
+import college4 from '../../../../img/Internship/college4.webp'
+import college5 from '../../../../img/Internship/college5.webp'
 const EliteStudentsCollege = [
     {
         image: college1,

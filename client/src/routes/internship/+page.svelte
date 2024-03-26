@@ -1,13 +1,10 @@
 <script lang="ts">
-  import { writable } from "svelte/store";
   import InternShipHero from "../../components/InternShip/HeroSection/InternShipHero.svelte";
   import Aboutinternhero from "../../components/InternShip/AboutIntenship/AboutInternHero/Aboutinternhero.svelte";
   import Aboutintercards from "../../components/InternShip/AboutIntenship/Aboutinterncards/Aboutintercards.svelte";
   import Elitestudents from "../../components/InternShip/Testimonials/Elitestudents/Elitestudents.svelte";
-  import Frequentquestion from "../../components/InternShip/Testimonials/FrequentQuestions/Frequentquestion.svelte";
   import TestimonialsHero from "../../components/InternShip/Testimonials/TestimonialHero/TestimonialsHero.svelte";
   import Footer from "../../components/Footer/Footer.svelte";
-  import InternShipcards from "../../components/InternShip/internShipImportant/InternShipcards.svelte";
   import { createForm } from "svelte-forms-lib";
   import * as yup from "yup";
   import { Card } from "$lib/components/ui/card";
@@ -215,7 +212,6 @@
   <div class="bg-internherobg">
     <InternShipHero />
   </div>
-  <!-- <InternShipcards /> -->
   <aside>
     <main
       class="bg-internherobg min-h-screen w-full overflow-x-hidden text-white"
@@ -490,7 +486,6 @@
     <TestimonialsHero />
   </div>
   <Elitestudents />
-  <!-- <Frequentquestion /> -->
 
   <main
     class="bg-internherobg w-full min-h-0 overflow-x-hidden pb-20 text-white"

@@ -1,7 +1,7 @@
 <script>
   import Button from "$lib/components/ui/button/button.svelte";
-  import internai1 from "../../../../img/Internship/internai1.png";
-  import inrenbg from "../.././../../img/Internship/internherobg.png";
+  // import internai1 from "../../../../img/Internship/internai1.png";
+  import internai1 from "../../../../img/Internship/internai1.webp";
 </script>
 
 <div class=" container mx-auto flex min-h-[95vh] sm:mt-0">

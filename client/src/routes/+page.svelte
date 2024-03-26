@@ -9,7 +9,6 @@
 
 <title>Learner Pro</title>
 <div class="">
-  <!-- dwdwdw -->
   <div class="bg-black">
     <Hero />
   </div>

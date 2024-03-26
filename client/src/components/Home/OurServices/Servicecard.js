@@ -1,6 +1,10 @@
-import team1 from '../../../img/Home/team1.png'
-import team2 from '../../../img/Home/team2.png'
-import team3 from '../../../img/Home/team3.png'
+// import team1 from '../../../img/Home/team1.png'
+// import team2 from '../../../img/Home/team2.png'
+// import team3 from '../../../img/Home/team3.png'
+
+import team1 from '../../../img/Home/team1.webp'
+import team2 from '../../../img/Home/team2.webp'
+import team3 from '../../../img/Home/team3.webp'
 
 const ServiceCard = [
     {

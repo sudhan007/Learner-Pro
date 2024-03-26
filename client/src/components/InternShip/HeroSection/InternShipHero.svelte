@@ -1,5 +1,6 @@
 <script>
-  import internhero1 from "../../../img/Internship/internhero1.png";
+  // import internhero1 from "../../../img/Internship/internhero1.png";
+  import internhero1 from "../../../img/Internship/internhero1.webp";
 </script>
 
 <main class=" flex h-screen w-full items-center overflow-x-hidden text-white">

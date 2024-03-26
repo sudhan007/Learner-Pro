@@ -28,13 +28,7 @@
             </h1>
           </div>
           <div class="mt-10">
-            <img
-              class=""
-              style="object-fit: contain;"
-              loading="lazy"
-              src={coding}
-              alt=""
-            />
+            <img class="" style="object-fit: contain;" src={coding} alt="" />
           </div>
         </Card>
       </div>
@@ -53,13 +47,7 @@
             </h1>
           </div>
           <div class="mt-10">
-            <img
-              class=""
-              style="object-fit: contain;"
-              loading="lazy"
-              src={coding1}
-              alt=""
-            />
+            <img class="" style="object-fit: contain;" src={coding1} alt="" />
           </div>
         </Card>
       </div>

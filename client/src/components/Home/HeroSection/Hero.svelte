@@ -51,7 +51,7 @@
               10000+
             </h3>
             <p class=" text-xs md:text-[17px] leading-snug xl:text-[20px]">
-              Happy <br /> Customers
+              Happy <br /> Students
             </p>
           </div>
           <div class=" md:mr-8">
@@ -81,7 +81,6 @@
           alt="LearnerPro Illustration"
           style="height: 100%; width: 100%;"
           class="h-full"
-          loading="lazy"
           src={hero1}
         />
         <!-- <img alt="LearnerPro Illustration" style="height: 100%;" class="h-full" src={herosvg} /> -->

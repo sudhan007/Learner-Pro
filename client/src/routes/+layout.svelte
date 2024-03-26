@@ -28,16 +28,21 @@
   //   }
   // });
   let isPageLoaded = false;
-
-  const pageLoaded = () => {
+  onMount(() => {
     setTimeout(() => {
       isPageLoaded = true;
     }, 4000);
-  };
+  });
+
+  // const pageLoaded = () => {
+  //   setTimeout(() => {
+  //     isPageLoaded = true;
+  //   }, 4000);
+  // };
 </script>
 
 {#if !isPageLoaded}
-  <div use:pageLoaded class="w-full h-screen flex justify-center items-center">
+  <div class="w-full h-screen flex justify-center items-center">
     <div
       class="animate-spin h-16 w-16 rounded-full border-b-2 border-green-500"
     ></div>

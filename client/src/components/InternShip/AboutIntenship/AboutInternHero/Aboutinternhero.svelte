@@ -40,7 +40,7 @@
 </div>
 
 <style>
-  .hero {
+  /* .hero {
     background-image: url(../../../../img/Internship/internherobg.png);
-  }
+  } */
 </style>

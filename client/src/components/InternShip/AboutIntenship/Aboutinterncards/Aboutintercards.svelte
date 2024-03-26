@@ -1,7 +1,6 @@
 <script lang="ts">
   import Button from "$lib/components/ui/button/button.svelte";
   import { Card } from "$lib/components/ui/card";
-  import tablet from "../../../../img/Internship/tablet.svg";
   import CardContent from "./CardContent";
 </script>
 

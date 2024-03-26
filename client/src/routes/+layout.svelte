@@ -52,5 +52,6 @@
   <Navbar />
  
 {/if} -->
-
+<Toaster />
+<Navbar />
 <slot />

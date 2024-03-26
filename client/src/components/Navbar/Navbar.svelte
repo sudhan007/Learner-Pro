@@ -13,7 +13,6 @@
   import logo from "../../img/Home/logo.png";
 
   let currentPath = "";
-  console.log($page.url.pathname);
   $: if ($page) {
     currentPath = $page.url.pathname;
   }
@@ -23,7 +22,6 @@
   let phoneNumber = "";
   onMount(() => {
     phoneNumber = localStorage.getItem("phoneNumber");
-    console.log(phoneNumber);
   });
   // mdew
   let isNavbarOpen = false;

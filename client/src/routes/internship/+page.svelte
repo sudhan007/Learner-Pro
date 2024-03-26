@@ -93,7 +93,6 @@
     }),
     onSubmit: async (values) => {
       closeModal();
-      console.log(values);
       let _formData = new FormData();
 
       _formData.append("name", values.name);
@@ -110,7 +109,6 @@
           body: _formData,
         });
         response = await response.json();
-        console.log(response, "wdhiuwd");
         if (response.ok === true) {
           form.set({
             name: "",
@@ -129,7 +127,6 @@
             style:
               "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
           });
-          console.log(showModal, "wjdhkwdw");
         } else {
           form.set({
             name: "",
@@ -167,7 +164,6 @@
           style:
             "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
         });
-        console.log(error);
       }
     },
   });
@@ -176,7 +172,6 @@
 
   const handleSubmit1 = async (event: any) => {
     event.preventDefault();
-    console.log(query);
     let _formData1 = new FormData();
     _formData1.append("query", query);
     try {
@@ -185,7 +180,6 @@
         body: _formData1,
       });
       response = await response.json();
-      console.log(response, "wdhiuwd");
       if (response.ok === true) {
         query = "";
         toast(`Query Submitted`, {

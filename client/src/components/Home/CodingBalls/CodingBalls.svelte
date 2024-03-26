@@ -1,7 +1,7 @@
 <script>
   import Icon from "@iconify/svelte";
-  import coding from "../../../img/Home/coding.png";
-  import coding1 from "../../../img/Home/coding1.png";
+  import coding from "../../../img/Home/coding.webp";
+  import coding1 from "../../../img/Home/coding1.webp";
   import { Card } from "$lib/components/ui/card";
 </script>
 
@@ -25,7 +25,13 @@
             </h1>
           </div>
           <div class="mt-10">
-            <img class="" style="object-fit: contain;" src={coding} alt="" />
+            <img
+              class=""
+              style="object-fit: contain;"
+              loading="eager"
+              src={coding}
+              alt=""
+            />
           </div>
         </Card>
       </div>
@@ -44,7 +50,13 @@
             </h1>
           </div>
           <div class="mt-10">
-            <img class="" style="object-fit: contain;" src={coding1} alt="" />
+            <img
+              class=""
+              style="object-fit: contain;"
+              loading="eager"
+              src={coding1}
+              alt=""
+            />
           </div>
         </Card>
       </div>

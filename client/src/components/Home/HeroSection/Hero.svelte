@@ -118,7 +118,7 @@
 
 <style>
   .hero {
-    background-image: url("../../../img/Home/wave.png");
+    background-image: url("../../../img/Home/wave.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

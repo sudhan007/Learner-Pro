@@ -4,11 +4,13 @@
   src="https://otpless.com/v2/auth.js"
   data-appid="8E75C1E8RNZ4RH17N0GT"
 >
+  // @ts-nocheck
+
   import "../app.pcss";
   import { Toaster } from "$lib/components/ui/sonner";
   import Navbar from "../components/Navbar/Navbar.svelte";
 
-  // import { onMount } from "svelte";
+  import { onMount } from "svelte";
   // import { goto } from "$app/navigation";
   // import { toast } from "svelte-sonner";
 
@@ -25,8 +27,21 @@
   //     });
   //   }
   // });
+  let isPageLoaded = false;
+
+  const pageLoaded = () => {
+    isPageLoaded = true;
+  };
 </script>
 
-<Toaster />
-<Navbar />
-<slot />
+{#if !isPageLoaded}
+  <div use:pageLoaded class="w-full h-screen flex justify-center items-center">
+    <div
+      class="animate-spin h-16 w-16 rounded-full border-b-2 border-green-500"
+    ></div>
+  </div>
+{:else}
+  <Toaster />
+  <Navbar />
+  <slot />
+{/if}

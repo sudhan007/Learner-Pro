@@ -61,7 +61,6 @@
         });
 
         response = await response.json();
-        console.log(response, "wdhiuwd");
         if (response.ok === true) {
           form.set({
             name: "",
@@ -107,7 +106,6 @@
           style:
             "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
         });
-        console.log(error);
       }
     },
   });

@@ -32,7 +32,7 @@
   const pageLoaded = () => {
     setTimeout(() => {
       isPageLoaded = true;
-    }, 3000);
+    }, 4000);
   };
 </script>
 

@@ -30,7 +30,9 @@
   let isPageLoaded = false;
 
   const pageLoaded = () => {
-    isPageLoaded = true;
+    setTimeout(() => {
+      isPageLoaded = true;
+    }, 2000);
   };
 </script>
 

@@ -81,7 +81,7 @@
           alt="LearnerPro Illustration"
           style="height: 100%; width: 100%;"
           class="h-full"
-          loading="lazy"
+          loading="eager"
           src={hero1}
         />
         <!-- <img alt="LearnerPro Illustration" style="height: 100%;" class="h-full" src={herosvg} /> -->

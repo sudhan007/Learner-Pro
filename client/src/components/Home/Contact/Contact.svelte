@@ -64,7 +64,7 @@
       </div>
     </div>
     <div class="flex flex-col items-center justify-center">
-      <img src={manvr} class="h-auto" loading="lazy" alt="" />
+      <img src={manvr} class="h-auto" loading="eager" alt="" />
     </div>
   </div>
 </main>

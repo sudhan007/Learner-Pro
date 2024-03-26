@@ -25,7 +25,7 @@
               class="-mt-8 md:h-[110px] w-[120px] lg:w-[180px]"
               src={brainman}
               alt=""
-              loading="lazy"
+              loading="eager"
             />
           </div>
           Future
@@ -58,7 +58,7 @@
           alt="LearnerPro Illustration"
           class="h-auto max-w-full"
           src={brain1}
-          loading="lazy"
+          loading="eager"
         />
       </div>
     </div>

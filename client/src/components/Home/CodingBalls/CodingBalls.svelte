@@ -31,7 +31,7 @@
             <img
               class=""
               style="object-fit: contain;"
-              loading="lazy"
+              loading="eager"
               src={coding}
               alt=""
             />
@@ -56,7 +56,7 @@
             <img
               class=""
               style="object-fit: contain;"
-              loading="lazy"
+              loading="eager"
               src={coding1}
               alt=""
             />

@@ -1,7 +1,7 @@
 <script>
   import Button from "$lib/components/ui/button/button.svelte";
-  import manvr from "../../../img/Home/manvr.webp";
-  // import manvr from "../../../img/Home/manvr.png";
+  // import manvr from "../../../img/Home/manvr.webp";
+  import manvr from "../../../img/Home/manvr.png";
 </script>
 
 <main
@@ -64,11 +64,7 @@
       </div>
     </div>
     <div class="flex flex-col items-center justify-center">
-      <img src={manvr} class="h-auto" loading="eager" alt="" />
+      <img src={manvr} class="h-auto" loading="lazy" alt="" />
     </div>
   </div>
 </main>
-
-<style>
-  /* s */
-</style>

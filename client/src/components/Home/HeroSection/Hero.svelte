@@ -1,8 +1,8 @@
 <script lang="ts">
   import * as Avatar from "$lib/components/ui/avatar";
   import Button from "$lib/components/ui/button/button.svelte";
-  // import hero1 from "../../../img/Home/hero1.png";
-  import hero1 from "../../../img/Home/hero1.webp";
+  import hero1 from "../../../img/Home/hero1.png";
+  // import hero1 from "../../../img/Home/hero1.webp";
 </script>
 
 <div class="hero min-h-screen overflow-x-hidden">
@@ -81,7 +81,7 @@
           alt="LearnerPro Illustration"
           style="height: 100%; width: 100%;"
           class="h-full"
-          loading="eager"
+          loading="lazy"
           src={hero1}
         />
         <!-- <img alt="LearnerPro Illustration" style="height: 100%;" class="h-full" src={herosvg} /> -->
@@ -118,7 +118,7 @@
 
 <style>
   .hero {
-    background-image: url("../../../img/Home/wave.webp");
+    background-image: url("../../../img/Home/wave.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

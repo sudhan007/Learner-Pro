@@ -10,7 +10,7 @@
       init(otplessUser.token);
     }
     </script>
-  <script type="text/javascript">
+  <script >
     let isInitialized = false;
 
     function init(token) {

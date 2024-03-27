@@ -3,19 +3,13 @@
 </script>
 
 <head>
-  <script
-    lang="ts"
-    id="otpless-sdk"
-    type="text/javascript"
-    src="https://otpless.com/v2/auth.js"
-    data-appid="TZ76JYNHHTEDGNMT4VIC"
-  >
-  </script>
-  <script>
+
+  <script id="otpless-sdk" type="text/javascript" src="https://otpless.com/v2/auth.js" data-appid="TZ76JYNHHTEDGNMT4VIC"></script>
+  <script type="text/javascript">
     function otpless(otplessUser) {
       init(otplessUser.token);
     }
-  </script>
+    </script>
   <script type="text/javascript">
     let isInitialized = false;
 

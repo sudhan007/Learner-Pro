@@ -1,9 +1,4 @@
-<script
-  id="otpless-sdk"
-  type="text/javascript"
-  src="https://otpless.com/v2/auth.js"
-  data-appid="8E75C1E8RNZ4RH17N0GT"
->
+<script>
   // @ts-nocheck
 
   let isPageLoaded = false;

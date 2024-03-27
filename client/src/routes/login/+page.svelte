@@ -2,15 +2,40 @@
   import imgUrl from "../../img/Home/login.png";
 </script>
 
-<head>
+<div
+  style="background: radial-gradient(circle, #424242, #0E0E0E);"
+  class="h-[94vh] flex flex-col items-center justify-center overflow-x-hidden"
+>
+  <div class="grid lg:gap-40 md:justify-between md:grid-cols-2 w-full">
+    <div class="hidden md:block">
+      <!-- svelte-ignore a11y-img-redundant-alt -->
+      <img
+        style="width: 100%; height: auto;"
+        src={imgUrl}
+        alt="Description of the image"
+      />
+    </div>
+    <div class="">
+      <div id="otpless-login-page"></div>
+    </div>
+  </div>
+</div>
 
-  <script id="otpless-sdk" type="text/javascript" src="https://otpless.com/v2/auth.js" data-appid="TZ76JYNHHTEDGNMT4VIC"></script>
-  <script type="text/javascript">
+<head>
+  <script
+    lang="ts"
+    id="otpless-sdk"
+    type="text/javascript"
+    src="https://otpless.com/v2/auth.js"
+    data-appid="TZ76JYNHHTEDGNMT4VIC"
+  >
+  </script>
+  <script>
     function otpless(otplessUser) {
       init(otplessUser.token);
     }
-    </script>
-  <script >
+  </script>
+  <script type="text/javascript">
     let isInitialized = false;
 
     function init(token) {
@@ -65,22 +90,3 @@
     }
   </script>
 </head>
-
-<div
-  style="background: radial-gradient(circle, #424242, #0E0E0E);"
-  class="h-[94vh] flex flex-col items-center justify-center overflow-x-hidden"
->
-  <div class="grid lg:gap-40 md:justify-between md:grid-cols-2 w-full">
-    <div class="hidden md:block">
-      <!-- svelte-ignore a11y-img-redundant-alt -->
-      <img
-        style="width: 100%; height: auto;"
-        src={imgUrl}
-        alt="Description of the image"
-      />
-    </div>
-    <div class="">
-      <div id="otpless-login-page"></div>
-    </div>
-  </div>
-</div>

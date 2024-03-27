@@ -2,7 +2,7 @@
   import imgUrl from "../../img/Home/login.png";
 </script>
 
-<head>
+<body>
   <script
     lang="ts"
     id="otpless-sdk"
@@ -70,7 +70,7 @@
         });
     }
   </script>
-</head>
+</body>
 
 <div
   style="background: radial-gradient(circle, #424242, #0E0E0E);"

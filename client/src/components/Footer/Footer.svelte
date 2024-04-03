@@ -148,7 +148,7 @@
     <div
       class="font-publicaz flex justify-center text-xs md:text-xl text-[#B9B9B9]"
     >
-      <h1>&copy; {year} Powered By Wenoxo Technologies Private Limited Inc.</h1>
+      <h1>&copy; {year} Powered By Wenoxo Technologies Private Limited</h1>
     </div>
     <div
       class="flex pt-5 gap-4 md:gap-10 justify-center text-2xl md:text-3xl cursor-pointer items-center"

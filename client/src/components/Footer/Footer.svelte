@@ -28,7 +28,12 @@
     <div
       class="font-publicalight mt-4 md:mt-8 flex justify-center text-base md:text-xl text-[#747474]"
     >
-      <a href="mailto:support@wenoxo.in">support@wenoxo.in</a>
+      <a href="mailto:support@wenoxo.in">support@wenoxo.in</a> <br />
+    </div>
+    <div
+      class="font-publicalight mt-2 flex justify-center text-base md:text-xl text-[#747474]"
+    >
+      <a href="tel:+916380058663">+91 6380058663</a>
     </div>
     <!-- <div class="px-3">
       <form action="">

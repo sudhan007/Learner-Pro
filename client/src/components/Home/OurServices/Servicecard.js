@@ -11,19 +11,19 @@ const ServiceCard = [
         image: team1,
         name: "Karthika Murugeswaran",
         role: "HR Manager",
-        content: "3+ years shaping dynamic workplaces as an HR manager, driving talent strategies for organizational success"
+        content: "4+ years shaping dynamic workplaces as an HR manager, driving talent strategies for organizational success"
     },
     {
         image: team2,
         name: "Jaslin",
         role: "Business Development Executive",
-        content: "With 2+ years of strategic Business Development expertise, fostering growth and innovation in the learning landscape"
+        content: "With 3+ years of strategic Business Development expertise, fostering growth and innovation in the learning landscape"
     },
     {
         image: team3,
         name: "Thinesh Rasla",
         role: "Full Stack Developer",
-        content: "Over 8+ years of full stack mastery architecting digital ecosystems from pixels to database"
+        content: "Over 6+ years of full stack mastery architecting digital ecosystems from pixels to database"
     }
 ]
 

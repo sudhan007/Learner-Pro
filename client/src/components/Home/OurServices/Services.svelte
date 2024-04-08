@@ -9,7 +9,7 @@
   import ServiceCard from "./Servicecard";
 </script>
 
-<main class=" bg-codingballs min-h-screen w-full overflow-x-hidden text-white">
+<main class=" bg-codingballs min-h-[50vh] w-full overflow-x-hidden text-white">
   <div
     class="font-publicamedium text-herotext flex justify-center text-2xl md:text-5xl"
   >
@@ -138,11 +138,11 @@
       </div>
     </div>
   </div>
-  <div
+  <!-- <div
     class="font-publicamedium text-herotext flex justify-center pt-5 text-2xl md:text-5xl"
   >
     Meet Our team
-  </div>
+  </div> 
   <div class="container mx-auto mb-4">
     <div
       class="grid md:grid-cols-2 lg:grid-cols-3 items-stretch
@@ -179,7 +179,7 @@
         </Card>
       {/each}
     </div>
-  </div>
+  </div>-->
 </main>
 
 <style>

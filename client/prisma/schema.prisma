@@ -25,6 +25,8 @@ model WebinarForm {
   phoneNumber     String
   certificateName String
   currentPosition String
+    createdAt DateTime @default(now())
+
 }
 
 model InternshipForm {
@@ -37,6 +39,8 @@ model InternshipForm {
   fieldofStudy   String
   gender         String
   classMode      String
+    createdAt DateTime @default(now())
+
 }
 
 model FooterForm {
@@ -47,4 +51,13 @@ model FooterForm {
 model FaqQuestions {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   query String
+}
+
+model WorkshopForm {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  email        String
+  phoneNumber  String @unique
+  currentPosition String
+  createdAt DateTime @default(now())
 }

@@ -180,7 +180,7 @@
             name="certificateName"
           />
           <label for="" class="text-base font-inter"
-            >Name in certificate
+            >Name in Certificate
           </label>
           {#if $errors.certificateName && $touched.certificateName}
             <p class="text-red-500 font-gilroy">{$errors.certificateName}</p>

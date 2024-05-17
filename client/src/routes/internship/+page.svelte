@@ -44,6 +44,8 @@
     { value: "webdevlopement", label: "Web Development" },
     { value: "ui/uxdesigning", label: "UI/UX Design" },
     { value: "mbainternship", label: "MBA Internship" },
+    {value:"computervision",label:"Computer Vision"},
+    {value:"reactjs",label:"React JS"}
   ];
 
   const {
@@ -78,7 +80,7 @@
       areaofInterest: yup
         .string()
         .required("Area of Interest is required")
-        .oneOf(["python", "webdevlopement", "ui/uxdesigning", "mbainternship"]),
+        .oneOf(["python", "webdevlopement", "ui/uxdesigning", "mbainternship","computervision","reactjs"]),
       gender: yup
         .string()
         .required("Gender is required")

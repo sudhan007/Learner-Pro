@@ -6,100 +6,71 @@ const prisma = new PrismaClient();
 /** @type {import('./$types').RequestHandler} */
 
 export async function POST({ request }) {
+  const pathname = new URL(request.url).pathname;
+  console.log(pathname, "pathname")
 
-    try {
-        const data = await request.formData();
+  if (pathname === "/webinarform") {
+    const data = await request.formData();
 
-        const name = data.get("name");
-        const collegeName = data.get("collegeName");
-        const phoneNumber = data.get("phoneNumber");
-        const email = data.get("email");
-        const areaofInterest = data.get("areaofInterest");
-        const fieldofStudy = data.get("fieldofStudy");
-        const gender = data.get("gender");
-        const classMode = data.get("classMode");
+    const name = data.get("name");
+    const email = data.get("email");
+    const phoneNumber = data.get("phoneNumber");
+    const certificateName = data.get("certificateName");
+    const currentPosition = data.get("currentPosition");
 
 
-        console.log(name, collegeName, phoneNumber, email, areaofInterest, fieldofStudy, gender, "sdlkheif")
-        if (!name || !collegeName || !phoneNumber || !email || !areaofInterest || !fieldofStudy || !gender || !classMode) {
-            return new Response(
-                JSON.stringify({
-                    failed: true,
-                })
-            )
-        }
-
-        let studentExists = await prisma.internshipForm.findFirst({
-            where: {
-                email: email,
-                phoneNumber: phoneNumber
-            }
+    if (!name || !email || !phoneNumber || !certificateName || !currentPosition) {
+      return new Response(
+        JSON.stringify({
+          failed: true,
         })
-
-        if (studentExists) {
-            return new Response(JSON.stringify({
-                ok: false,
-                message: "Email / Phone number already exists"
-            }))
-        }
-
-        const newStudent = await prisma.internshipForm.create({
-            data: {
-                name: name.toString(),
-                collegeName: collegeName.toString(),
-                phoneNumber: phoneNumber.toString(),
-                email: email.toString(),
-                areaofInterest: areaofInterest.toString(),
-                fieldofStudy: fieldofStudy.toString(),
-                gender: gender.toString(),
-                classMode: classMode.toString(),
-            },
-        })
-        return new Response(JSON.stringify({
-            ok: true,
-            message: "Registration successfully",
-            data: newStudent
-        }))
-
-    } catch (error) {
-        return new Response(JSON.stringify({
-            ok: false,
-            message: error.message
-        }))
+      )
     }
 
-    // const pathname = request.url
-    // const parts = pathname.split('/').filter(part => part !== '');
-    // const lastEndpoint = parts[parts.length - 1];
-    // console.log(lastEndpoint, "last pooit");
+    try {
+      let studentExists = await prisma.webinarForm.findFirst({
+        where: {
+          phoneNumber: phoneNumber,
+          email: email
+        },
+      })
 
-    // console.log(lastEndpoint == "internshipform", "true orffff");
-    // console.log(lastEndpoint == "faqquery", "wdwjdkw")
-    // if (lastEndpoint == "internshipform") {
 
-    // } else if (lastEndpoint == "faqquery") {
-    //     try {
-    //         const data = await request.formData();
+      if (studentExists) {
+        return new Response(
+          JSON.stringify({
+            ok: false,
+            message: "Email / Phone number already exists"
+          })
+        )
+      }
 
-    //         const query = data.get("query");
+      const newStudent = await prisma.webinarForm.create({
+        data: {
+          name: name.toString(),
+          email: email.toString(),
+          phoneNumber: phoneNumber.toString(),
+          certificateName: certificateName.toString(),
+          currentPosition: currentPosition.toString(),
+        },
+      })
+      return new Response(JSON.stringify({
+        ok: true,
+        message: "Registration successfully"
+      }))
 
-    //         const newQuery = await prisma.faqQuestions.create({
-    //             data: {
-    //                 query: query.toString()
-    //             }
-    //         })
+    } catch (error) {
+      return new Response(JSON.stringify({
+        ok: false,
+        message: error.message
+      }))
+    }
+  }
+  else if (pathname === "/webinarform") {
+    return new Response(JSON.stringify({
+      ok: true
+    }))
+  }
 
-    //         return new Response(JSON.stringify({
-    //             ok: true,
-    //             message: "Query submitted"
-    //         }))
-
-    //     } catch (error) {
-    //         return new Response(JSON.stringify({ ok: false, message: error.message }))
-    //     }
-
-    // }
 
 }
-
-

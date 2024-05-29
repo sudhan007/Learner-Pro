@@ -4,6 +4,7 @@
   import Aboutintercards from "../../components/InternShip/AboutIntenship/Aboutinterncards/Aboutintercards.svelte";
   import Elitestudents from "../../components/InternShip/Testimonials/Elitestudents/Elitestudents.svelte";
   import TestimonialsHero from "../../components/InternShip/Testimonials/TestimonialHero/TestimonialsHero.svelte";
+  import internhero1 from "../../img/Internship/internhero1.webp";
   import Footer from "../../components/Footer/Footer.svelte";
   import { createForm } from "svelte-forms-lib";
   import * as yup from "yup";
@@ -44,8 +45,8 @@
     { value: "webdevlopement", label: "Web Development" },
     { value: "ui/uxdesigning", label: "UI/UX Design" },
     { value: "mbainternship", label: "MBA Internship" },
-    {value:"computervision",label:"Computer Vision"},
-    {value:"reactjs",label:"React JS"}
+    { value: "computervision", label: "Computer Vision" },
+    { value: "reactjs", label: "React JS" },
   ];
 
   const {
@@ -80,7 +81,14 @@
       areaofInterest: yup
         .string()
         .required("Area of Interest is required")
-        .oneOf(["python", "webdevlopement", "ui/uxdesigning", "mbainternship","computervision","reactjs"]),
+        .oneOf([
+          "python",
+          "webdevlopement",
+          "ui/uxdesigning",
+          "mbainternship",
+          "computervision",
+          "reactjs",
+        ]),
       gender: yup
         .string()
         .required("Gender is required")
@@ -212,7 +220,52 @@
 <div>
   <!-- Internship Home -->
   <div class="bg-internherobg">
-    <InternShipHero />
+    <!-- <InternShipHero /> -->
+    <main
+      class=" flex h-screen w-full items-center overflow-x-hidden text-white"
+    >
+      <div class="px-4 md:px-8 lg:px-20">
+        <div class="flex flex-col pt-6 items-start md:items-center md:flex-row">
+          <div class="md:w-7/12">
+            <div class="font-publicaz mb-3">
+              <h1
+                class=" text-[25px] md:text-[30px] xl:text-[44px] leading-snug"
+              >
+                Exciting Internship Opportunity
+              </h1>
+              <h1 class=" text-3xl lg:text-5xl leading-snug xl:text-7xl">
+                Join Learner Pro Community
+              </h1>
+            </div>
+            <div
+              class="text-interndesc font-publicaz text-base md:text-[20px] leading-relaxed"
+            >
+              <p>
+                An internship is a professional learning experience that offers
+                practical work related <br />
+                to a field of study or career interest. An internship gives opportunity
+                for career exploration
+                <br />
+                and development, and to learn new skills.
+              </p>
+            </div>
+            <div class="flex mt-8">
+              <Button
+                on:click={() => (showModal = true)}
+                style="background: linear-gradient(82.96deg, #FFFFFF -29.79%, #FF3434 -29.77%, #00B4DB -9.84%, #E9E9E9 108.39%, #212443 161.74%);"
+                class="font-publicbold rounded-full px-6 md:px-12 py-6 md:py-8 text-[20px] text-[#000000]"
+                >INTERNSHIP FORM</Button
+              >
+            </div>
+          </div>
+          <div class="md:w-5/12 mt-5 md:mt-0">
+            <div class="hero-bg h-auto">
+              <img src={internhero1} alt="" class="h-auto w-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
   <aside>
     <main
@@ -641,5 +694,11 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+  .hero-bg {
+    background-image: url(../../../img/Internship/internherobg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 </style>

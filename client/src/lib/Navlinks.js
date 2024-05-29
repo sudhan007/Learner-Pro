@@ -5,7 +5,7 @@ const menuLinks = [
     },
 
     {
-        name: "Internship",
+        name: "Webinarform",
         path: "/internship",
     },
 

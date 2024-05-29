@@ -19,18 +19,17 @@ model User {
 }
 
 model WebinarForm {
-  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
   name            String
   email           String
   phoneNumber     String
   certificateName String
   currentPosition String
-    createdAt DateTime @default(now())
-
+  createdAt       DateTime @default(now())
 }
 
 model InternshipForm {
-  id             String @id @default(auto()) @map("_id") @db.ObjectId
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
   name           String
   collegeName    String
   phoneNumber    String
@@ -39,8 +38,7 @@ model InternshipForm {
   fieldofStudy   String
   gender         String
   classMode      String
-    createdAt DateTime @default(now())
-
+  createdAt      DateTime @default(now())
 }
 
 model FooterForm {
@@ -54,10 +52,10 @@ model FaqQuestions {
 }
 
 model WorkshopForm {
-  id           String @id @default(auto()) @map("_id") @db.ObjectId
-  name         String
-  email        String
-  phoneNumber  String @unique
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  email           String
+  phoneNumber     String   @unique
   currentPosition String
-  createdAt DateTime @default(now())
+  createdAt       DateTime @default(now())
 }

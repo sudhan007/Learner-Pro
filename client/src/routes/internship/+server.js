@@ -9,7 +9,7 @@ export async function POST({ request }) {
   const pathname = new URL(request.url).pathname;
   console.log(pathname, "pathname")
 
-  if (pathname === "/webinarform") {
+  if (pathname === "/internship") {
     const data = await request.formData();
 
     const name = data.get("name");
@@ -52,6 +52,7 @@ export async function POST({ request }) {
           phoneNumber: phoneNumber.toString(),
           certificateName: certificateName.toString(),
           currentPosition: currentPosition.toString(),
+          createdAt: new Date()
         },
       })
       return new Response(JSON.stringify({
@@ -71,6 +72,5 @@ export async function POST({ request }) {
       ok: true
     }))
   }
-
 
 }

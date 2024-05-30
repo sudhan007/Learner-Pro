@@ -29,19 +29,19 @@ export async function POST({ request }) {
             )
         }
 
-        let studentExists = await prisma.internshipForm.findFirst({
-            where: {
-                email: email,
-                phoneNumber: phoneNumber
-            }
-        })
+        // let studentExists = await prisma.internshipForm.findFirst({
+        //     where: {
+        //         email: email,
+        //         phoneNumber: phoneNumber
+        //     }
+        // })
 
-        if (studentExists) {
-            return new Response(JSON.stringify({
-                ok: false,
-                message: "Email / Phone number already exists"
-            }))
-        }
+        // if (studentExists) {
+        //     return new Response(JSON.stringify({
+        //         ok: false,
+        //         message: "Email / Phone number already exists"
+        //     }))
+        // }
 
         const newStudent = await prisma.internshipForm.create({
             data: {

@@ -27,50 +27,50 @@ export async function POST({ request }) {
       )
     }
 
-    // try {
-    //   let studentExists = await prisma.webinarForm.findFirst({
-    //     where: {
-    //       phoneNumber: phoneNumber,
-    //       email: email
-    //     },
-    //   })
+    try {
+      // let studentExists = await prisma.webinarForm.findFirst({
+      //   where: {
+      //     phoneNumber: phoneNumber,
+      //     email: email
+      //   },
+      // })
 
 
-    //   if (studentExists) {
-    //     return new Response(
-    //       JSON.stringify({
-    //         ok: false,
-    //         message: "Email / Phone number already exists"
-    //       })
-    //     )
-    //   }
+      // if (studentExists) {
+      //   return new Response(
+      //     JSON.stringify({
+      //       ok: false,
+      //       message: "Email / Phone number already exists"
+      //     })
+      //   )
+      // }
 
-    const newStudent = await prisma.webinarForm.create({
-      data: {
-        name: name.toString(),
-        email: email.toString(),
-        phoneNumber: phoneNumber.toString(),
-        certificateName: certificateName.toString(),
-        currentPosition: currentPosition.toString(),
-        createdAt: new Date()
-      },
-    })
+      const newStudent = await prisma.webinarForm.create({
+        data: {
+          name: name.toString(),
+          email: email.toString(),
+          phoneNumber: phoneNumber.toString(),
+          certificateName: certificateName.toString(),
+          currentPosition: currentPosition.toString(),
+          createdAt: new Date()
+        },
+      })
+      return new Response(JSON.stringify({
+        ok: true,
+        message: "Registration successfully"
+      }))
+
+    } catch (error) {
+      return new Response(JSON.stringify({
+        ok: false,
+        message: error.message
+      }))
+    }
+  }
+  else if (pathname === "/webinarform") {
     return new Response(JSON.stringify({
-      ok: true,
-      message: "Registration successfully"
-    }))
-
-  } catch (error) {
-    return new Response(JSON.stringify({
-      ok: false,
-      message: error.message
+      ok: true
     }))
   }
-}
-  else if (pathname === "/webinarform") {
-  return new Response(JSON.stringify({
-    ok: true
-  }))
-}
 
 }

@@ -39,7 +39,7 @@
             on:click={() => (window.location.href = "/webinarform")}
             variant="ghost"
             class="text-herodesc hover:bg-white hover:text-black rounded-full border-2  border-gray-500 md:px-10 md:py-8 text-base md:text-[20px]"
-            >Internship</Button
+            >Webinar</Button
           >
         </div>
         <div

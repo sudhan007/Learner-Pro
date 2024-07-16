@@ -9,7 +9,7 @@ export async function POST({ request }) {
   const pathname = new URL(request.url).pathname;
   console.log(pathname, "pathname")
 
-  if (pathname === "/internship") {
+  if (pathname === "/webinarform") {
     const data = await request.formData();
 
     const name = data.get("name");

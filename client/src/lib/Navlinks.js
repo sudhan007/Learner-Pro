@@ -8,6 +8,10 @@ const menuLinks = [
         name: "Internship",
         path: "/internship",
     },
+    {
+        name: "Bootcamp",
+        path: "/bootcampform",
+    },
 
 ]
 

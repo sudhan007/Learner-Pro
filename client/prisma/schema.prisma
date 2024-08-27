@@ -28,6 +28,16 @@ model WebinarForm {
   createdAt       DateTime @default(now())
 }
 
+model BootCampForm {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  email           String
+  phoneNumber     String
+  certificateName String
+  currentPosition String
+  createdAt       DateTime @default(now())
+}
+
 model InternshipForm {
   id             String   @id @default(auto()) @map("_id") @db.ObjectId
   name           String

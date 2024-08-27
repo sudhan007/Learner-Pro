@@ -35,11 +35,17 @@
             class="text-herodesc rounded-full md:px-12 md:py-8 text-base md:text-[20px]"
             >Workshop</Button
           >
-          <Button
+          <!-- <Button
             on:click={() => (window.location.href = "/webinarform")}
             variant="ghost"
             class="text-herodesc hover:bg-white hover:text-black rounded-full border-2  border-gray-500 md:px-10 md:py-8 text-base md:text-[20px]"
             >Webinar</Button
+          > -->
+          <Button
+            on:click={() => (window.location.href = "/bootcampform")}
+            variant="ghost"
+            class="text-herodesc hover:bg-white hover:text-black rounded-full border-2  border-gray-500 md:px-10 md:py-8 text-base md:text-[20px]"
+            >Bootcamp</Button
           >
         </div>
         <div

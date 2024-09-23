@@ -39,7 +39,7 @@
             on:click={() => (window.location.href = "/payrollcourse")}
             style="background: linear-gradient(85.8deg, #FF3434 9.11%, rgba(255, 63, 52, 0.848958) 33.86%, rgba(255, 91, 51, 0.616348) 80.97%, rgba(255, 117, 52, 0.41) 127.28%, rgba(255, 125, 52, 0) 162.41%);"
             class="text-herodesc rounded-full md:px-12 md:py-8 text-base md:text-[20px]"
-            >Pay Roll Course</Button
+            >Payroll Course</Button
           >
 
           <!-- <Button

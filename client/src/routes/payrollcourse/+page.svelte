@@ -112,7 +112,7 @@
 </script>
 
 <head>
-  <title>Pay Roll Course</title>
+  <title>Payroll Course</title>
 </head>
 <section
   class="h-[91vh] flex items-center justify-center"
@@ -122,7 +122,7 @@
     class=" px-10 py-10 rounded-2xl w-[600px] container mx-auto bg-[#242424] p-2 shadow-2xl"
   >
     <h2 class="font-publicaz text-herodesc text-center text-4xl">
-      Pay Roll Course
+      Payroll Course
     </h2>
 
     <form class:valid={$isValid} method="POST" on:submit={handleSubmit}>

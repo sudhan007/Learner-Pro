@@ -48,12 +48,12 @@
             class="text-herodesc hover:bg-white hover:text-black rounded-full border-2  border-gray-500 md:px-10 md:py-8 text-base md:text-[20px]"
             >Webinar</Button
           > -->
-          <Button
+          <!-- <Button
             on:click={() => (window.location.href = "/bootcampform")}
             variant="ghost"
             class="text-herodesc hover:bg-white hover:text-black rounded-full border-2  border-gray-500 md:px-10 md:py-8 text-base md:text-[20px]"
             >Bootcamp</Button
-          >
+          > -->
         </div>
         <div
           class="font-publicbold mt-6 flex gap-3 items-center justify-center md:justify-normal md:gap-8 font-medium text-white xl:mt-12"

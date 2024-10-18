@@ -19,8 +19,10 @@
       <div
         class=" font-publicaz mb-4 text-lg md:text-xl lg:text-2xl font-medium leading-relaxed tracking-wider"
       >
-        <p class="">Adhere to our company's dress code for a polished and</p>
-        <p>professional appearance that resonates with our culture.</p>
+        <p>
+          Adhere to our company's dress code for a polished and professional
+          appearance that resonates with our culture.
+        </p>
       </div>
       <div class="mb-4 pt-4">
         <Button

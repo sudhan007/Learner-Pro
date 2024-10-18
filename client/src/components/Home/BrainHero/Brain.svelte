@@ -40,7 +40,7 @@
             class="font-publicaz text-herotext mb-4 px-10 md:px-0 flex items-center gap-4 md:gap-12"
           >
             <div><img src={check} class="h-[40px]" alt="checkMark" /></div>
-            <div class="text-[20px] md:text-[45px]">Digital Litercy</div>
+            <div class="text-[20px] md:text-[45px]">Digital Literacy</div>
           </div>
           <div
             class="font-publicaz text-herotext mb-4 flex items-center px-10 md:px-0 gap-4 md:gap-12"

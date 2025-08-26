@@ -180,7 +180,7 @@
             bind:value={$form.collegeName}
             name="collegeName"
           />
-          <label for="" class="text-base font-inter">College Number</label>
+          <label for="" class="text-base font-inter">College Name</label>
           {#if $errors.collegeName && $touched.collegeName}
             <p class="text-red-500 font-gilroy">{$errors.collegeName}</p>
           {/if}

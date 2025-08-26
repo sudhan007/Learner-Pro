@@ -77,5 +77,6 @@ model WorkshopForm {
   email           String
   phoneNumber     String   @unique
   currentPosition String
+  collegeName     String
   createdAt       DateTime @default(now())
 }

@@ -15,10 +15,11 @@ export async function POST({ request }) {
     const name = data.get("name");
     const email = data.get("email");
     const phoneNumber = data.get("phoneNumber");
+    const collegeName = data.get("collegeName");
     const currentPosition = data.get("currentPosition");
 
 
-    if (!name || !email || !phoneNumber  || !currentPosition) {
+    if (!name || !email || !phoneNumber || !currentPosition || !collegeName) {
       return new Response(
         JSON.stringify({
           failed: true,
@@ -49,6 +50,7 @@ export async function POST({ request }) {
           name: name.toString(),
           email: email.toString(),
           phoneNumber: phoneNumber.toString(),
+          collegeName: collegeName.toString(),
           currentPosition: currentPosition.toString(),
         },
       })

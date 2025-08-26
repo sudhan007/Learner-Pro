@@ -28,6 +28,7 @@
       name: "",
       email: "",
       phoneNumber: "",
+      collegeName: "",
       currentPosition: "",
     },
     validationSchema: yup.object().shape({
@@ -38,6 +39,7 @@
         .required("Phone number is required")
         .min(10, "phone number should be 10")
         .max(10, "phone number should be 10"),
+      collegeName: yup.string().required("College name is required"),
       currentPosition: yup
         .string()
         .required("Current Position is required")
@@ -49,6 +51,7 @@
       _formData.append("name", values.name);
       _formData.append("email", values.email);
       _formData.append("phoneNumber", values.phoneNumber);
+      _formData.append("collegeName", values.collegeName || "");
       _formData.append("currentPosition", values.currentPosition);
 
       try {
@@ -63,6 +66,7 @@
             name: "",
             email: "",
             phoneNumber: "",
+            collegeName: "",
             currentPosition: "student",
           });
           toast(`Registration Successful`, {
@@ -76,6 +80,7 @@
             name: "",
             email: "",
             phoneNumber: "",
+            collegeName: "",
             currentPosition: "student",
           });
           toast(`${response.message}`, {
@@ -91,6 +96,7 @@
           name: "",
           email: "",
           phoneNumber: "",
+          collegeName: "",
           currentPosition: "",
         });
         toast(`${error.response.data.message}`, {
@@ -164,7 +170,22 @@
             <p class="text-red-500 font-gilroy">{$errors.phoneNumber}</p>
           {/if}
         </div>
-        
+
+        <div class="input-group">
+          <input
+            class="font-publicaz w-full py-3 indent-4 md:text-lg"
+            type="text"
+            on:change={handleChange}
+            on:blur={handleChange}
+            bind:value={$form.collegeName}
+            name="collegeName"
+          />
+          <label for="" class="text-base font-inter">College Number</label>
+          {#if $errors.collegeName && $touched.collegeName}
+            <p class="text-red-500 font-gilroy">{$errors.collegeName}</p>
+          {/if}
+        </div>
+
         <div class="">
           <div class="pb-2 px-2">
             <label for="" class="text-base -3 text-white font-inter"

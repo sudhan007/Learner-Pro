@@ -18,10 +18,10 @@ export async function POST({ request }) {
         const fieldofStudy = data.get("fieldofStudy");
         const gender = data.get("gender");
         const classMode = data.get("classMode");
+        const programType = data.get("programType")
 
 
-        console.log(name, collegeName, phoneNumber, email, areaofInterest, fieldofStudy, gender, "sdlkheif")
-        if (!name || !collegeName || !phoneNumber || !email || !areaofInterest || !fieldofStudy || !gender || !classMode) {
+        if (!name || !collegeName || !phoneNumber || !email || !areaofInterest || !fieldofStudy || !gender || !classMode || !programType) {
             return new Response(
                 JSON.stringify({
                     failed: true,
@@ -53,6 +53,7 @@ export async function POST({ request }) {
                 fieldofStudy: fieldofStudy.toString(),
                 gender: gender.toString(),
                 classMode: classMode.toString(),
+                programType: programType.toString()
             },
         })
         return new Response(JSON.stringify({

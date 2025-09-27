@@ -58,6 +58,7 @@ model InternshipForm {
   fieldofStudy   String
   gender         String
   classMode      String
+  programType    String
   createdAt      DateTime @default(now())
 }
 

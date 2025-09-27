@@ -1,24 +1,24 @@
 <script lang="ts">
-  import InternShipHero from "../../components/InternShip/HeroSection/InternShipHero.svelte";
-  import Aboutinternhero from "../../components/InternShip/AboutIntenship/AboutInternHero/Aboutinternhero.svelte";
-  import Aboutintercards from "../../components/InternShip/AboutIntenship/Aboutinterncards/Aboutintercards.svelte";
-  import Elitestudents from "../../components/InternShip/Testimonials/Elitestudents/Elitestudents.svelte";
-  import TestimonialsHero from "../../components/InternShip/Testimonials/TestimonialHero/TestimonialsHero.svelte";
-  import internhero1 from "../../img/Internship/internhero1.webp";
-  import Footer from "../../components/Footer/Footer.svelte";
-  import { createForm } from "svelte-forms-lib";
-  import * as yup from "yup";
-  import { Card } from "$lib/components/ui/card";
-  import Button from "$lib/components/ui/button/button.svelte";
-  import Modal from "./Modal.svelte";
-  import * as RadioGroup from "$lib/components/ui/radio-group";
-  import Label from "$lib/components/ui/label/label.svelte";
-  import InternshipCard from "./InternShipCard";
-  import { toast } from "svelte-sonner";
-  import { afterUpdate, createEventDispatcher } from "svelte";
-  import * as Accordion from "$lib/components/ui/accordion";
-  import InternshipFaq from "./FaqQuestions";
-  import Icon from "@iconify/svelte";
+  import InternShipHero from '../../components/InternShip/HeroSection/InternShipHero.svelte';
+  import Aboutinternhero from '../../components/InternShip/AboutIntenship/AboutInternHero/Aboutinternhero.svelte';
+  import Aboutintercards from '../../components/InternShip/AboutIntenship/Aboutinterncards/Aboutintercards.svelte';
+  import Elitestudents from '../../components/InternShip/Testimonials/Elitestudents/Elitestudents.svelte';
+  import TestimonialsHero from '../../components/InternShip/Testimonials/TestimonialHero/TestimonialsHero.svelte';
+  import internhero1 from '../../img/Internship/internhero1.webp';
+  import Footer from '../../components/Footer/Footer.svelte';
+  import { createForm } from 'svelte-forms-lib';
+  import * as yup from 'yup';
+  import { Card } from '$lib/components/ui/card';
+  import Button from '$lib/components/ui/button/button.svelte';
+  import Modal from './Modal.svelte';
+  import * as RadioGroup from '$lib/components/ui/radio-group';
+  import Label from '$lib/components/ui/label/label.svelte';
+  import InternshipCard from './InternShipCard';
+  import { toast } from 'svelte-sonner';
+  import { afterUpdate, createEventDispatcher } from 'svelte';
+  import * as Accordion from '$lib/components/ui/accordion';
+  import InternshipFaq from './FaqQuestions';
+  import Icon from '@iconify/svelte';
 
   let showModal = false;
 
@@ -33,24 +33,38 @@
 
   const toggleQuestion = (id: string) => {
     isOpen[id] = !isOpen[id];
-    dispatcher("toggle", { id, isOpen: isOpen[id] });
+    dispatcher('toggle', { id, isOpen: isOpen[id] });
   };
 
   function closeModal() {
     showModal = false;
   }
 
-  const Interests = [
-    { value: "python", label: "Python" },
-    { value: "webdevlopement", label: "Web Development" },
-    { value: "ui/uxdesigning", label: "UI/UX Design" },
-    { value: "mbainternship", label: "MBA Internship" },
-    { value: "computervision", label: "Computer Vision" },
-    { value: "reactjs", label: "React JS" },
-    { value: "hr", label: "HR" },
-    { value: "marketing", label: "Marketing" },
-    { value: "hrauditing", label: "HR Auditing" },
+  // Course options
+  const Courses = [
+    { value: 'fullstackdevelopment', label: 'Full Stack Development' },
+    { value: 'dataanalytics', label: 'Data Analytics' },
+    { value: 'flutter', label: 'Flutter' },
+    { value: 'digitalmarketing', label: 'Digital Marketing' },
+    { value: 'humanresource', label: 'Human Resource' },
+    { value: 'ui/ux', label: 'UI/UX' },
   ];
+
+  // Internship options
+  const Internships = [
+    { value: 'python', label: 'Python' },
+    { value: 'reactjs', label: 'React JS' },
+    { value: 'flutter', label: 'Flutter' },
+    { value: 'softwaretesting', label: 'Software Testing' },
+    { value: 'computervision', label: 'Computer Vision' },
+    { value: 'digitalmarketing', label: 'Digital Marketing' },
+    { value: 'humanresource', label: 'Human Resource' },
+    { value: 'dataanalytics', label: 'Data Analytics' },
+  ];
+
+  const allCourseValues = Courses.map((c) => c.value);
+  const allInternshipValues = Internships.map((i) => i.value);
+  const allAreaValues = [...allCourseValues, ...allInternshipValues];
 
   const {
     form,
@@ -62,118 +76,114 @@
     handleSubmit,
   } = createForm({
     initialValues: {
-      name: "",
-      collegeName: "",
-      email: "",
-      fieldofStudy: "",
-      phoneNumber: "",
-      areaofInterest: "",
-      gender: "",
-      classMode: "",
+      name: '',
+      collegeName: '',
+      email: '',
+      fieldofStudy: '',
+      phoneNumber: '',
+      programType: '',
+      areaofInterest: '',
+      gender: '',
+      classMode: '',
     },
     validationSchema: yup.object().shape({
-      name: yup.string().required("Name is required"),
-      collegeName: yup.string().required("College Name is required"),
-      email: yup.string().required("Email is required"),
-      fieldofStudy: yup.string().required("Field of Study is required"),
+      name: yup.string().required('Name is required'),
+      collegeName: yup.string().required('College Name is required'),
+      email: yup.string().required('Email is required'),
+      fieldofStudy: yup.string().required('Field of Study is required'),
       phoneNumber: yup
         .string()
-        .required("Phone Number is required")
-        .min(10, "phone number should be 10")
-        .max(10, "phone number should be 10"),
-      areaofInterest: yup
+        .required('Phone Number is required')
+        .min(10, 'phone number should be 10')
+        .max(10, 'phone number should be 10'),
+      programType: yup
         .string()
-        .required("Area of Interest is required")
-        .oneOf([
-          "python",
-          "webdevlopement",
-          "ui/uxdesigning",
-          "mbainternship",
-          "computervision",
-          "reactjs",
-          "hr",
-          "marketing",
-          "hrauditing",
-        ]),
+        .required('Program Type is required')
+        .oneOf(['course', 'internship']),
+      areaofInterest: yup.string().required('Area of Interest is required'),
       gender: yup
         .string()
-        .required("Gender is required")
-        .oneOf(["male", "female"]),
+        .required('Gender is required')
+        .oneOf(['male', 'female']),
       classMode: yup
         .string()
-        .required("Status is required")
-        .oneOf(["online", "offline"]),
+        .required('Status is required')
+        .oneOf(['online', 'offline']),
     }),
     onSubmit: async (values) => {
+      console.log(values);
       closeModal();
       let _formData = new FormData();
 
-      _formData.append("name", values.name);
-      _formData.append("collegeName", values.collegeName);
-      _formData.append("email", values.email);
-      _formData.append("fieldofStudy", values.fieldofStudy);
-      _formData.append("phoneNumber", values.phoneNumber);
-      _formData.append("areaofInterest", values.areaofInterest);
-      _formData.append("gender", values.gender);
-      _formData.append("classMode", values.classMode);
+      _formData.append('name', values.name);
+      _formData.append('collegeName', values.collegeName);
+      _formData.append('email', values.email);
+      _formData.append('fieldofStudy', values.fieldofStudy);
+      _formData.append('phoneNumber', values.phoneNumber);
+      _formData.append('programType', values.programType);
+      _formData.append('areaofInterest', values.areaofInterest);
+      _formData.append('gender', values.gender);
+      _formData.append('classMode', values.classMode);
       try {
-        let response: any = await fetch("?/", {
-          method: "POST",
+        let response: any = await fetch('?/', {
+          method: 'POST',
           body: _formData,
         });
         response = await response.json();
         if (response.ok === true) {
           form.set({
-            name: "",
-            collegeName: "",
-            email: "",
-            fieldofStudy: "",
-            phoneNumber: "",
-            areaofInterest: "",
-            gender: "",
-            classMode: "",
+            name: '',
+            collegeName: '',
+            email: '',
+            fieldofStudy: '',
+            phoneNumber: '',
+            programType: '',
+            areaofInterest: '',
+            gender: '',
+            classMode: '',
           });
-          // jj
           toast(`Registration Successfully`, {
             duration: 4000,
-            position: "top-center",
+            position: 'top-center',
             style:
               "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
           });
         } else {
           form.set({
-            name: "",
-            collegeName: "",
-            email: "",
-            fieldofStudy: "",
-            phoneNumber: "",
-            areaofInterest: "",
-            gender: "",
-            classMode: "",
+            name: '',
+            collegeName: '',
+            email: '',
+            fieldofStudy: '',
+            phoneNumber: '',
+            programType: '',
+            areaofInterest: '',
+            gender: '',
+            classMode: '',
           });
           toast(`${response.message}`, {
             duration: 4000,
-            position: "top-center",
-            class: "bg-red-500",
+            position: 'top-center',
+            class: 'bg-red-500',
             style:
               "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
           });
         }
       } catch (error: any) {
         form.set({
-          name: "",
-          collegeName: "",
-          email: "",
-          fieldofStudy: "",
-          phoneNumber: "",
-          areaofInterest: "",
-          gender: "",
-          classMode: "",
+          name: '',
+          collegeName: '',
+          email: '',
+          fieldofStudy: '',
+          phoneNumber: '',
+          programType: '',
+          areaofInterest: '',
+          gender: '',
+          classMode: '',
         });
         toast(`${error.response.data.message}`, {
           duration: 4000,
-          position: "top-center",
-          class: "bg-red-500",
+          position: 'top-center',
+          class: 'bg-red-500',
           style:
             "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
         });
@@ -181,31 +191,31 @@
     },
   });
 
-  let query = "";
+  let query = '';
 
   const handleSubmit1 = async (event: any) => {
     event.preventDefault();
     let _formData1 = new FormData();
-    _formData1.append("query", query);
+    _formData1.append('query', query);
     try {
-      let response: any = await fetch("?/faqquery", {
-        method: "POST",
+      let response: any = await fetch('?/faqquery', {
+        method: 'POST',
         body: _formData1,
       });
       response = await response.json();
       if (response.ok === true) {
-        query = "";
+        query = '';
         toast(`Query Submitted`, {
           duration: 4000,
-          position: "top-center",
+          position: 'top-center',
           style:
             "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
         });
       } else {
         toast(`${response.message}`, {
           duration: 4000,
-          position: "top-center",
-          class: "bg-red-500",
+          position: 'top-center',
+          class: 'bg-red-500',
           style:
             "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
         });
@@ -213,13 +223,15 @@
     } catch (error: any) {
       toast(`${error.response.data.message}`, {
         duration: 4000,
-        position: "top-center",
-        class: "bg-red-500",
+        position: 'top-center',
+        class: 'bg-red-500',
         style:
           "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
       });
     }
   };
+
+  // Reset area of interest when program type changes
 </script>
 
 <title>InternShip</title>
@@ -375,6 +387,8 @@
           </div>
         </RadioGroup.Root>
 
+        <!-- Program Type Selection -->
+
         <div
           class=" grid grid-cols-1 md:grid-cols-2 md:gap-x-8 gap-y-0 md:pt-5"
         >
@@ -454,23 +468,7 @@
               >
             {/if}
           </div>
-          <div class="input-group">
-            <select
-              class="font-publicaz w-full py-3 bg-black text-white indent-4 outline-none bg- md:text-lg"
-              name="areaofInterest"
-              on:change={handleChange}
-              on:blur={handleChange}
-            >
-              <option class="bg-black" value="">Area of Interest</option>
-              {#each Interests as item}
-                <option class="bg-black" value={item.value}>{item.label}</option
-                >
-              {/each}
-            </select>
-            {#if $errors.areaofInterest && $touched.areaofInterest}
-              <p class="text-red-500 font-gilroy">{$errors.areaofInterest}</p>
-            {/if}
-          </div>
+
           <div class="input-group gender border border-white">
             <h1
               class="border inline relative -top-3 left-1 text-base bg-[#111111] font-inter"
@@ -514,6 +512,61 @@
                 <p class="text-red-500 font-gilroy">{$errors.gender}</p>
               {/if}
             </div>
+          </div>
+
+          <div class="input-group">
+            <select
+              class="font-publicaz w-full py-3 bg-black text-white indent-4 outline-none bg- md:text-lg"
+              name="programType"
+              on:change={handleChange}
+              on:blur={handleChange}
+              bind:value={$form.programType}
+            >
+              <option class="bg-black" value="">Select Program Type</option>
+              <option class="bg-black" value="course">Course</option>
+              <option class="bg-black" value="internship">Internship</option>
+            </select>
+            {#if $errors.programType && $touched.programType}
+              <small class="text-red-500 font-gilroy"
+                >Program Type is required</small
+              >
+            {/if}
+          </div>
+
+          <div class="input-group">
+            <select
+              class="font-publicaz w-full py-3 bg-black text-white indent-4 outline-none bg- md:text-lg"
+              name="areaofInterest"
+              on:change={handleChange}
+              on:blur={handleChange}
+              disabled={!$form.programType}
+            >
+              <option class="bg-black" value="">
+                {$form.programType === 'course'
+                  ? 'Select Course'
+                  : $form.programType === 'internship'
+                    ? 'Select Internship'
+                    : 'Select Program Type '}
+              </option>
+              {#if $form.programType === 'course'}
+                {#each Courses as item}
+                  <option class="bg-black" value={item.value}
+                    >{item.label}</option
+                  >
+                {/each}
+              {:else if $form.programType === 'internship'}
+                {#each Internships as item}
+                  <option class="bg-black" value={item.value}
+                    >{item.label}</option
+                  >
+                {/each}
+              {/if}
+            </select>
+            {#if $errors.areaofInterest && $touched.areaofInterest}
+              <p class="text-red-500 font-gilroy">
+                Please select a valid option
+              </p>
+            {/if}
           </div>
         </div>
 

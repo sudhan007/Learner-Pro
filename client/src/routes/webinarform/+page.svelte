@@ -1,16 +1,16 @@
 <script lang="ts">
-  import Button from "$lib/components/ui/button/button.svelte";
-  import { createForm } from "svelte-forms-lib";
-  import * as yup from "yup";
-  import { toast } from "svelte-sonner";
+  import Button from '$lib/components/ui/button/button.svelte';
+  import { createForm } from 'svelte-forms-lib';
+  import * as yup from 'yup';
+  import { toast } from 'svelte-sonner';
 
-  let gradientColor1 = "#424242";
-  let gradientColor2 = "#353535";
+  let gradientColor1 = '#424242';
+  let gradientColor2 = '#353535';
 
   const positions = [
-    { value: "workingprofessional", label: "Working Professional" },
-    { value: "lookingforcareer", label: "Looking For Career" },
-    { value: "student", label: "Student" },
+    { value: 'workingprofessional', label: 'Working Professional' },
+    { value: 'lookingforcareer', label: 'Looking For Career' },
+    { value: 'student', label: 'Student' },
   ];
 
   const {
@@ -25,84 +25,91 @@
     handleReset,
   } = createForm({
     initialValues: {
-      name: "",
-      email: "",
-      phoneNumber: "",
-      certificateName: "",
-      currentPosition: "",
+      name: '',
+      email: '',
+      phoneNumber: '',
+      certificateName: '',
+      currentPosition: '',
     },
     validationSchema: yup.object().shape({
-      name: yup.string().required("Name is required"),
-      email: yup.string().required("Email is required").email("Invalid email"),
+      name: yup.string().required('Name is required'),
+      email: yup.string().required('Email is required').email('Invalid email'),
       phoneNumber: yup
         .string()
-        .required("Phone number is required")
-        .min(10, "phone number should be 10")
-        .max(10, "phone number should be 10"),
-      certificateName: yup.string().required("Certificate Name is required"),
+        .required('Phone number is required')
+        .min(10, 'phone number should be 10')
+        .max(10, 'phone number should be 10'),
+      certificateName: yup.string().required('Certificate Name is required'),
       currentPosition: yup
         .string()
-        .required("Current Position is required")
-        .oneOf(["workingprofessional", "lookingforcareer", "student"]),
+        .required('Current Position is required')
+        .oneOf(['workingprofessional', 'lookingforcareer', 'student']),
     }),
     onSubmit: async (values) => {
       let _formData = new FormData();
 
-      _formData.append("name", values.name);
-      _formData.append("email", values.email);
-      _formData.append("phoneNumber", values.phoneNumber);
-      _formData.append("certificateName", values.certificateName);
-      _formData.append("currentPosition", values.currentPosition);
+      _formData.append('name', values.name);
+      _formData.append('email', values.email);
+      _formData.append('phoneNumber', values.phoneNumber);
+      _formData.append('certificateName', values.certificateName);
+      _formData.append('currentPosition', values.currentPosition);
 
       try {
-        let response: any = await fetch("?/", {
-          method: "POST",
+        let response: any = await fetch('?/', {
+          method: 'POST',
           body: _formData,
         });
 
         response = await response.json();
         if (response.ok === true) {
           form.set({
-            name: "",
-            email: "",
-            phoneNumber: "",
-            certificateName: "",
-            currentPosition: "student",
+            name: '',
+            email: '',
+            phoneNumber: '',
+            certificateName: '',
+            currentPosition: 'student',
           });
+
           toast(`Registration Successful`, {
             duration: 4000,
-            position: "top-center",
+            position: 'top-center',
             style:
               "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
           });
+          const whatsappGroupLink =
+            'https://chat.whatsapp.com/C6uXDw6n3hV3l7HMwYCA3J?mode=wwc';
+
+          setTimeout(() => {
+            window.location.href = whatsappGroupLink;
+          }, 50);
         } else {
           form.set({
-            name: "",
-            email: "",
-            phoneNumber: "",
-            certificateName: "",
-            currentPosition: "student",
+            name: '',
+            email: '',
+            phoneNumber: '',
+            certificateName: '',
+            currentPosition: 'student',
           });
           toast(`${response.message}`, {
             duration: 4000,
-            position: "top-center",
-            class: "bg-red-500",
+            position: 'top-center',
+            class: 'bg-red-500',
             style:
               "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
           });
         }
       } catch (error: any) {
         form.set({
-          name: "",
-          email: "",
-          phoneNumber: "",
-          certificateName: "",
-          currentPosition: "",
+          name: '',
+          email: '',
+          phoneNumber: '',
+          certificateName: '',
+          currentPosition: '',
         });
         toast(`${error.response.data.message}`, {
           duration: 4000,
-          position: "top-center",
-          class: "bg-red-500",
+          position: 'top-center',
+          class: 'bg-red-500',
           style:
             "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
         });

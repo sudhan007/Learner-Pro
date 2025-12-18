@@ -148,7 +148,7 @@
         <li class="border-r border-[#626381] px-4"><a href="/contact_us">Contact Us</a></li> 
         <li class="border-r border-[#626381] px-4"><a href="/privacy_policy">Privacy Policy</a></li>
         <li class="border-r border-[#626381] px-4"><a href="/terms_and_conditions">Terms & Conditions</a></li>
-        <li class=" border-[#626381] px-4"><a href="/cancel_policy">Cancel Policy</a></li>
+        <li class=" border-[#626381] px-4"><a href="/cancel_policy">Cancellation & Refund Policy</a></li>
       </ul>
     </div>
     <div

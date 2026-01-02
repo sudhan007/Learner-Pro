@@ -145,9 +145,10 @@
       <ul
         class="font-publicaz flex items-center justify-center text-xs md:text-xl text-[#B9B9B9]"
       >
-        <li class="border-r border-[#626381] px-4">Careers</li>
-        <li class="border-r border-[#626381] px-4">Privacy Policy</li>
-        <li class=" border-[#626381] px-4">Terms & Conditions</li>
+        <li class="border-r border-[#626381] px-4"><a href="/contact_us">Contact Us</a></li> 
+        <li class="border-r border-[#626381] px-4"><a href="/privacy_policy">Privacy Policy</a></li>
+        <li class="border-r border-[#626381] px-4"><a href="/terms_and_conditions">Terms & Conditions</a></li>
+        <li class=" border-[#626381] px-4"><a href="/cancel_policy">Cancellation & Refund Policy</a></li>
       </ul>
     </div>
     <div

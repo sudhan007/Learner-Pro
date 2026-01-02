@@ -1,10 +1,10 @@
 <script lang="ts">
   import * as Avatar from "$lib/components/ui/avatar";
-  import Button from "$lib/components/ui/button/button.svelte";
-  import hero1 from "../../../img/Home/hero1.webp";
+  import Button from "$lib/components/ui/button/button.svelte"; 
   import { createForm } from 'svelte-forms-lib';
   import * as yup from 'yup';
   import { toast } from 'svelte-sonner';
+   import Footer from '../../components/Footer/Footer.svelte';
 
   interface Course {
     id: number;
@@ -72,6 +72,149 @@
       duration: "8 Months",
       modules: ["Python & Pandas", "Data Visualization", "Statistics & Probability", "Machine Learning", "Deep Learning", "Big Data Analytics"],
     },
+    {
+      id: 5,
+      title: "Python Programming",
+      description:
+        "Learn Python from scratch and become proficient in one of the most popular programming languages.",
+      shortDesc: "Python Programming",
+      price: "₹12000/-",
+      icon: "🐍",
+      color: "from-yellow-500 to-orange-500",
+      fullDescription: "Master Python programming with hands-on projects. Learn variables, functions, OOP, file handling, and build real-world applications.",
+      duration: "3 Months",
+      modules: ["Python Basics", "Data Types & Variables", "Functions & Modules", "Object-Oriented Programming", "File Handling", "Mini Projects"],
+    },
+    {
+      id: 6,
+      title: "React JS Advanced",
+      description:
+        "Deep dive into React with hooks, context API, and state management patterns for production-ready applications.",
+      shortDesc: "React JS Advanced",
+      price: "₹18000/-",
+      icon: "⚛️",
+      color: "from-cyan-500 to-blue-500",
+      fullDescription: "Advanced React concepts including hooks, Redux, context API, performance optimization, and testing strategies.",
+      duration: "4 Months",
+      modules: ["React Hooks", "State Management with Redux", "Context API", "Performance Optimization", "Testing", "Production Deployment"],
+    },
+    {
+      id: 7,
+      title: "UI/UX Design",
+      description:
+        "Master the principles of user interface and user experience design. Create beautiful and functional designs.",
+      shortDesc: "UI/UX Design",
+      price: "₹16000/-",
+      icon: "🎭",
+      color: "from-pink-500 to-rose-500",
+      fullDescription: "Learn design principles, wireframing, prototyping, and user research. Master Figma and design tools for professional projects.",
+      duration: "3 Months",
+      modules: ["Design Principles", "User Research", "Wireframing", "Prototyping in Figma", "Visual Design", "Design Systems"],
+    },
+    {
+      id: 8,
+      title: "Java Programming",
+      description:
+        "Learn object-oriented programming with Java and build enterprise-level applications with Spring Boot.",
+      shortDesc: "Java Programming",
+      price: "₹20000/-",
+      icon: "☕",
+      color: "from-orange-600 to-red-600",
+      fullDescription: "Master Java fundamentals, OOP concepts, collections, exception handling, and Spring Boot framework.",
+      duration: "5 Months",
+      modules: ["Java Basics", "OOP Concepts", "Collections Framework", "Exception Handling", "Spring Boot", "Project Development"],
+    },
+    {
+      id: 9,
+      title: "Digital Marketing",
+      description:
+        "Learn SEO, social media marketing, email marketing, and content strategy to grow your online presence.",
+      shortDesc: "Digital Marketing",
+      price: "₹14000/-",
+      icon: "📱",
+      color: "from-indigo-500 to-purple-500",
+      fullDescription: "Complete digital marketing course covering SEO, SEM, social media, email marketing, analytics, and marketing automation.",
+      duration: "3 Months",
+      modules: ["SEO Fundamentals", "Google Ads & SEM", "Social Media Marketing", "Email Marketing", "Analytics & Reporting", "Marketing Strategy"],
+    },
+    {
+      id: 10,
+      title: "DevOps & Cloud",
+      description:
+        "Master Docker, Kubernetes, AWS, and CI/CD pipelines for modern cloud-based deployments.",
+      shortDesc: "DevOps & Cloud",
+      price: "₹35000/-",
+      icon: "☁️",
+      color: "from-blue-600 to-cyan-600",
+      fullDescription: "Learn containerization with Docker, orchestration with Kubernetes, AWS cloud services, and CI/CD automation.",
+      duration: "4 Months",
+      modules: ["Docker Basics", "Kubernetes Orchestration", "AWS Services", "CI/CD Pipelines", "Infrastructure as Code", "Monitoring & Logging"],
+    },
+    {
+      id: 11,
+      title: "Data Analytics",
+      description:
+        "Analyze data using Python, SQL, and Tableau. Transform raw data into actionable business insights.",
+      shortDesc: "Data Analytics",
+      price: "₹22000/-",
+      icon: "📈",
+      color: "from-green-500 to-teal-500",
+      fullDescription: "Learn SQL, Python for data analysis, data visualization with Tableau, and statistical analysis for business decisions.",
+      duration: "4 Months",
+      modules: ["SQL Fundamentals", "Python Data Analysis", "Data Visualization with Tableau", "Statistical Analysis", "Business Intelligence", "Real Projects"],
+    },
+    {
+      id: 12,
+      title: "Mobile App Development",
+      description:
+        "Build cross-platform mobile apps with Flutter and React Native for iOS and Android platforms.",
+      shortDesc: "Mobile App Development",
+      price: "₹28000/-",
+      icon: "📲",
+      color: "from-purple-600 to-pink-600",
+      fullDescription: "Master Flutter and React Native frameworks to build beautiful, performant mobile applications for both platforms.",
+      duration: "5 Months",
+      modules: ["Flutter Basics", "State Management", "Firebase Integration", "API Integration", "Publishing Apps", "Advanced Features"],
+    },
+    {
+      id: 13,
+      title: "Cybersecurity Basics",
+      description:
+        "Learn cybersecurity fundamentals, network security, ethical hacking, and protection against cyber threats.",
+      shortDesc: "Cybersecurity Basics",
+      price: "₹26000/-",
+      icon: "🔐",
+      color: "from-red-500 to-red-600",
+      fullDescription: "Master network security, encryption, vulnerability assessment, and ethical hacking principles for secure systems.",
+      duration: "4 Months",
+      modules: ["Network Security", "Encryption & Cryptography", "Ethical Hacking", "Vulnerability Assessment", "Penetration Testing", "Security Best Practices"],
+    },
+    {
+      id: 14,
+      title: "Web Design with CSS",
+      description:
+        "Learn modern CSS techniques, responsive design, animations, and create visually stunning websites.",
+      shortDesc: "Web Design with CSS",
+      price: "₹11000/-",
+      icon: "🎨",
+      color: "from-yellow-500 to-pink-500",
+      fullDescription: "Master CSS3, Flexbox, Grid, animations, and responsive design patterns for modern web applications.",
+      duration: "2 Months",
+      modules: ["CSS Fundamentals", "Flexbox & Grid", "Responsive Design", "CSS Animations", "Sass/SCSS", "Best Practices"],
+    },
+    {
+      id: 15,
+      title: "Database Management",
+      description:
+        "Learn SQL, NoSQL databases, MongoDB, and PostgreSQL. Design and manage scalable databases.",
+      shortDesc: "Database Management",
+      price: "₹19000/-",
+      icon: "🗄️",
+      color: "from-slate-500 to-gray-500",
+      fullDescription: "Master relational and non-relational databases, SQL queries, indexing, and database optimization techniques.",
+      duration: "3 Months",
+      modules: ["SQL Fundamentals", "Database Design", "MongoDB & NoSQL", "PostgreSQL Advanced", "Indexing & Optimization", "Backup & Recovery"],
+    },
   ];
 
   let selectedCourse: Course | null = null;
@@ -115,18 +258,6 @@
       _formData.append('phoneNumber', values.phoneNumber);
       _formData.append('gender', values.gender);
       _formData.append('courseId', values.courseId);
-
-
-       toast('🎉 Enrollment Successful! Welcome to the course!', {
-            duration: 4000,
-            position: 'top-center',
-            style:
-              "border-radius: 20px; background: #22c55e; color: white; font-size: 17px; font-family: 'PublicaSans', sans-serif;",
-          });
-
-          return
-
-
 
       try {
         let response: any = await fetch('?/enrollCourse', {
@@ -188,124 +319,14 @@
     }
     showEnrollForm = true;
   }
-</script>
-
-<div class="hero min-h-screen overflow-x-hidden">
-  <div class="pt-10">
-    <div class="flex flex-col items-center justify-between lg:flex-row">
-      <div class=" px-10 md:px-20 lg:w-1/2 xl:px-36">
-        <div class="text-center md:text-left">
-          <h1
-            class="font-publicaz text-herotext text-nowrap text-[30px] leading-tight tracking-wider md:text-[50px] xl:text-[65px]"
-          >
-            <span class="text-[35px] md:text-[55px] xl:text-[75px]"
-              >Keep Learning</span
-            > <br /> On LearnerPro
-          </h1>
-          <p
-            class="font-publicaz text-herodesc mt-3 text-wrap text-xs md:text-[17px] font-medium md:leading-loose xl:text-[20px]"
-          >
-            Elevate Your Knowledge Through the Gateway of Technical Questions <br
-            />
-            Illuminate the Path of Understanding with Questions that Spark the Light
-            of Knowledge
-          </p>
-        </div>
-        <div
-          class="font-publicamedium mt-5 flex flex-wrap w-full justify-center md:justify-normal gap-3 md:gap-8 font-semibold md:mt-12"
-        >
-          <Button
-            on:click={() => (window.location.href = "/webinarform")}
-            style="background: linear-gradient(85.8deg, #FF3434 9.11%, rgba(255, 63, 52, 0.848958) 33.86%, rgba(255, 91, 51, 0.616348) 80.97%, rgba(255, 117, 52, 0.41) 127.28%, rgba(255, 125, 52, 0) 162.41%);"
-            class="text-herodesc rounded-full md:px-12 md:py-8 text-base md:text-[20px]"
-            >Webinar</Button
-          >
-          <Button
-            on:click={() => (window.location.href = "/payrollcourse")}
-            style="background: linear-gradient(85.8deg, #FF3434 9.11%, rgba(255, 63, 52, 0.848958) 33.86%, rgba(255, 91, 51, 0.616348) 80.97%, rgba(255, 117, 52, 0.41) 127.28%, rgba(255, 125, 52, 0) 162.41%);"
-            class="text-herodesc rounded-full md:px-12 md:py-8 text-base md:text-[20px]"
-            >Payroll Course</Button
-          >
-        </div>
-        <div
-          class="font-publicbold mt-6 flex gap-3 items-center justify-center md:justify-normal md:gap-8 font-medium text-white xl:mt-12"
-        >
-          <div class=" md:mr-8">
-            <h3
-              class="text-herocount mb-2 text-lg md:text-[25px] font-bold xl:text-[40px]"
-            >
-              10000+
-            </h3>
-            <p class=" text-xs md:text-[17px] leading-snug xl:text-[20px]">
-              Happy <br /> Students
-            </p>
-          </div>
-          <div class=" md:mr-8">
-            <h3
-              class="text-herocount mb-2 text-lg md:text-[25px] font-bold xl:text-[40px]"
-            >
-              5000+
-            </h3>
-            <p class="text-xs md:text-[17px] leading-snug xl:text-[20px]">
-              Students <br />Trained
-            </p>
-          </div>
-          <div class=" md:mr-8">
-            <h3
-              class="text-herocount mb-2 text-lg md:text-[25px] font-bold xl:text-[40px]"
-            >
-              400+
-            </h3>
-            <p class="text-xs md:text-[17px] xl:text-[20px] leading-snug">
-              Expert<br />Mentors
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="mt-12 flex h-full lg:mt-0 lg:w-1/2">
-        <img
-          alt="LearnerPro Illustration"
-          style="height: 100%; width: 100%;"
-          class="h-full"
-          src={hero1}
-        />
-      </div>
-    </div>
-  </div>
-
-  <div
-    class="font-publicaz mt-5 mb-2 flex flex-wrap items-center justify-center text-white"
-  >
-    <div class="flex items-center justify-center">
-      <p class="mr-4 text-3xl md:text-7xl font-bold">1.2K</p>
-      <div class="flex gap-4 border-r border-gray-500 py-2 pr-5">
-        <span class="text-2xl font-bold">+</span>
-        <span class="text-xl">Learners</span>
-      </div>
-    </div>
-    <div class="ml-4 flex -space-x-2 text-white">
-      <Avatar.Root>
-        <Avatar.Image src="https://github.com/shadcn.png" alt="@learner1" />
-        <Avatar.Fallback>CN</Avatar.Fallback>
-      </Avatar.Root>
-      <Avatar.Root>
-        <Avatar.Image src="https://github.com/shadcn.png" alt="@learner2" />
-        <Avatar.Fallback>CN</Avatar.Fallback>
-      </Avatar.Root>
-      <Avatar.Root>
-        <Avatar.Image src="https://github.com/shadcn.png" alt="@learner3" />
-        <Avatar.Fallback>CN</Avatar.Fallback>
-      </Avatar.Root>
-    </div>
-  </div>
-</div>
+</script> 
 
 <div class="py-20 px-4 md:px-8 lg:px-16 bg-gray-900">
   <div class="max-w-7xl mx-auto">
     <!-- Section Header -->
     <div class="text-center mb-16">
       <h2 class="font-publicaz text-4xl md:text-5xl font-bold text-white mb-4">
-        Popular Learning Courses
+        All Courses
       </h2>
       <p class="text-gray-400 text-lg max-w-2xl mx-auto">
         Choose from our comprehensive range of industry-leading courses designed
@@ -365,12 +386,11 @@
         Not sure which course is right for you?
       </p>
       <Button
-       
+        on:click={() => (window.location.href = "/course-counseling")}
         variant="ghost"
         class="text-white border-2 border-white hover:bg-white hover:text-gray-900 rounded-full px-12 py-3 font-bold transition-all duration-300"
       >
-      <a href={'/internship'}> Get Free Course Counseling</a>
-        
+        Get Free Course Counseling
       </Button>
     </div>
   </div>
@@ -552,6 +572,8 @@
     </div>
   </div>
 {/if}
+
+<Footer />
 
 <style>
   .hero {

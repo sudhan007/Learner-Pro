@@ -77,7 +77,7 @@
               "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
           });
           const whatsappGroupLink =
-            'https://chat.whatsapp.com/G7remI1EfROBCDMSKif6jt';
+            'https://chat.whatsapp.com/BpAHdyvvSUS89PWZMFBC0M?mode=gi_c';
 
           setTimeout(() => {
             window.location.href = whatsappGroupLink;

@@ -26,85 +26,20 @@
       description:
         "Master frontend and backend technologies to build complete web applications. Learn React, Node.js, and databases.",
       shortDesc: "Full Stack Developer",
-      price: "₹30000/-",
+      price: "₹27000/-",
       icon: "💻",
       color: "from-blue-500 to-cyan-500",
       fullDescription: "Become a complete web developer with expertise in both frontend and backend technologies. This comprehensive course covers HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and database management.",
       duration: "6 Months",
       modules: ["HTML & CSS Fundamentals", "JavaScript Advanced", "React JS Mastery", "Node.js & Express", "MongoDB & Databases", "Project Development"],
     },
-    {
+     {
       id: 2,
-      title: "Machine Learning",
-      description:
-        "Build intelligent systems with Python and AI. Explore neural networks, classification, and data science fundamentals.",
-      shortDesc: "Machine Learning",
-      price: "₹25000/-",
-      icon: "🤖",
-      color: "from-purple-500 to-pink-500",
-      fullDescription: "Master machine learning concepts and build intelligent systems. Learn Python, TensorFlow, scikit-learn, neural networks, and advanced AI algorithms.",
-      duration: "4 Months",
-      modules: ["Python for ML", "Data Preprocessing", "Supervised Learning", "Unsupervised Learning", "Neural Networks", "Real-world Projects"],
-    },
-    {
-      id: 3,
-      title: "Front End Developer",
-      description:
-        "Create stunning user interfaces with HTML, CSS, and JavaScript. Master React and modern UI frameworks.",
-      shortDesc: "Front End Developer",
-      price: "₹15000/-",
-      icon: "🎨",
-      color: "from-orange-500 to-red-500",
-      fullDescription: "Create beautiful and responsive user interfaces. Learn HTML5, CSS3, JavaScript, React, UI/UX principles, and modern frontend tools.",
-      duration: "3 Months",
-      modules: ["HTML & CSS", "JavaScript Basics", "React Fundamentals", "State Management", "UI Design Principles", "Responsive Design"],
-    },
-    {
-      id: 4,
-      title: "AI & Data Science",
-      description:
-        "Transform raw data into actionable insights. Learn Python, TensorFlow, and advanced analytics techniques.",
-      shortDesc: "AI & Data Science",
-      price: "₹60000/-",
-      icon: "📊",
-      color: "from-green-500 to-emerald-500",
-      fullDescription: "Deep dive into artificial intelligence and data science. Learn data analysis, visualization, machine learning, deep learning, and business intelligence.",
-      duration: "8 Months",
-      modules: ["Python & Pandas", "Data Visualization", "Statistics & Probability", "Machine Learning", "Deep Learning", "Big Data Analytics"],
-    },
-    {
-      id: 5,
-      title: "Python Programming",
-      description:
-        "Learn Python from scratch and become proficient in one of the most popular programming languages.",
-      shortDesc: "Python Programming",
-      price: "₹12000/-",
-      icon: "🐍",
-      color: "from-yellow-500 to-orange-500",
-      fullDescription: "Master Python programming with hands-on projects. Learn variables, functions, OOP, file handling, and build real-world applications.",
-      duration: "3 Months",
-      modules: ["Python Basics", "Data Types & Variables", "Functions & Modules", "Object-Oriented Programming", "File Handling", "Mini Projects"],
-    },
-    {
-      id: 6,
-      title: "React JS Advanced",
-      description:
-        "Deep dive into React with hooks, context API, and state management patterns for production-ready applications.",
-      shortDesc: "React JS Advanced",
-      price: "₹18000/-",
-      icon: "⚛️",
-      color: "from-cyan-500 to-blue-500",
-      fullDescription: "Advanced React concepts including hooks, Redux, context API, performance optimization, and testing strategies.",
-      duration: "4 Months",
-      modules: ["React Hooks", "State Management with Redux", "Context API", "Performance Optimization", "Testing", "Production Deployment"],
-    },
-    {
-      id: 7,
       title: "UI/UX Design",
       description:
         "Master the principles of user interface and user experience design. Create beautiful and functional designs.",
       shortDesc: "UI/UX Design",
-      price: "₹16000/-",
+      price: "₹27000/-",
       icon: "🎭",
       color: "from-pink-500 to-rose-500",
       fullDescription: "Learn design principles, wireframing, prototyping, and user research. Master Figma and design tools for professional projects.",
@@ -112,51 +47,118 @@
       modules: ["Design Principles", "User Research", "Wireframing", "Prototyping in Figma", "Visual Design", "Design Systems"],
     },
     {
-      id: 8,
-      title: "Java Programming",
+      id: 3,
+      title: "Python Programming",
       description:
-        "Learn object-oriented programming with Java and build enterprise-level applications with Spring Boot.",
-      shortDesc: "Java Programming",
-      price: "₹20000/-",
-      icon: "☕",
-      color: "from-orange-600 to-red-600",
-      fullDescription: "Master Java fundamentals, OOP concepts, collections, exception handling, and Spring Boot framework.",
-      duration: "5 Months",
-      modules: ["Java Basics", "OOP Concepts", "Collections Framework", "Exception Handling", "Spring Boot", "Project Development"],
+        "Learn Python from scratch and become proficient in one of the most popular programming languages.",
+      shortDesc: "Python Programming",
+      price: "₹23000/-",
+      icon: "🐍",
+      color: "from-yellow-500 to-orange-500",
+      fullDescription: "Master Python programming with hands-on projects. Learn variables, functions, OOP, file handling, and build real-world applications.",
+      duration: "3 Months",
+      modules: ["Python Basics", "Data Types & Variables", "Functions & Modules", "Object-Oriented Programming", "File Handling", "Mini Projects"],
     },
     {
-      id: 9,
+      id: 4,
       title: "Digital Marketing",
       description:
         "Learn SEO, social media marketing, email marketing, and content strategy to grow your online presence.",
       shortDesc: "Digital Marketing",
-      price: "₹14000/-",
+      price: "₹23000/-",
       icon: "📱",
       color: "from-indigo-500 to-purple-500",
       fullDescription: "Complete digital marketing course covering SEO, SEM, social media, email marketing, analytics, and marketing automation.",
       duration: "3 Months",
       modules: ["SEO Fundamentals", "Google Ads & SEM", "Social Media Marketing", "Email Marketing", "Analytics & Reporting", "Marketing Strategy"],
     },
+   {
+  id: 5,
+  title: "Business Analyst",
+  description: "Master data-driven decision making, requirement gathering, and stakeholder communication to drive business success.",
+  shortDesc: "Business Analyst",
+  price: "₹20000/-",
+  icon: "📊",
+  color: "from-amber-500 to-orange-500",
+  fullDescription: "Become a skilled Business Analyst capable of bridging the gap between business needs and technical solutions. This course covers business process modeling, requirement analysis, data analysis using Excel & SQL, stakeholder management, Agile & Scrum methodologies, and delivering impactful business insights.",
+  duration: "4 Months",
+  modules: [
+    "Business Process Modeling",
+    "Requirement Gathering & Analysis",
+    "Data Analysis with Excel & SQL",
+    "Stakeholder Management",
+    "Agile & Scrum Methodologies",
+    "Case Studies & Project Work"
+  ]
+},
+{
+  id: 6,
+  title: "Human Resource Management",
+  description: "Master HR strategies, talent acquisition, employee engagement, and workforce planning to build high-performing organizations.",
+  shortDesc: "Human Resource Management",
+  price: "₹23000/-",
+  icon: "🧑‍💼",
+  color: "from-purple-500 to-pink-500",
+  fullDescription: "Become a professional HR Manager equipped with the skills to manage the complete employee lifecycle. This course covers talent acquisition, onboarding, payroll management, performance appraisal, labor laws, employee engagement strategies, and HR analytics.",
+  duration: "4 Months",
+  modules: [
+    "HR Fundamentals & Strategy",
+    "Talent Acquisition & Recruitment",
+    "Onboarding & Employee Engagement",
+    "Payroll & Compensation Management",
+    "Performance Appraisal Systems",
+    "Labor Laws & Compliance",
+    "HR Analytics & Reporting"
+  ]
+},
+{
+  id: 7,
+  title: "Software Testing",
+  description: "Master manual and automation testing techniques to ensure software quality, reliability, and performance.",
+  shortDesc: "Software Testing",
+  price: "₹23000/-",
+  icon: "🧪",
+  color: "from-green-500 to-teal-500",
+  fullDescription: "Become a certified Software Testing professional with expertise in both manual and automation testing. This course covers software testing life cycle, test case design, bug tracking, Selenium automation, API testing, performance testing, and Agile testing methodologies.",
+  duration: "4 Months",
+  modules: [
+    "Software Testing Fundamentals",
+    "Test Case Design & Planning",
+    "Manual Testing Techniques",
+    "Selenium Automation Testing",
+    "API Testing with Postman",
+    "Performance Testing with JMeter",
+    "Agile Testing & Bug Tracking"
+  ]
+},
+{
+  id: 8,
+  title: "Computer Vision with AI",
+  description: "Master image processing, deep learning, and AI-powered visual recognition to build intelligent computer vision applications.",
+  shortDesc: "Computer Vision with AI",
+  price: "₹27000/-",
+  icon: "👁️",
+  color: "from-violet-500 to-indigo-500",
+  fullDescription: "Become an AI-powered Computer Vision expert capable of building intelligent visual systems. This course covers image processing, convolutional neural networks, object detection, face recognition, image segmentation, OpenCV, TensorFlow, and real-world AI vision project development.",
+  duration: "5 Months",
+  modules: [
+    "Image Processing Fundamentals",
+    "Python & OpenCV Basics",
+    "Deep Learning & Neural Networks",
+    "Convolutional Neural Networks (CNN)",
+    "Object Detection & Recognition",
+    "Face Recognition & Tracking",
+    "Image Segmentation Techniques",
+    "Real-World CV Project Development"
+  ]
+},
     {
-      id: 10,
-      title: "DevOps & Cloud",
-      description:
-        "Master Docker, Kubernetes, AWS, and CI/CD pipelines for modern cloud-based deployments.",
-      shortDesc: "DevOps & Cloud",
-      price: "₹35000/-",
-      icon: "☁️",
-      color: "from-blue-600 to-cyan-600",
-      fullDescription: "Learn containerization with Docker, orchestration with Kubernetes, AWS cloud services, and CI/CD automation.",
-      duration: "4 Months",
-      modules: ["Docker Basics", "Kubernetes Orchestration", "AWS Services", "CI/CD Pipelines", "Infrastructure as Code", "Monitoring & Logging"],
-    },
-    {
-      id: 11,
+      id: 9,
       title: "Data Analytics",
       description:
         "Analyze data using Python, SQL, and Tableau. Transform raw data into actionable business insights.",
       shortDesc: "Data Analytics",
-      price: "₹22000/-",
+      price: "₹27000/-",
       icon: "📈",
       color: "from-green-500 to-teal-500",
       fullDescription: "Learn SQL, Python for data analysis, data visualization with Tableau, and statistical analysis for business decisions.",
@@ -164,51 +166,26 @@
       modules: ["SQL Fundamentals", "Python Data Analysis", "Data Visualization with Tableau", "Statistical Analysis", "Business Intelligence", "Real Projects"],
     },
     {
-      id: 12,
-      title: "Mobile App Development",
+      id: 10,
+      title: "App Development with Flutter",
       description:
         "Build cross-platform mobile apps with Flutter and React Native for iOS and Android platforms.",
       shortDesc: "Mobile App Development",
-      price: "₹28000/-",
+      price: "₹27000/-",
       icon: "📲",
       color: "from-purple-600 to-pink-600",
       fullDescription: "Master Flutter and React Native frameworks to build beautiful, performant mobile applications for both platforms.",
       duration: "5 Months",
       modules: ["Flutter Basics", "State Management", "Firebase Integration", "API Integration", "Publishing Apps", "Advanced Features"],
     },
-    {
-      id: 13,
-      title: "Cybersecurity Basics",
-      description:
-        "Learn cybersecurity fundamentals, network security, ethical hacking, and protection against cyber threats.",
-      shortDesc: "Cybersecurity Basics",
-      price: "₹26000/-",
-      icon: "🔐",
-      color: "from-red-500 to-red-600",
-      fullDescription: "Master network security, encryption, vulnerability assessment, and ethical hacking principles for secure systems.",
-      duration: "4 Months",
-      modules: ["Network Security", "Encryption & Cryptography", "Ethical Hacking", "Vulnerability Assessment", "Penetration Testing", "Security Best Practices"],
-    },
-    {
-      id: 14,
-      title: "Web Design with CSS",
-      description:
-        "Learn modern CSS techniques, responsive design, animations, and create visually stunning websites.",
-      shortDesc: "Web Design with CSS",
-      price: "₹11000/-",
-      icon: "🎨",
-      color: "from-yellow-500 to-pink-500",
-      fullDescription: "Master CSS3, Flexbox, Grid, animations, and responsive design patterns for modern web applications.",
-      duration: "2 Months",
-      modules: ["CSS Fundamentals", "Flexbox & Grid", "Responsive Design", "CSS Animations", "Sass/SCSS", "Best Practices"],
-    },
+ 
     {
       id: 15,
       title: "Database Management",
       description:
         "Learn SQL, NoSQL databases, MongoDB, and PostgreSQL. Design and manage scalable databases.",
       shortDesc: "Database Management",
-      price: "₹19000/-",
+      price: "₹23000/-",
       icon: "🗄️",
       color: "from-slate-500 to-gray-500",
       fullDescription: "Master relational and non-relational databases, SQL queries, indexing, and database optimization techniques.",
@@ -319,6 +296,20 @@
     }
     showEnrollForm = true;
   }
+
+    function openWhatsAppEnquiry() {
+    if (!selectedCourse) return;
+    
+    const message = `Hi, I'm interested in the *${selectedCourse.title}* course.\n\nPlease send me more details including fees, batch timings, and syllabus.`;
+    const whatsappUrl = `https://wa.me/916380058663?text=${encodeURIComponent(message)}`; 
+    window.open(whatsappUrl, '_blank');
+  }
+
+  // New function for Call enquiry
+  function openCallEnquiry() {
+    window.location.href = "tel:+916380058663";
+  }
+
 </script> 
 
 <div class="py-20 px-4 md:px-8 lg:px-16 bg-gray-900">
@@ -363,7 +354,7 @@
             <!-- Price and Button -->
             <div class="space-y-4">
               <div class="flex items-baseline gap-2">
-                <span class="text-3xl font-bold text-white">
+                <span class="text-3xl font-bold text-white line-through">
                   {course.price}
                 </span>
               </div>
@@ -412,11 +403,11 @@
       </div>
 
       {#if !showEnrollForm}
-        <!-- Course Details Content -->
+        <!-- Course Details + Enquiry Options -->
         <div class="p-6 space-y-6">
           <!-- Price Badge -->
           <div class="inline-block">
-            <span class="bg-gradient-to-r {selectedCourse.color} text-white px-6 py-2 rounded-full text-xl font-bold">
+            <span class="bg-gradient-to-r {selectedCourse.color} text-white px-6 py-2 rounded-full text-xl font-bold line-through">
               {selectedCourse.price}
             </span>
           </div>
@@ -447,14 +438,44 @@
             </div>
           </div>
 
-          <!-- Enroll Button -->
-          <Button
-            on:click={openEnrollForm}
-            class="w-full bg-gradient-to-r {selectedCourse.color} text-white font-bold py-4 rounded-lg hover:shadow-lg transition-all duration-300 text-lg"
-          >
-            Enroll Now
-          </Button>
+          <!-- Enquiry Options -->
+          <div class="pt-8 border-t border-gray-700">
+            <h3 class="font-publicaz text-2xl font-bold text-white mb-6 text-center">
+              How would you like to proceed?
+            </h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- WhatsApp Button -->
+              <Button
+                on:click={openWhatsAppEnquiry}
+                class="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-5 rounded-xl flex items-center justify-center gap-3 text-lg shadow-lg transition-all"
+              >
+                <span class="text-3xl">💬</span>
+                Enquire on WhatsApp
+              </Button>
+
+              <!-- Call Button -->
+              <Button
+                on:click={openCallEnquiry}
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 rounded-xl flex items-center justify-center gap-3 text-lg shadow-lg transition-all"
+              >
+                <span class="text-3xl">📞</span>
+                Call for Enquiry
+              </Button>
+            </div>
+
+            <!-- <div class="text-center mt-8">
+              <p class="text-gray-400 mb-4">— OR —</p>
+              <Button
+                on:click={openEnrollForm}
+                class="w-full bg-gradient-to-r {selectedCourse.color} text-white font-bold py-4 rounded-xl text-lg hover:shadow-xl transition-all duration-300"
+              >
+                Fill Online Enrollment Form
+              </Button>
+            </div> -->
+          </div>
         </div>
+
       {:else}
         <!-- Enrollment Form -->
         <div class="p-6">
@@ -545,7 +566,7 @@
             </div>
 
             <!-- Form Actions -->
-            <div class="flex gap-4 pt-4">
+            <div class="flex gap-4 pt-6">
               <Button
                 type="button"
                 on:click={() => showEnrollForm = false}
@@ -556,13 +577,13 @@
               </Button>
               <Button
                 type="submit"
-                disabled={!$isValid}
+                disabled={!$isValid || $isSubmitting}
                 class="flex-1 bg-gradient-to-r {selectedCourse.color} text-white font-bold py-3 rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50"
               >
                 {#if $isSubmitting}
-                  <div class="h-4 w-4 border-b-2 rounded-full border-white animate-spin"></div>
+                  <div class="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin mx-auto"></div>
                 {:else}
-                  Submit
+                  Submit Enrollment
                 {/if}
               </Button>
             </div>

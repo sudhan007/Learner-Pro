@@ -5,9 +5,7 @@
   import Button from "$lib/components/ui/button/button.svelte";
   import { afterNavigate } from "$app/navigation";
   import Icon from "@iconify/svelte";
-  import * as AlertDialog from "$lib/components/ui/alert-dialog";
   import { toast } from "svelte-sonner";
-  import * as Tooltip from "$lib/components/ui/tooltip";
   import logo from "../../img/Home/logo.webp";
 
   let currentPath = "";
@@ -64,7 +62,7 @@
         </li>
       {/each}
 
-      <li>
+      <!-- <li>
         {#if phoneNumber}
           <div
             style="border: 1.15px solid rgba(232, 239, 247, 0.25)"
@@ -120,7 +118,7 @@
             </AlertDialog.Content>
           </AlertDialog.Root>
         </li>
-      {/if}
+      {/if} -->
     </ul>
   </div>
 </header>
@@ -165,7 +163,7 @@
         </li>
       {/each}
 
-      <li>
+      <!-- <li>
         {#if phoneNumber}
           <div
             style="border: 1.15px solid rgba(232, 239, 247, 0.25)"
@@ -220,7 +218,7 @@
             </AlertDialog.Content>
           </AlertDialog.Root>
         </li>
-      {/if}
+      {/if} -->
     </ul>
   </div>
 </header>

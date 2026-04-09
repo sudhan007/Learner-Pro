@@ -11,10 +11,10 @@ const menuLinks = [
         name: "Internship",
         path: "/internship",
     },
-    {
-        name: "Bootcamp",
-        path: "/bootcampform",
-    },
+    // {
+    //     name: "Bootcamp",
+    //     path: "/bootcampform",
+    // },
     {
         name: "Contact Us",
         path: "/contact_us",

@@ -26,7 +26,7 @@
       description:
         "Master frontend and backend technologies to build complete web applications. Learn React, Node.js, and databases.",
       shortDesc: "Full Stack Developer",
-      price: "₹30000/-",
+      price: "₹27000/-",
       icon: "💻",
       color: "from-blue-500 to-cyan-500",
       fullDescription: "Become a complete web developer with expertise in both frontend and backend technologies. This comprehensive course covers HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and database management.",
@@ -35,42 +35,42 @@
     },
     {
       id: 2,
-      title: "Machine Learning",
+      title: "UI/UX Design",
       description:
-        "Build intelligent systems with Python and AI. Explore neural networks, classification, and data science fundamentals.",
-      shortDesc: "Machine Learning",
-      price: "₹25000/-",
-      icon: "🤖",
-      color: "from-purple-500 to-pink-500",
-      fullDescription: "Master machine learning concepts and build intelligent systems. Learn Python, TensorFlow, scikit-learn, neural networks, and advanced AI algorithms.",
-      duration: "4 Months",
-      modules: ["Python for ML", "Data Preprocessing", "Supervised Learning", "Unsupervised Learning", "Neural Networks", "Real-world Projects"],
+        "Master the principles of user interface and user experience design. Create beautiful and functional designs.",
+      shortDesc: "UI/UX Design",
+      price: "₹27000/-",
+      icon: "🎭",
+      color: "from-pink-500 to-rose-500",
+      fullDescription: "Learn design principles, wireframing, prototyping, and user research. Master Figma and design tools for professional projects.",
+      duration: "3 Months",
+      modules: ["Design Principles", "User Research", "Wireframing", "Prototyping in Figma", "Visual Design", "Design Systems"],
     },
     {
       id: 3,
-      title: "Front End Developer",
+      title: "Python Programming",
       description:
-        "Create stunning user interfaces with HTML, CSS, and JavaScript. Master React and modern UI frameworks.",
-      shortDesc: "Front End Developer",
-      price: "₹15000/-",
-      icon: "🎨",
-      color: "from-orange-500 to-red-500",
-      fullDescription: "Create beautiful and responsive user interfaces. Learn HTML5, CSS3, JavaScript, React, UI/UX principles, and modern frontend tools.",
+        "Learn Python from scratch and become proficient in one of the most popular programming languages.",
+      shortDesc: "Python Programming",
+      price: "₹23000/-",
+      icon: "🐍",
+      color: "from-yellow-500 to-orange-500",
+      fullDescription: "Master Python programming with hands-on projects. Learn variables, functions, OOP, file handling, and build real-world applications.",
       duration: "3 Months",
-      modules: ["HTML & CSS", "JavaScript Basics", "React Fundamentals", "State Management", "UI Design Principles", "Responsive Design"],
+      modules: ["Python Basics", "Data Types & Variables", "Functions & Modules", "Object-Oriented Programming", "File Handling", "Mini Projects"],
     },
     {
       id: 4,
-      title: "AI & Data Science",
+      title: "Data Analytics",
       description:
-        "Transform raw data into actionable insights. Learn Python, TensorFlow, and advanced analytics techniques.",
-      shortDesc: "AI & Data Science",
-      price: "₹60000/-",
-      icon: "📊",
-      color: "from-green-500 to-emerald-500",
-      fullDescription: "Deep dive into artificial intelligence and data science. Learn data analysis, visualization, machine learning, deep learning, and business intelligence.",
-      duration: "8 Months",
-      modules: ["Python & Pandas", "Data Visualization", "Statistics & Probability", "Machine Learning", "Deep Learning", "Big Data Analytics"],
+        "Analyze data using Python, SQL, and Tableau. Transform raw data into actionable business insights.",
+      shortDesc: "Data Analytics",
+      price: "₹27000/-",
+      icon: "📈",
+      color: "from-green-500 to-teal-500",
+      fullDescription: "Learn SQL, Python for data analysis, data visualization with Tableau, and statistical analysis for business decisions.",
+      duration: "4 Months",
+      modules: ["SQL Fundamentals", "Python Data Analysis", "Data Visualization with Tableau", "Statistical Analysis", "Business Intelligence", "Real Projects"],
     },
   ];
 
@@ -115,18 +115,6 @@
       _formData.append('phoneNumber', values.phoneNumber);
       _formData.append('gender', values.gender);
       _formData.append('courseId', values.courseId);
-
-
-       toast('🎉 Enrollment Successful! Welcome to the course!', {
-            duration: 4000,
-            position: 'top-center',
-            style:
-              "border-radius: 20px; background: #22c55e; color: white; font-size: 17px; font-family: 'PublicaSans', sans-serif;",
-          });
-
-          return
-
-
 
       try {
         let response: any = await fetch('?/enrollCourse', {
@@ -188,6 +176,20 @@
     }
     showEnrollForm = true;
   }
+
+  // New function for WhatsApp enquiry
+  function openWhatsAppEnquiry() {
+    if (!selectedCourse) return;
+    
+    const message = `Hi, I'm interested in the *${selectedCourse.title}* course.\n\nPlease send me more details including fees, batch timings, and syllabus.`;
+    const whatsappUrl = `https://wa.me/916380058663?text=${encodeURIComponent(message)}`; 
+    window.open(whatsappUrl, '_blank');
+  }
+
+  // New function for Call enquiry
+  function openCallEnquiry() {
+    window.location.href = "tel:+916380058663";
+  }
 </script>
 
 <div class="hero min-h-screen overflow-x-hidden">
@@ -218,7 +220,7 @@
             on:click={() => (window.location.href = "/webinarform")}
             style="background: linear-gradient(85.8deg, #FF3434 9.11%, rgba(255, 63, 52, 0.848958) 33.86%, rgba(255, 91, 51, 0.616348) 80.97%, rgba(255, 117, 52, 0.41) 127.28%, rgba(255, 125, 52, 0) 162.41%);"
             class="text-herodesc rounded-full md:px-12 md:py-8 text-base md:text-[20px]"
-            >Webinar</Button
+            >Free Soft Skill Training</Button
           >
           <Button
             on:click={() => (window.location.href = "/payrollcourse")}
@@ -342,7 +344,7 @@
             <!-- Price and Button -->
             <div class="space-y-4">
               <div class="flex items-baseline gap-2">
-                <span class="text-3xl font-bold text-white">
+                <span class="text-3xl line-through font-bold text-white">
                   {course.price}
                 </span>
               </div>
@@ -365,12 +367,10 @@
         Not sure which course is right for you?
       </p>
       <Button
-       
         variant="ghost"
         class="text-white border-2 border-white hover:bg-white hover:text-gray-900 rounded-full px-12 py-3 font-bold transition-all duration-300"
       >
-      <a href={'/internship'}> Get Free Course Counseling</a>
-        
+        <a href={'/internship'}> Get Free Course Counseling</a>
       </Button>
     </div>
   </div>
@@ -392,11 +392,11 @@
       </div>
 
       {#if !showEnrollForm}
-        <!-- Course Details Content -->
+        <!-- Course Details + Enquiry Options -->
         <div class="p-6 space-y-6">
           <!-- Price Badge -->
           <div class="inline-block">
-            <span class="bg-gradient-to-r {selectedCourse.color} text-white px-6 py-2 rounded-full text-xl font-bold">
+            <span class="bg-gradient-to-r {selectedCourse.color} text-white px-6 py-2 rounded-full text-xl font-bold line-through">
               {selectedCourse.price}
             </span>
           </div>
@@ -427,14 +427,44 @@
             </div>
           </div>
 
-          <!-- Enroll Button -->
-          <Button
-            on:click={openEnrollForm}
-            class="w-full bg-gradient-to-r {selectedCourse.color} text-white font-bold py-4 rounded-lg hover:shadow-lg transition-all duration-300 text-lg"
-          >
-            Enroll Now
-          </Button>
+          <!-- Enquiry Options -->
+          <div class="pt-8 border-t border-gray-700">
+            <h3 class="font-publicaz text-2xl font-bold text-white mb-6 text-center">
+              How would you like to proceed?
+            </h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- WhatsApp Button -->
+              <Button
+                on:click={openWhatsAppEnquiry}
+                class="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-5 rounded-xl flex items-center justify-center gap-3 text-lg shadow-lg transition-all"
+              >
+                <span class="text-3xl">💬</span>
+                Enquire on WhatsApp
+              </Button>
+
+              <!-- Call Button -->
+              <Button
+                on:click={openCallEnquiry}
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 rounded-xl flex items-center justify-center gap-3 text-lg shadow-lg transition-all"
+              >
+                <span class="text-3xl">📞</span>
+                Call for Enquiry
+              </Button>
+            </div>
+
+            <!-- <div class="text-center mt-8">
+              <p class="text-gray-400 mb-4">— OR —</p>
+              <Button
+                on:click={openEnrollForm}
+                class="w-full bg-gradient-to-r {selectedCourse.color} text-white font-bold py-4 rounded-xl text-lg hover:shadow-xl transition-all duration-300"
+              >
+                Fill Online Enrollment Form
+              </Button>
+            </div> -->
+          </div>
         </div>
+
       {:else}
         <!-- Enrollment Form -->
         <div class="p-6">
@@ -525,7 +555,7 @@
             </div>
 
             <!-- Form Actions -->
-            <div class="flex gap-4 pt-4">
+            <div class="flex gap-4 pt-6">
               <Button
                 type="button"
                 on:click={() => showEnrollForm = false}
@@ -536,13 +566,13 @@
               </Button>
               <Button
                 type="submit"
-                disabled={!$isValid}
+                disabled={!$isValid || $isSubmitting}
                 class="flex-1 bg-gradient-to-r {selectedCourse.color} text-white font-bold py-3 rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50"
               >
                 {#if $isSubmitting}
-                  <div class="h-4 w-4 border-b-2 rounded-full border-white animate-spin"></div>
+                  <div class="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin mx-auto"></div>
                 {:else}
-                  Submit
+                  Submit Enrollment
                 {/if}
               </Button>
             </div>

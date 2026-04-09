@@ -28,7 +28,7 @@
       name: '',
       email: '',
       phoneNumber: '',
-      certificateName: '',
+      certificateName: 'test',
       currentPosition: '',
     },
     validationSchema: yup.object().shape({
@@ -77,7 +77,7 @@
               "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
           });
           const whatsappGroupLink =
-            'https://chat.whatsapp.com/BpAHdyvvSUS89PWZMFBC0M?mode=gi_c';
+            'https://chat.whatsapp.com/E5NHoAlhhWH60TAv87N0Q1?mode=gi_t';
 
           setTimeout(() => {
             window.location.href = whatsappGroupLink;
@@ -129,7 +129,7 @@
     class=" px-10 py-10 rounded-2xl w-[600px] container mx-auto bg-[#242424] p-2 shadow-2xl"
   >
     <h2 class="font-publicaz text-herodesc text-center text-4xl">
-      Webinar Form
+      Free Soft Skill Training
     </h2>
 
     <form class:valid={$isValid} method="POST" on:submit={handleSubmit}>
@@ -177,7 +177,7 @@
             <p class="text-red-500 font-gilroy">{$errors.phoneNumber}</p>
           {/if}
         </div>
-        <div class="input-group">
+        <div class="input-group hidden">
           <input
             class="font-publicaz w-full py-3 indent-4 md:text-lg"
             type="text"

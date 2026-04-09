@@ -342,20 +342,24 @@
             </p>
 
             <!-- Price and Button -->
-            <div class="space-y-4">
-              <div class="flex items-baseline gap-2">
-                <span class="text-3xl line-through font-bold text-white">
-                  {course.price}
-                </span>
-              </div>
+           <div class="space-y-4">
+  <div class="flex items-center gap-3 justify-between">
+    <!-- Original Price -->
+   <span class="text-2xl line-through font-bold text-white"> {course.price} </span>
 
-              <Button
-                on:click={() => openCourseModal(course)}
-                class="w-full bg-gradient-to-r {course.color} text-white font-bold py-3 rounded-lg hover:shadow-lg transition-all duration-300"
-              >
-                View Course
-              </Button>
-            </div>
+    <!-- Offer Badge -->
+    <span class="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full animate-pulse">
+      20% OFF
+    </span>
+  </div>
+
+  <Button
+    on:click={() => openCourseModal(course)}
+    class="w-full bg-gradient-to-r {course.color} text-white font-bold py-3 rounded-lg hover:shadow-lg transition-all duration-300"
+  >
+    View Course
+  </Button>
+</div>
           </div>
         </div>
       {/each}
@@ -367,10 +371,11 @@
         Not sure which course is right for you?
       </p>
       <Button
+                on:click={openCallEnquiry}
         variant="ghost"
         class="text-white border-2 border-white hover:bg-white hover:text-gray-900 rounded-full px-12 py-3 font-bold transition-all duration-300"
       >
-        <a href={'/internship'}> Get Free Course Counseling</a>
+        Get Free Course Counseling
       </Button>
     </div>
   </div>

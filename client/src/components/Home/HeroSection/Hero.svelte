@@ -182,13 +182,13 @@
     if (!selectedCourse) return;
     
     const message = `Hi, I'm interested in the *${selectedCourse.title}* course.\n\nPlease send me more details including fees, batch timings, and syllabus.`;
-    const whatsappUrl = `https://wa.me/916380058663?text=${encodeURIComponent(message)}`; 
+    const whatsappUrl = `https://wa.me/917598625653?text=${encodeURIComponent(message)}`; 
     window.open(whatsappUrl, '_blank');
   }
 
   // New function for Call enquiry
   function openCallEnquiry() {
-    window.location.href = "tel:+916380058663";
+    window.location.href = "tel:+917598625653";
   }
 </script>
 

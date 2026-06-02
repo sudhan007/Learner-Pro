@@ -27,7 +27,7 @@
       title: "Phone",
       description: "Give us a call",
       details: [
-        "+91 6380058663", 
+        "+91 7598625653", 
       ]
     },
     {

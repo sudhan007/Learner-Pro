@@ -33,7 +33,7 @@
     <div
       class="font-publicalight mt-2 flex justify-center text-base md:text-xl text-[#747474]"
     >
-      <a href="tel:+916380058663">+91 6380058663</a>
+      <a href="tel:+917598625653">+91 7598625653</a>
     </div>
     <!-- <div class="px-3">
       <form action="">

@@ -77,7 +77,7 @@
               "border-radius: 20px; background: white; color: black; font-size: 17px; font-family: 'ZPublicaSans', sans-serif;",
           });
           const whatsappGroupLink =
-            'https://chat.whatsapp.com/FFaL8UTjSBh6IzPy7hbkvi?mode=gi_t';
+            'https://chat.whatsapp.com/Ey31u5Cor1PL007mR6CnJq?mode=gi_t';
           setTimeout(() => {
             window.location.href = whatsappGroupLink;
           }, 50);
@@ -128,7 +128,7 @@
     class=" px-10 py-10 rounded-2xl w-[600px] container mx-auto bg-[#242424] p-2 shadow-2xl"
   >
     <h2 class="font-publicaz text-herodesc text-center text-4xl">
-         Computer Vision with AI
+         Future Training
     </h2>
 
     <form class:valid={$isValid} method="POST" on:submit={handleSubmit}>

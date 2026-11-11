@@ -1,351 +1,96 @@
 <script lang="ts">
   import Footer from '../../components/Footer/Footer.svelte';
 
-  interface Subsection {
-    title?: string;
-    intro?: string;
-    items?: string[];
-    outro?: string;
-  }
-
   interface Section {
     id: string;
     title: string;
-    paragraphs?: string[];
-    items?: string[];
-    subsections?: Subsection[];
-    outro?: string[];
+    content: string;
   }
 
   const sections: Section[] = [
     {
-      id: "scope-and-introduction",
-      title: "1. SCOPE AND INTRODUCTION",
-      paragraphs: [
-        'LearnerPe ("Platform", "Application", "we", "our" or "us") is an education fee payment platform designed to facilitate convenient and secure payment of educational fees through digital payment methods.',
-        'LearnerPe enables users to make payments towards school fees, college fees, tuition fees, coaching fees and other eligible education-related payments using supported payment methods, including credit cards.',
-        'This Privacy Policy applies to the LearnerPe website, mobile application and all related services offered through the Platform.',
-        'The Platform is owned and operated by [Insert Legal Entity Name], having its corporate office at 387, Joe Daniel Street, Vetturnimadam, Nagercoil, Tamil Nadu – 629003, India.',
-        "This Privacy Policy explains how we collect, receive, store, use, process, share and protect users' personal and transaction-related information when they access or use LearnerPe.",
-        "We are committed to maintaining the privacy and security of users' information in accordance with applicable Indian laws and regulations, including the Information Technology Act, 2000, applicable rules and the Digital Personal Data Protection Act, 2023, to the extent applicable."
-      ]
+      id: "scope",
+      title: "1. SCOPE",
+      content: "This internet resources and domains, www.learnerpro.in, on the world wide web, and the application titled 'learnerpro' ('Application') is owned and hosted by learnerpro, having its corporate office at 387, Joe Daniel St, Vetturnimadam, Nagercoil, Tamil Nadu 629003, under the brand name 'learnerpro'. learnerpro is committed to protecting the User's information and privacy. This Privacy Policy is designed to help the User understand how learnerpro may collect, process, store and use the information provided by the User to learnerpro and to assist the User in making informed decisions while using the Application and the Services. This Privacy Policy has been published inter alia in compliance with the provisions of the Information Technology Act, 2000 and the rules and regulations made thereunder."
     },
     {
-      id: "consent-and-updates",
-      title: "2. CONSENT TO THIS PRIVACY POLICY AND POLICY UPDATES",
-      paragraphs: [
-        "By downloading, accessing or using the LearnerPe Application or registering on the Platform, users acknowledge that they have read and understood this Privacy Policy.",
-        "Users consent to the collection, use, storage and processing of their personal information for the purposes described in this Privacy Policy and in accordance with applicable laws.",
-        "Where separate consent is legally required for a particular purpose, such consent will be obtained separately.",
-        "If users do not agree with this Privacy Policy, they should refrain from accessing or using the Platform.",
-        "LearnerPe reserves the right to modify, update or revise this Privacy Policy from time to time. Any changes will be published on the Platform along with the updated effective date."
-      ]
+      id: "consent",
+      title: "2. CONSENT TO THIS POLICY AND CHANGES IN POLICY",
+      content: "By downloading and using the Application, the user ('User') expressly gives learnerpro consent to collect, receive, store, use, deal with, handle, manage, process, provide access to, share, disclose to and analyse the User Information in the manner set forth in this Privacy Policy. If the User does not agree to the terms of this Privacy Policy, please do not use or access the Application. By accessing the Application or by otherwise providing any User Information, each User will be deemed to have read, understood and agreed to the terms and conditions outlined in the Privacy Policy. learnerpro may, at any time, change, modify, add or delete any terms of the Privacy Policy, at its sole discretion, with or without advance notice."
     },
     {
-      id: "third-party-services",
-      title: "3. THIRD-PARTY WEBSITES AND SERVICES",
-      paragraphs: [
-        "The LearnerPe Application may contain links to third-party websites, payment gateways, banking services or other external platforms.",
-        "These third-party services operate independently and may have their own privacy policies and terms of service.",
-        "LearnerPe does not control the privacy practices, security policies or information-handling procedures of such third parties.",
-        "Users are advised to review the respective privacy policies before sharing personal or financial information with external platforms."
-      ]
+      id: "third-party",
+      title: "3. LINKS TO THIRD PARTY WEBSITES",
+      content: "The procedures and practices set forth in this Privacy Policy describe the use and disclosure of User Information collected by learnerpro. The Application and/or other platforms of learnerpro may contain links to other websites. Any personal information about the User collected which such User visits such websites is not governed by this Privacy Policy. The User acknowledges that learnerpro shall not be responsible for and has no control over the practices and content of any website accessed using the links contained on the Application."
     },
     {
-      id: "eligibility-and-competency",
-      title: "4. USER ELIGIBILITY AND COMPETENCY",
-      paragraphs: [
-        "By using LearnerPe, users represent that they are legally competent to enter into a valid agreement under applicable Indian laws.",
-        "Users below 18 years of age may use the services only through or with the involvement and consent of their parent or legal guardian, wherever required by applicable law.",
-        "Where a parent or guardian makes an educational fee payment on behalf of a student, the parent or guardian is responsible for providing accurate information and the necessary authorisation."
-      ]
+      id: "competency",
+      title: "4. COMPETENCY TO CONTRACT",
+      content: "By agreeing to this Privacy Policy, a User represents that the User is at least the age of majority i.e. 18 years, and is competent to contract. Additionally, where the User is registering on behalf of, and is the authorized representative of, a company, partnership or any other legal entity, such User has been duly authorized by such entity. In case the User is a natural person who is not of the age of majority or is not competent to contract, the User may not use the Application and/or the Services, or provide any information to learnerpro."
     },
     {
-      id: "information-we-collect",
-      title: "5. INFORMATION WE COLLECT",
-      paragraphs: [
-        "LearnerPe may collect different categories of information depending on how users register, access and use the Platform."
-      ],
-      subsections: [
-        {
-          title: "5.1 Personal Information",
-          intro: "We may collect the following personal information:",
-          items: [
-            "Full name.",
-            "Registered mobile number.",
-            "Email address.",
-            "Residential address, where required.",
-            "Date of birth, where required.",
-            "User account and profile details.",
-            "Other information voluntarily provided by users."
-          ]
-        },
-        {
-          title: "5.2 Educational and Beneficiary Information",
-          intro: "To facilitate education-related payments, we may collect:",
-          items: [
-            "Student name.",
-            "School or college name.",
-            "Educational institution details.",
-            "Tuition or coaching centre details.",
-            "Student identification or admission number, where required.",
-            "Fee payment details.",
-            "Beneficiary or institution account information, where applicable.",
-            "Other information necessary to identify and process the intended payment."
-          ]
-        },
-        {
-          title: "5.3 Payment and Transaction Information",
-          intro: "When users initiate payments through LearnerPe, we may collect and process information such as:",
-          items: [
-            "Transaction reference or identification number.",
-            "Payment amount.",
-            "Payment date and time.",
-            "Payment method and payment status.",
-            "Payment gateway reference details.",
-            "Card network and limited card-related information, where made available by payment service providers.",
-            "Beneficiary and payment destination details.",
-            "Refund, reversal and dispute-related information.",
-            "Transaction history and payment records."
-          ],
-          outro: "Payment card credentials and sensitive payment information may be collected and processed directly by authorised payment gateways or payment service providers in accordance with their applicable security requirements."
-        },
-        {
-          title: "5.4 Device and Technical Information",
-          intro: "We may automatically collect certain technical information when users access the Platform, including:",
-          items: [
-            "IP address.",
-            "Device type and model.",
-            "Operating system.",
-            "Application version.",
-            "Browser information.",
-            "Device identifiers, where permitted.",
-            "Login activity.",
-            "Application usage and diagnostic information.",
-            "Technical logs and error reports."
-          ]
-        }
-      ]
+      id: "collection",
+      title: "5. INFORMATION COLLECTION",
+      content: "learnerpro collects two basic types of information from a User: personal information, which is any information that exclusively identifies a User (e.g., name, postal address, date of birth, mobile/telephone phone number, email address, PAN, GST, financial information like bank account details, identification information amongst others) and non-personal information, which is information that does not exclusively identify a User. When the User accesses the Application to make Transactions, learnerpro may collect information about the Transaction, device information, technical usage data, and geolocation of the User. User Information includes location information, access information, personal information, contacts, other applications, transaction information, billing information, automated collection details, and other information as may be explicitly required from time to time."
     },
     {
-      id: "purpose-of-collection",
-      title: "6. PURPOSE OF COLLECTION AND USE OF INFORMATION",
-      paragraphs: [
-        "LearnerPe collects and processes user information for the following purposes:"
-      ],
-      items: [
-        "To register and authenticate user accounts.",
-        "To facilitate education fee payments.",
-        "To process payments through authorised payment gateways.",
-        "To identify students, educational institutions and beneficiaries.",
-        "To provide transaction confirmations and payment updates.",
-        "To maintain payment and transaction history.",
-        "To communicate payment status, refunds and transaction-related information.",
-        "To provide customer support and resolve user complaints.",
-        "To investigate failed, pending, disputed or unsuccessful transactions.",
-        "To detect, prevent and investigate fraudulent or unauthorised activities.",
-        "To maintain platform security and prevent misuse.",
-        "To improve application performance and user experience.",
-        "To communicate service announcements, updates and promotional offers, where permitted.",
-        "To comply with applicable legal, regulatory and contractual obligations."
-      ]
+      id: "not-upload",
+      title: "6. TYPE OF INFORMATION NOT TO BE UPLOADED",
+      content: "While accessing or using the Application or the Services, User(s) shall ensure that they do NOT host, display, upload, modify, publish, transmit, update or share any information that: they do not have a right to make available; is defamatory, vulgar, obscene, pornographic, paedophilic, invasive of privacy, insulting, harassing, libellous, racially or ethnically objectionable, relating to money laundering or gambling; is harmful to minors and children; infringes patent, trademark, copyright or other proprietary rights; violates any applicable law or regulation; deceives or misleads any other user; impersonates any person or entity; threatens the unity, integrity, defence, security or sovereignty of India; contains viruses or malicious code; is patently false and untrue with intent to mislead or harass."
     },
     {
-      id: "payment-processing",
-      title: "7. PAYMENT PROCESSING AND THIRD-PARTY SERVICE PROVIDERS",
-      paragraphs: [
-        "LearnerPe may work with authorised payment gateways, banking partners, technology providers and other service providers to facilitate payment transactions.",
-        "When a user initiates a payment, relevant transaction information may be shared with these service providers for payment authentication, processing, verification, settlement, refund handling and dispute resolution.",
-        "Such information may include transaction amount, payment references, payment method details and other information necessary to complete the transaction.",
-        "LearnerPe may receive transaction confirmations, payment status, reference numbers and other relevant information from these service providers.",
-        "Users acknowledge that payment processing may involve third-party systems and is subject to the respective service providers' applicable terms, conditions and privacy policies."
-      ]
+      id: "purpose",
+      title: "7. PURPOSE OF COLLECTION AND USAGE OF INFORMATION",
+      content: "User Information will be used by learnerpro for purposes including: to provide, maintain and enhance the Application and Services; to authenticate Users' KYC documents; to perform creditworthiness and financial standing checks; to send technical notices, updates, and support messages; to investigate complaints and disputes; to respond to queries or feedback; to monitor and analyze trends and usage; to link or combine with information received from others; to inform Users of offers, products, and services; to detect and protect against error, fraud and criminal activity; to comply with applicable laws and regulations; and to share data for internal and external services with third parties."
     },
     {
-      id: "sharing-and-disclosure",
-      title: "8. SHARING AND DISCLOSURE OF USER INFORMATION",
-      paragraphs: [
-        "LearnerPe does not sell users' personal information to third parties.",
-        "However, user information may be shared with the following categories of third parties when necessary for providing our services:"
-      ],
-      items: [
-        "Payment Gateways: For processing, verifying and facilitating payment transactions.",
-        "Banking and Payment Service Providers: For payment processing, transaction verification, refunds and settlement-related activities.",
-        "Educational Institutions and Beneficiaries: To identify the intended recipient and facilitate the relevant education fee payment, where applicable.",
-        "Technology and Cloud Service Providers: For hosting, maintaining and securing the Platform.",
-        "Communication Service Providers: For sending SMS, emails, OTPs and transaction notifications.",
-        "Fraud Prevention and Security Providers: To identify suspicious activities and protect the Platform.",
-        "Government and Regulatory Authorities: Where disclosure is required under applicable laws, regulations, court orders or lawful requests."
-      ],
-      outro: [
-        "We may also disclose information where necessary to protect our legal rights, prevent fraud, investigate security incidents or comply with legal obligations."
-      ]
+      id: "storage",
+      title: "8. INFORMATION STORAGE AND DISSEMINATION",
+      content: "User Information is stored on learnerpro's database servers or hosted by third parties in data centres located in India or outside India. Storage and transfer of User Information is carried out in compliance with all applicable laws, including the Information Technology Act, 2000. learnerpro implements reasonable security practices and procedures including physical, electronic and managerial measures to safeguard User Information. However, learnerpro cannot guarantee that there will be no unintended disclosures due to data breach, unauthorized access, or security failure. learnerpro may disclose information when required by law or to protect its rights or the rights of others. User Information may be shared with third parties for access to their applications and services, and in case of proposed merger, acquisition or reorganization. Data transfers to other countries may occur, and when this happens, learnerpro will protect User Information as described in this Privacy Policy."
     },
     {
-      id: "data-storage-and-security",
-      title: "9. DATA STORAGE AND SECURITY",
-      paragraphs: [
-        "LearnerPe takes reasonable technical, organisational and administrative measures to protect users' personal and transaction-related information against unauthorised access, disclosure, alteration, misuse or loss.",
-        "Security measures may include:"
-      ],
-      items: [
-        "Secure data storage and hosting infrastructure.",
-        "Access controls and authentication procedures.",
-        "Encryption and secure communication protocols, where applicable.",
-        "Monitoring of suspicious activities.",
-        "Appropriate internal data protection procedures.",
-        "Security measures implemented by authorised service providers."
-      ],
-      outro: [
-        "User information may be stored on our servers or on third-party cloud infrastructure, in India or other jurisdictions, subject to applicable legal requirements.",
-        "Although we take reasonable precautions to protect user information, no electronic transmission or storage system can be guaranteed to be completely secure."
-      ]
+      id: "retention",
+      title: "9. RETENTION OF USER INFORMATION",
+      content: "learnerpro shall retain the personal information of the User as long as it serves the purpose(s) for which it was initially collected or subsequently authorized. learnerpro may continue processing User's personal information beyond such period only for archiving purposes. After the expiry of this time period, learnerpro may either delete User's personal information or retain it in a form such that it does not identify the User personally."
     },
     {
-      id: "retention-of-information",
-      title: "10. RETENTION OF USER INFORMATION",
-      paragraphs: [
-        "LearnerPe retains personal and transaction-related information only for as long as necessary to fulfil the purposes for which it was collected.",
-        "Certain information, including payment records, transaction references, refund records, dispute details and other relevant documents, may be retained for longer periods where required under applicable laws, regulatory requirements or contractual obligations.",
-        "Once the information is no longer required for the relevant purposes, LearnerPe may securely delete, anonymise or otherwise dispose of such information in accordance with applicable laws."
-      ]
+      id: "communication",
+      title: "10. COMMUNICATION POLICY",
+      content: "When the User sets up an account on the Application, the User explicitly consents to receive emails and messages from learnerpro and its service providers in connection with the Services as well as marketing and promotional communications. While Users may opt out of promotional messages by contacting learnerpro at support@learnerpro.in or the Data Protection and Grievance Officer, Users cannot opt out of receiving certain administrative, financial, technical and legal information from learnerpro in connection with the Services."
     },
     {
-      id: "communication-policy",
-      title: "11. COMMUNICATION AND NOTIFICATION POLICY",
-      paragraphs: [
-        "By registering and using LearnerPe, users may receive communications through registered mobile numbers, email addresses, SMS, application notifications or other available communication channels.",
-        "Such communications may include:"
-      ],
-      items: [
-        "Account registration and verification messages.",
-        "OTP and authentication notifications.",
-        "Payment initiation and confirmation messages.",
-        "Successful, pending or failed transaction updates.",
-        "Refund and reversal notifications.",
-        "Customer support communications.",
-        "Important service announcements.",
-        "Promotional offers and marketing communications, where permitted."
-      ],
-      outro: [
-        "Users may opt out of promotional communications by contacting us or using the available unsubscribe mechanism.",
-        "However, users may continue to receive essential service-related, transaction-related, security and legal communications."
-      ]
+      id: "alteration",
+      title: "11. ALTERATION OF USER INFORMATION",
+      content: "In case the User requests any change or deletion of User Information, or to permanently delete the User's account, the User must contact learnerpro at support@learnerpro.in or contact the Data Protection and Grievance Officer. learnerpro is not obligated to alter or delete any User Information which it is required to maintain under applicable laws or pursuant to contractual requirements."
     },
     {
-      id: "cookies-and-tracking",
-      title: "12. COOKIES AND TRACKING TECHNOLOGIES",
-      paragraphs: [
-        "LearnerPe may use cookies and similar technologies on its website to improve functionality, understand user preferences and analyse website performance.",
-        "These technologies may help us:"
-      ],
-      items: [
-        "Improve website navigation.",
-        "Remember user preferences.",
-        "Analyse website traffic.",
-        "Monitor technical performance.",
-        "Enhance the overall user experience."
-      ],
-      outro: [
-        "Users may manage cookies through their browser settings. Disabling certain cookies may affect the availability or functionality of some website features."
-      ]
+      id: "termination",
+      title: "12. TERMINATION OF ACCESS",
+      content: "learnerpro shall have the right to immediately terminate the right of access/usage, de-activate the account, investigate and take appropriate action, file complaints with appropriate authorities, and/or take any other action deemed appropriate when any User commits a breach of this Privacy Policy, fails to comply with applicable law, uploads non-compliant information, commits breach of intellectual property rights, or where learnerpro has reasonable grounds for suspecting illegal, fraudulent, unethical or abusive activity, or believes the User's actions may cause legal liability or are contrary to learnerpro's interests."
     },
     {
-      id: "user-rights",
-      title: "13. USER RIGHTS AND PERSONAL INFORMATION MANAGEMENT",
-      paragraphs: [
-        "Subject to applicable laws, users may have the right to:"
-      ],
-      items: [
-        "Request access to their personal information.",
-        "Request correction or updating of inaccurate information.",
-        "Request deletion of personal information, where legally permissible.",
-        "Withdraw consent for applicable data processing activities.",
-        "Raise concerns regarding the collection or processing of personal information.",
-        "Submit privacy-related complaints through the designated grievance channel."
-      ],
-      outro: [
-        "Users may exercise these rights by contacting LearnerPe through the official support email address provided in this Privacy Policy.",
-        "Requests will be reviewed and handled in accordance with applicable laws."
-      ]
+      id: "warranty",
+      title: "13. NO WARRANTY FOR ACCURACY AND COMPLETENESS OF DATA",
+      content: "Each User undertakes to ensure that any information/data uploaded through the Services shall be accurate and complete and that no false or misleading information shall be provided. The Services and Application display/transmit information on an 'as-is' and 'as available' basis. learnerpro makes no representation or warranty regarding the accuracy or completeness of such information. learnerpro makes no representations or warranties (express or implied) with respect to the Application, including any warranties of title, non-infringement, availability, security, accuracy, merchantability, fitness for a particular purpose, freedom from viruses, completeness, timeliness, functionality, reliability, or speed of delivery."
     },
     {
-      id: "modification-and-deletion-of-accounts",
-      title: "14. MODIFICATION AND DELETION OF USER ACCOUNTS",
-      paragraphs: [
-        "Users may request changes to their personal information or request permanent deletion of their LearnerPe account by contacting our support team.",
-        "Upon receiving a valid request, LearnerPe will review and process the request in accordance with applicable laws and internal procedures.",
-        "Account deletion may restrict users from accessing their transaction history, account-related services and other application features.",
-        "However, LearnerPe may retain certain information where required for legal, regulatory, accounting, transaction verification, dispute resolution or other legitimate purposes."
-      ]
-    },
-    {
-      id: "prohibited-information-and-misuse",
-      title: "15. PROHIBITED INFORMATION AND MISUSE OF THE PLATFORM",
-      paragraphs: [
-        "Users shall not upload, submit, transmit or share any information through LearnerPe that:"
-      ],
-      items: [
-        "Is false, misleading, fraudulent or inaccurate.",
-        "Belongs to another person without proper authorisation.",
-        "Violates another person's privacy or legal rights.",
-        "Contains malicious software, viruses or harmful code.",
-        "Is unlawful, abusive, defamatory or objectionable.",
-        "Involves unauthorised payment activities.",
-        "Is intended to manipulate, misuse or disrupt payment processing.",
-        "Violates applicable laws or regulations."
-      ],
-      outro: [
-        "LearnerPe reserves the right to restrict, suspend or terminate access to the Platform where misuse, fraudulent activity or violations of applicable policies are identified."
-      ]
-    },
-    {
-      id: "accuracy-of-user-information",
-      title: "16. ACCURACY OF USER INFORMATION",
-      paragraphs: [
-        "Users are responsible for providing accurate, complete and up-to-date information while registering and initiating payments through LearnerPe.",
-        "Users should carefully verify the student details, educational institution, beneficiary information and payment amount before confirming a transaction.",
-        "LearnerPe shall not be responsible for incorrect information voluntarily submitted by users, subject to applicable laws and the terms governing the relevant services."
-      ]
-    },
-    {
-      id: "limitation-of-liability",
-      title: "17. LIMITATION OF LIABILITY",
-      paragraphs: [
-        "LearnerPe takes reasonable measures to safeguard user information and maintain the security of its Platform.",
-        "However, LearnerPe shall not be responsible for security incidents, unauthorised disclosures or interruptions arising from circumstances beyond its reasonable control, including third-party service failures, internet disruptions or cyberattacks, subject to applicable laws.",
-        "Nothing in this Privacy Policy shall exclude any liability that cannot be excluded under applicable law."
-      ]
+      id: "limitation",
+      title: "14. LIMITATION OF LIABILITY",
+      content: "In no event shall learnerpro or its officers, directors, managers, partners, members, shareholders, employees, affiliates and agents be liable to any person for any claims, liabilities, losses, payments, costs, expenses, litigation, settlements, fines, penalties and damages, including direct, indirect, punitive, special, incidental or consequential damages; cost of procurement of substitute products/services; loss of material/data; loss of income, revenue, profits, business, contracts, anticipated savings, goodwill, or reputation arising out of or in connection with any access or use of the Services or Application. For any data loss or theft due to unauthorized access to the User's electronic devices through which the User accesses the Application, learnerpro shall not be held liable for any loss whatsoever incurred by the User."
     },
     {
       id: "indemnification",
-      title: "18. INDEMNIFICATION",
-      paragraphs: [
-        "Users agree to use LearnerPe in compliance with this Privacy Policy and applicable laws.",
-        "To the extent permitted by law, users may be responsible for claims, losses or damages arising from fraudulent activities, misuse of the Platform, unauthorised use of another person's information or violation of applicable laws."
-      ]
-    },
-    {
-      id: "governing-law-and-jurisdiction",
-      title: "19. GOVERNING LAW AND JURISDICTION",
-      paragraphs: [
-        "This Privacy Policy shall be governed by and interpreted in accordance with the laws of India.",
-        "Any disputes arising in connection with this Privacy Policy shall be subject to the jurisdiction of the competent courts in Tamil Nadu, India, subject to applicable laws."
-      ]
+      title: "15. INDEMNIFICATION",
+      content: "Each User shall defend, indemnify and hold harmless learnerpro and related parties against all claims brought in connection with: breach of this Privacy Policy or applicable laws; fraud, negligent acts or willful misconduct; infringement of intellectual property rights; inaccuracy or misrepresentation; breach of security procedures; and/or unauthorized disclosure of information. To the maximum extent permissible under law, learnerpro shall not be liable to the User or any third party for any losses or damages arising out of the User's use of the Application or Services, whether based on warranty, contract, tort or otherwise. learnerpro does not accept liability for any loss or damage resulting from or in connection with the use of the Application or inability to use it, or for any delay or failure in performance for any reason whatsoever."
     }
   ];
 </script>
 
 <div class="bg-white min-h-screen">
   <!-- Header -->
-  <div class="bg-white border-b border-gray-200 py-6">
+  <div class="bg-white border-b border-gray-200 py-4">
     <div class="max-w-6xl mx-auto px-6">
-      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">PRIVACY POLICY – LEARNERPAY</h1>
-      <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500">
-        <span><strong class="font-medium text-gray-700">Effective Date:</strong> 10 November 2026</span>
-        <span class="hidden sm:inline text-gray-300">•</span>
-        <span><strong class="font-medium text-gray-700">Last Updated:</strong> 10 November 2026</span>
-      </div>
+      <h3 class="text-4xl font-bold text-gray-900 mb-2">Privacy Policy</h3> 
     </div>
   </div>
 
@@ -354,52 +99,8 @@
     <div class="space-y-10">
       {#each sections as section}
         <div id={section.id} class="scroll-mt-20">
-          <h2 class="text-xl font-bold text-gray-900 mb-4">{section.title}</h2>
-
-          {#if section.paragraphs}
-            {#each section.paragraphs as paragraph}
-              <p class="text-gray-700 leading-relaxed text-base mb-3">{paragraph}</p>
-            {/each}
-          {/if}
-
-          {#if section.items}
-            <ul class="list-disc pl-6 space-y-1.5 text-gray-700 leading-relaxed text-base mb-4">
-              {#each section.items as item}
-                <li>{item}</li>
-              {/each}
-            </ul>
-          {/if}
-
-          {#if section.subsections}
-            <div class="space-y-6 mt-4">
-              {#each section.subsections as sub}
-                <div class="border-l-2 border-gray-100 pl-4 py-1">
-                  {#if sub.title}
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">{sub.title}</h3>
-                  {/if}
-                  {#if sub.intro}
-                    <p class="text-gray-700 leading-relaxed text-base mb-2">{sub.intro}</p>
-                  {/if}
-                  {#if sub.items}
-                    <ul class="list-disc pl-6 space-y-1.5 text-gray-700 leading-relaxed text-base mb-2">
-                      {#each sub.items as item}
-                        <li>{item}</li>
-                      {/each}
-                    </ul>
-                  {/if}
-                  {#if sub.outro}
-                    <p class="text-gray-700 leading-relaxed text-base mt-2">{sub.outro}</p>
-                  {/if}
-                </div>
-              {/each}
-            </div>
-          {/if}
-
-          {#if section.outro}
-            {#each section.outro as paragraph}
-              <p class="text-gray-700 leading-relaxed text-base mt-3 mb-3">{paragraph}</p>
-            {/each}
-          {/if}
+          <h4 class="text-xl font-semibold text-gray-700 mb-4">{section.title}</h4>
+          <p class="text-gray-700 leading-relaxed text-base">{section.content}</p>
         </div>
       {/each}
     </div>

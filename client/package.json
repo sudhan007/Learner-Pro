@@ -45,6 +45,7 @@
     "@iconify/svelte": "^3.1.6",
     "@prisma/client": "^5.11.0",
     "@svelte-reactive-form/rules": "^0.16.14",
+    "@sveltejs/adapter-vercel": "^7.0.3",
     "axios": "^1.6.8",
     "bits-ui": "^0.19.7",
     "clsx": "^2.1.0",
